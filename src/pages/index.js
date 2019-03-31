@@ -32,12 +32,12 @@ class BlogIndex extends Component {
 }
 
 export default BlogIndex;
-
 export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
+        description
       }
     }
 
