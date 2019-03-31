@@ -42,13 +42,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `lencx's Blog`,
-        short_name: `lx`,
+        name: `NoFWL`,
+        short_name: `nofwl`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `pink`,
         display: `minimal-ui`,
-        icon: `${__dirname}/src/assets/lencx.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/src/assets/nofwl.png`, // This path is relative to the root of the site.
+      },
+    },
+    { // dart-sass
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require('sass'),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

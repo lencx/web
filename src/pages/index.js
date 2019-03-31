@@ -15,6 +15,7 @@ class BlogIndex extends Component {
         {posts.map(({ node }) => {
           // console.log(node.frontmatter);
           const post = node.frontmatter;
+          console.log(node)
           return (
             <div key={`${post.title}_${post.date}`}>
               <Link style={{ boxShadow: `none` }} to={node.fields.slug}>

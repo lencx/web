@@ -19,6 +19,9 @@ Run locally, `yarn`, then `yarn dev`, then open `https://localhost:8000`.
 * Image
   * gatsby-transformer-sharp
   * gatsby-plugin-sharp
+* Sass
+  * gatsby-plugin-sass
+  * sass(dart-sass)
 * i18n
   * gatsby-plugin-i18n
 * Search

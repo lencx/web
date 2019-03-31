@@ -30,8 +30,8 @@ exports.createPages = ({ actions, graphql }) => {
 
     const allPosts = result.data.allMarkdownRemark.edges;
     allPosts.forEach((post, index) => {
-      const previous = index === allPosts.length - 1 ? null : allPosts[index + 1].node;
-      const next = index === 0 ? null : allPosts[index - 1].node;
+      const previous = index === 0 ? null : allPosts[index - 1].node;
+      const next = index === allPosts.length - 1 ? null : allPosts[index + 1].node;
 
       createPage({
         path: post.node.fields.slug,
@@ -57,3 +57,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+// exports.onCreateWebpackConfig = ({ actions }) => {
+//   actions.setWebpackConfig({ });
+// };

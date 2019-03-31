@@ -1,6 +1,6 @@
 ---
-date: 2019-03-26 10:10:10
 title: git
+date: 2019-03-26
 spoiler: git tricks
 ---
 

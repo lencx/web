@@ -1,0 +1,9 @@
+:root {
+  --font-code: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  --font-def:  -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --main-color: pink;
+}
+
+body {
+  --font-def: var(--font-code);
+}
