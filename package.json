@@ -1,7 +1,7 @@
 {
-  "name": "lencx.io",
+  "name": "nofwl",
   "private": true,
-  "description": "lencx",
+  "description": "No free working life",
   "version": "0.1.0",
   "author": "lencx <cxin1314@gmail.com>",
   "dependencies": {
@@ -27,7 +27,7 @@
     "gatsby",
     "blog",
     "post",
-    "lencx.io"
+    "nofwl"
   ],
   "license": "MIT",
   "scripts": {
@@ -41,9 +41,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lencx/lencx.io"
+    "url": "https://github.com/lencx/nofwl"
   },
   "bugs": {
-    "url": "https://github.com/lencx/lencx.io/issues"
+    "url": "https://github.com/lencx/nofwl/issues"
   }
 }
