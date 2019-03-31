@@ -24,7 +24,10 @@
     "prettier": "^1.16.4"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "blog",
+    "post",
+    "lencx.io"
   ],
   "license": "MIT",
   "scripts": {
@@ -38,9 +41,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/lencx/lencx.io"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/lencx/lencx.io/issues"
   }
 }
