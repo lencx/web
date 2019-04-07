@@ -6,24 +6,26 @@ import Layout from "../components/layout"
 
 class BlogIndex extends Component {
   render() {
-    const { data } = this.props;
-    const posts = data.allMarkdownRemark.edges;
-
+    const { data, pageContext } = this.props;
+    const posts = data.allMarkdownRemark.edges
+      .filter(({ node }) => node.fields.langKey === 'en');
+    const langKey = pageContext.langKey
+    console.log(posts, '------', langKey);
+    // .filter(item => item.defaultLang === 'en')
     // console.log(data)
     return (
       <Layout>
         {posts.map(({ node }) => {
-          // console.log(node.frontmatter);
+          console.log(node);
           const post = node.frontmatter;
-          console.log(node)
           return (
             <div key={`${post.title}_${post.date}`}>
               <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                 <h2>{post.title} - <i>{post.date}</i></h2>
               </Link>
+              <span>category: {post.category}</span>
               <p> {post.spoiler}</p>
               <div dangerouslySetInnerHTML={{ __html: node.html }}></div>
-              <hr />
             </div>
           )
         })}
@@ -45,15 +47,16 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
           fields {
             slug
+            langKey
           }
           html
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
+            category
           }
         }
       }

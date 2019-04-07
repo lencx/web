@@ -29,3 +29,11 @@ Run locally, `yarn`, then `yarn dev`, then open `https://localhost:8000`.
 * MDX?
   * gatsby-plugin-mdx
   * `yarn add @mdx-js/mdx @mdx-js/loader loader-utils --dev`
+
+* gatsby-plugin-nprogress
+* gatsby-plugin-sitemap
+* gatsby-plugin-feed
+* gatsby-plugin-catch-links
+* gatsby-plugin-google-analytics
+* slash
+* typography
