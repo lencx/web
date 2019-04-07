@@ -1,9 +1,11 @@
 ---
 title: git
 date: 2019-03-26
-spoiler: git tricks
+spoiler: git 技巧
 category: git
 ---
+
+> （繁体）
 
 ```bash
 # branch rename

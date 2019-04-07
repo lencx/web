@@ -2,6 +2,7 @@
 title: Hello world
 date: 2019-03-27
 spoiler: First blog
+category: --
 ---
 
 ## Test markdown
@@ -19,3 +20,5 @@ spoiler: First blog
 * list-item-1
 * list-item-2
 * list-item-3
+
+![test](./test.png)
