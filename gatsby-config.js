@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `NoFWL`,
+    title: `nofwl`,
     description: `No free working life`,
     author: `lencx`,
     social: {
@@ -32,7 +32,7 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             options: {
               // inlineCodeMarker: '±',
-              classPrefix: 'nfwl-language-'
+              classPrefix: 'nl_language-'
             },
           },
           'gatsby-remark-copy-linked-files',
@@ -86,6 +86,12 @@ module.exports = {
         langKeyDefault: 'en',
         useLangKeyLayout: false,
         pagesPaths: [`/content/posts`]
+      },
+    },
+    { // theme
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography',
       },
     },
     `gatsby-plugin-catch-links`

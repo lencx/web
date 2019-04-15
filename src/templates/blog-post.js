@@ -7,15 +7,14 @@ class BlogPostTemplate extends Component {
     const post = this.props.data.markdownRemark;
     // const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next, translations, translationLinks } = this.props.pageContext;
-    console.log(post, this.props.pageContext, '-+++')
-    const hasTrans = translations.length > 0;
+    // console.log(post, this.props.pageContext, '-+++')
     return (
-      <div>
+      <div className="nl_post">
         <h1>{post.frontmatter.title}</h1>
         <p>spoiler: {post.frontmatter.spoiler}</p>
         <p>
           {translations.map(item => <span key={item}>
-            {/* {console.log(item, translationLinks[item],'------____')} */}
+            {/* {console.log(item, translationLinks[item])} */}
             <Link to={translationLinks[item]} rel="translations">
               {item} /
             </Link>
@@ -23,7 +22,7 @@ class BlogPostTemplate extends Component {
         </p>
         <span>category: {post.frontmatter.category}</span>
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
-        {!hasTrans && previous && (
+        { previous && (
           <Link
             to={previous.fields.slug}
             rel="prev"
@@ -32,7 +31,7 @@ class BlogPostTemplate extends Component {
             ← {previous.frontmatter.title}
           </Link>
         )}
-        {!hasTrans && next && (
+        { next && (
           <Link to={next.fields.slug} rel="next">
             {next.frontmatter.title} →
           </Link>

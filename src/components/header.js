@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle, siteDesc }) => (
+const Header = ({ siteTitle, _siteDesc }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -25,7 +25,7 @@ const Header = ({ siteTitle, siteDesc }) => (
           }}
         >
           <span className="nofwl-title">{siteTitle}</span>
-          <span className="nofwl-desc">{siteDesc}</span>
+          {/* <span className="nofwl-desc">{siteDesc}</span> */}
         </Link>
       </h1>
     </div>

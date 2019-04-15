@@ -2,6 +2,8 @@
 const path = require('path');
 // const { createFilePath } = require('gatsby-source-filesystem');
 const { supportedLanguages } = require('./i18n');
+
+const defaultLanguage = 'en';
 // const { maybeAbsoluteLinks } = require('./config');
 
 exports.createPages = ({ actions, graphql }) => {
@@ -19,10 +21,11 @@ exports.createPages = ({ actions, graphql }) => {
 
   return new Promise((resolve, _reject) => {
     const blogPostTemplate = path.resolve('src/templates/blog-post.js');
+    const blogIndexTemplate = path.resolve('./src/templates/blog-index.js');
     Object.keys(supportedLanguages).forEach(langKey => {
       createPage({
-        path: langKey === 'en' ? '/' : `/${langKey}/`,
-        component: path.resolve('./src/templates/blog-index.js'),
+        path: langKey === defaultLanguage ? '/' : `/${langKey}/`,
+        component: blogIndexTemplate,
         context: {
           langKey,
         },
@@ -71,34 +74,49 @@ exports.createPages = ({ actions, graphql }) => {
         return result;
       }, {});
 
-      // console.log(JSON.stringify(translationsByDirectory));
-      // console.log(JSON.stringify(allPosts), 'allSlugs');
+      const defaultLangPosts = allPosts.filter(post => post.node.fields.langKey === defaultLanguage)
 
-      // const defaultLangPosts = allPosts.filter(({ node }) => node.fields.langKey === 'en');
-
-      allPosts.map((post, index) => {
-        // Page turning
-        const previous = index === 0 ? null : allPosts[index - 1].node;
-        const next = index === allPosts.length - 1 ? null : allPosts[index + 1].node;
-
-        const dirName = post.node.fields.directoryName;
-        const translations = translationsByDirectory[dirName] || [];
+      defaultLangPosts.map((post, index) => {
+        const { directoryName, slug } = post.node.fields;
+        const previous = index === 0 ? null : defaultLangPosts[index - 1].node;
+        const next = index === defaultLangPosts.length - 1 ? null : defaultLangPosts[index + 1].node;
+        // console.log(langKey, directoryName, translationsByDirectory);
+        // console.log(post, index);
 
         let translationLinks = {};
-        translations.map(lang => translationLinks[lang] = `/${lang}/${dirName}`)
+        const translations = translationsByDirectory[directoryName] || [];
+        translations.map(lang => {
+          translationLinks[lang] = `/${lang}/${directoryName}/`;
+        });
 
+        // console.log('translations', directoryName, translations);
         createPage({
-          path: post.node.fields.slug,
+          path: slug,
           component: blogPostTemplate,
           context: {
-            slug: post.node.fields.slug,
-            previous,
-            next,
+            slug,
             translations,
             translationLinks,
+            previous,
+            next
           }
-        })
-      })
+        });
+        // if (langKey === defaultLanguage) {
+        //   // Page turning
+        // } else {
+        //   translationLinks['raw'] = `/${directoryName}/`;
+        //   translations.pop('raw');
+        //   createPage({
+        //     path: slug,
+        //     component: blogPostTemplate,
+        //     context: {
+        //       slug,
+        //       translations,
+        //       translationLinks,
+        //     }
+        //   })
+        // }
+      });
     }))
   })
 }
