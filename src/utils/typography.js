@@ -10,6 +10,7 @@ import {
   lineHeights,
   letterSpacings,
   fonts,
+  shadows,
 } from "./tokens"
 import codeLangs from './tokens/code-langs';
 
@@ -27,7 +28,6 @@ const _options = {
   plugins: [new CodePlugin()],
   overrideStyles: ({ rhythm }) => {
     return {
-      // ...codeLangs,
       a: {
         textDecoration: `none`,
       },
@@ -80,14 +80,16 @@ const _options = {
         borderRadius: `${radii[1]}px`,
         position: `relative`,
         WebkitOverflowScrolling: `touch`,
+        padding: `${rhythm(space[6])} ${rhythm(space[2])} ${rhythm(space[3])}`,
+        // [raised, floating, overlay, dialog]
+        boxShadow: shadows.floating,
       },
-      ".gatsby-highlight pre[class*='nl_language-']": {
+      ".gatsby-highlight pre[class*='language-']": {
         backgroundColor: `transparent`,
         border: 0,
-        padding: `${rhythm(space[6])} 0`,
         WebkitOverflowScrolling: `touch`,
       },
-      ".gatsby-highlight pre[class*='nl_language-']::before": {
+      ".gatsby-highlight pre[class*='language-']::before": {
         background: `#ddd`,
         borderRadius: `0 0 ${radii[2]}px ${radii[2]}px`,
         color: colors.gray.dark,
@@ -97,88 +99,25 @@ const _options = {
         lineHeight: lineHeights.solid,
         padding: `${rhythm(space[1])} ${rhythm(space[2])}`,
         position: `absolute`,
-        right: rhythm(space[6]),
         textAlign: `right`,
         // textTransform: `uppercase`,
-        top: `0`,
+        top: rhythm(-space[6]),
+        marginRight: rhythm(-space[3]),
       },
-      ...codeLangs,
-      // ".gatsby-highlight pre[class='nl_language-javascript']::before": {
-      //   content: `'js'`,
-      //   background: `#f7df1e`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-js']::before": {
-      //   content: `'js'`,
-      //   background: `#f7df1e`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-jsx']::before": {
-      //   content: `'jsx'`,
-      //   background: `#61dafb`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-graphql']::before": {
-      //   content: `'GraphQL'`,
-      //   background: `#E10098`,
-      //   color: colors.white,
-      //   fontWeight: `400`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-html']::before": {
-      //   content: `'html'`,
-      //   background: `#005A9C`,
-      //   color: colors.white,
-      //   fontWeight: `400`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-css']::before": {
-      //   content: `'css'`,
-      //   background: `#ff9800`,
-      //   color: colors.white,
-      //   fontWeight: `400`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-shell']::before": {
-      //   content: `'shell'`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-sh']::before": {
-      //   content: `'sh'`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-bash']::before": {
-      //   content: `'bash'`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-yaml']::before": {
-      //   content: `'yaml'`,
-      //   background: `#ffa8df`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-markdown']::before": {
-      //   content: `'md'`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-json']::before, .gatsby-highlight pre[class='nl_language-json5']::before": {
-      //   content: `'json'`,
-      //   background: `linen`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-diff']::before": {
-      //   content: `'diff'`,
-      //   background: `#e6ffed`,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-text']::before": {
-      //   content: `'text'`,
-      //   background: colors.white,
-      // },
-      // ".gatsby-highlight pre[class='nl_language-flow']::before": {
-      //   content: `'flow'`,
-      //   background: `#E8BD36`,
-      // },
       ".gatsby-highlight pre code": {
         display: `block`,
         fontSize: `100%`,
-        lineHeight: 1.5,
+        // lineHeight: 1.5,
         float: `left`,
         minWidth: `100%`,
         // reset code vertical padding declared earlier
-        padding: `0 ${rhythm(space[6])}`,
+        padding: `0 ${rhythm(space[7])}`,
       },
       ".gatsby-highlight-code-line": {
         background: colors.code.border,
-        marginRight: `${rhythm(-space[6])}`,
+        // marginRight: `${rhythm(-space[6])}`,
         // marginLeft: `${rhythm(-space[6])}`,
-        // paddingRight: rhythm(space[6]),
+        paddingRight: rhythm(space[6]),
         paddingLeft: rhythm(space[5]),
         borderLeft: `${rhythm(space[1])} solid ${
           colors.code.lineHighlightBorder
@@ -290,10 +229,10 @@ const _options = {
         border: `none`,
       },
       [breakpoints.lg]: {
-        // ".gatsby-highlight, .post-body .gatsby-resp-image-link, .gatsby-code-title": {
-        //   marginLeft: rhythm(-space[7]),
-        //   marginRight: rhythm(-space[7]),
-        // },
+        ".gatsby-highlight, .post-body .gatsby-resp-image-link, .gatsby-code-title": {
+          marginLeft: rhythm(-space[7]),
+          marginRight: rhythm(-space[7]),
+        },
         ".gatsby-highlight pre": {
           padding: `${rhythm(space[7])} 0`,
           marginBottom: rhythm(space[7]),
@@ -302,9 +241,9 @@ const _options = {
           padding: `0 ${rhythm(space[7])}`,
         },
         ".gatsby-highlight-code-line": {
-          marginRight: rhythm(-space[7]),
+          // marginRight: rhythm(-space[7]),
           // marginLeft: rhythm(-space[7]),
-          // paddingRight: rhythm(space[7]),
+          paddingRight: rhythm(space[7]),
           paddingLeft: rhythm(space[6]),
           borderLeftWidth: rhythm(space[2]),
         },
@@ -315,7 +254,7 @@ const _options = {
             space[3]
           )}`,
         },
-        ".gatsby-highlight pre[class*='nl_language-']::before": {
+        ".gatsby-highlight pre[class*='language-']::before": {
           right: rhythm(space[7]),
         },
       },
@@ -351,7 +290,7 @@ const _options = {
       ".token.regex, .token.important": {
         color: colors.code.regex,
       },
-      ".nl_language-css .token.string, .style .token.string": {
+      ".language-css .token.string, .style .token.string": {
         color: colors.code.cssString,
       },
       ".token.important": {
@@ -379,6 +318,7 @@ const _options = {
       ".gatsby-resp-image-link + em a[href*='//']:after": {
         content: `" " url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20class='i-external'%20viewBox='0%200%2032%2032'%20width='14'%20height='14'%20fill='none'%20stroke='%23744C9E'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='9.38%'%3E%3Cpath%20d='M14%209%20L3%209%203%2029%2023%2029%2023%2018%20M18%204%20L28%204%2028%2014%20M28%204%20L14%2018'/%3E%3C/svg%3E")`,
       },
+      ...codeLangs,
     }
   },
 }

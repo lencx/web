@@ -39,7 +39,8 @@ export default {
   white: `#ffffff`,
   code: {
     bgInline: `#fbf2e9`,
-    bg: `#fdfaf6`,
+    // bg: `#fdfaf6`,
+    bg: `#fdf6e3`,
     border: `#faede5`,
     text: `#866c5b`,
     remove: `#e45c5c`,
@@ -58,10 +59,13 @@ export default {
   codeLangColor: {
     c: '#555555',
     css: '#FF9800', // #563D7C
+    diff: '#E6FFED',
+    flow: '#E8BD36',
     graphql: '#E10098',
     go: '#00ADD8',
     html: '#E34C26',
     js: '#F7DF1E', // #F1E05A
+    json: 'linen',
     java: '#B07219',
     jsx: '#61DAFB',
     ts: '#2B7489',

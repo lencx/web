@@ -32,7 +32,9 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             options: {
               // inlineCodeMarker: '±',
-              classPrefix: 'nl_language-'
+              classPrefix: 'language-',
+              // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
+              showLineNumbers: true,
             },
           },
           'gatsby-remark-copy-linked-files',

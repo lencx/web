@@ -5,6 +5,7 @@ spoiler: JavaScript methods
 category: js
 ---
 
+<!-- ```js{5,7-12} -->
 ```js
 /**
  * matrixMultiply

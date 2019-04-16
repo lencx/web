@@ -5,14 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Header from './header'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-import './layout.scss'
-import './../styles'
+import Header from './header';
+
+import './layout.scss';
+import './../styles';
 
 const Layout = ({ children }) => (
   <StaticQuery

@@ -47,19 +47,21 @@ const preCodeLanguages = [
   },
   {
     langs: ['yaml', 'yml'],
-    txt: 'YAML',
+    txt: 'yaml',
+    bg: codeLangColor.css,
   },
   {
     langs: ['md', 'markdown'],
-    txt: 'MarkDown',
+    txt: 'md',
   },
   {
     langs: ['mdx'],
-    txt: 'MDX',
+    txt: 'mdx',
   },
   {
     langs: ['json'],
     txt: 'JSON',
+    bg: codeLangColor.json,
   },
   {
     langs: ['rust'],
@@ -71,7 +73,15 @@ const preCodeLanguages = [
     langs: ['txt', 'text'],
     txt: 'Text',
     background: colors.white,
-  }
+  },
+  {
+    langs: ['diff'],
+    bg: codeLangColor.diff,
+  },
+  {
+    langs: ['flow'],
+    bg: codeLangColor.flow,
+  },
 ];
 
 const genCodeLanguage = (languages) => {
@@ -79,7 +89,7 @@ const genCodeLanguage = (languages) => {
   languages.map(({ langs, txt, bg, ...rest }) => {
     if (Array.isArray(langs)) {
       langs.map(_lang => {
-        const langKey = `.gatsby-highlight pre[class='nl_language-${_lang}']::before`;
+        const langKey = `.gatsby-highlight pre[class*='language-${_lang}']::before`;
         codeLangs[langKey] = {
           content: txt ? `'${txt}'` : `'${_lang}'`,
           ...rest,
