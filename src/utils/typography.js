@@ -77,12 +77,12 @@ const _options = {
       // gatsby-remark-prismjs styles
       ".gatsby-highlight": {
         background: colors.code.bg,
-        borderRadius: `${radii[1]}px`,
+        // borderRadius: `${radii[1]}px`,
         position: `relative`,
         WebkitOverflowScrolling: `touch`,
         padding: `${rhythm(space[6])} ${rhythm(space[2])} ${rhythm(space[3])}`,
         // [raised, floating, overlay, dialog]
-        boxShadow: shadows.floating,
+        boxShadow: shadows.raised,
       },
       ".gatsby-highlight pre[class*='language-']": {
         backgroundColor: `transparent`,
@@ -111,7 +111,7 @@ const _options = {
         float: `left`,
         minWidth: `100%`,
         // reset code vertical padding declared earlier
-        padding: `0 ${rhythm(space[7])}`,
+        paddingRight: rhythm(space[4]),
       },
       ".gatsby-highlight-code-line": {
         background: colors.code.border,
@@ -237,9 +237,9 @@ const _options = {
           padding: `${rhythm(space[7])} 0`,
           marginBottom: rhythm(space[7]),
         },
-        ".gatsby-highlight pre code": {
-          padding: `0 ${rhythm(space[7])}`,
-        },
+        // ".gatsby-highlight pre code": {
+        //   padding: `0 ${rhythm(space[7])}`,
+        // },
         ".gatsby-highlight-code-line": {
           // marginRight: rhythm(-space[7]),
           // marginLeft: rhythm(-space[7]),
@@ -277,7 +277,9 @@ const _options = {
       ".token.selector, .token.attr-name, .token.string, .token.char, .token.function, .token.builtin": {
         color: colors.code.selector,
       },
-      ".token.operator, .token.entity, .token.url, .token.variable": {},
+      ".token.operator, .token.entity, .token.url, .token.variable": {
+        color: '#ba2821',
+      },
       ".token.atrule, .token.attr-value, .token.keyword, .token.class-name": {
         color: colors.code.keyword,
       },
@@ -325,5 +327,5 @@ const _options = {
 
 const typography = new Typography(_options)
 
-export const { scale, rhythm, options } = typography
-export default typography
+export const { scale, rhythm, options } = typography;
+export default typography;

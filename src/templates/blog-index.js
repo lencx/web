@@ -1,10 +1,14 @@
-import React, { Component } from "react"
-import { Link, graphql } from "gatsby"
+import React, { PureComponent } from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Layout from "../components/layout"
 // import SEO from "../components/seo"
+import Layout from '../components/layout';
+import preCode from './../utils/pre-code';
 
-class BlogIndex extends Component {
+class BlogIndex extends PureComponent {
+  componentDidMount() {
+    preCode();
+  }
   render() {
     // pageContext
     const { data } = this.props;

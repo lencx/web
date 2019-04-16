@@ -33,3 +33,14 @@ export const matrixMultiply = (MatrixA, MatrixB) => {
 export const matrixTranspose = matrix => matrix[0]
   .map((_, i) => matrix.map(row => row[i]));
 ```
+
+```js
+/**
+ * Returns a function that can be called with an object. The return value of the
+ * new function is a copy of the object excluding the key passed initially.
+ */
+const omit = key => object => {
+  const { [key]: toRemove, ...rest } = object;
+  return rest;
+}
+```

@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link, graphql } from 'gatsby';
-// import Helmet from 'react-helmet';
 
-class BlogPostTemplate extends Component {
+// import Helmet from 'react-helmet';
+import preCode from './../utils/pre-code';
+
+class BlogPostTemplate extends PureComponent {
+  componentDidMount() {
+    preCode();
+  }
   render() {
     const post = this.props.data.markdownRemark;
     // const siteTitle = this.props.data.site.siteMetadata.title;

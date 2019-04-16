@@ -47,7 +47,7 @@ export default {
     add: `#4a9c59`,
     selector: `#b3568b`,
     tag: `#4084a1`,
-    keyword: `#538eb6`,
+    keyword: `#538eb6`, //#e90
     comment: `#6f8f39`,
     punctuation: `#53450e`,
     regex: `#d88489`,
