@@ -41,13 +41,9 @@ export default ({ menus }) => {
 
   const handleHideMenu = (e, type) => {
     stopPropagation(e);
-    if (isMenuOpen) {
-      setMenuOpen(false);
-    }
-    if (isSmMenuOpen) {
-      if (type === 'scroll' && screenSize < breakpoint) {
-        setSmMenuOpen(false);
-      }
+    setMenuOpen(false);
+    if (type === 'scroll' && screenSize < breakpoint) {
+      setSmMenuOpen(false);
     }
   }
 

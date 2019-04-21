@@ -46,15 +46,17 @@ header.nofwl-header {
     border-radius: 50%;
     overflow: hidden;
     &:hover {
-      animation: logoAni 3s linear infinite;
+      @media screen and (min-width: vaar(--breakpoint)) {
+        animation: logoAni 3s linear infinite;
+      }
     }
     img {
       margin: 0;
     }
   }
-  .toggle__theme {
+  // .toggle__theme {
 
-  }
+  // }
 }
 
 .nofwl-container {
