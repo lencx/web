@@ -15,7 +15,7 @@ import './layout.scss';
 import '../../styles';
 
 const Layout = ({ children }) => {
-  useEffect(preCode, [0]);
+  useEffect(preCode, []);
 
   return (
     <StaticQuery
@@ -30,10 +30,11 @@ const Layout = ({ children }) => {
         }
       `}
       render={data => {
-        const { title, description } = data.site.siteMetadata;
+        // const { title, description } = data.site.siteMetadata;
         return (
           <>
-            <Header siteTitle={title} siteDesc={description} />
+            {/* <Header siteTitle={title} siteDesc={description} /> */}
+            <Header />
             <div className="nofwl-container">
               <main>{children}</main>
               <footer>

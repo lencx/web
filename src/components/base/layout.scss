@@ -1,4 +1,13 @@
-/* nofwl css */
+
+
+@keyframes logoAni {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
 
 header.nofwl-header {
   position: fixed;
@@ -7,19 +16,44 @@ header.nofwl-header {
   height: 80px;
   background: #292f36;
   // color: #4a4a4a;
-  transition: all 500ms ease;
+  transition: transform 500ms ease;
+  user-select: none;
   &.head__unpinned {
     transform: translateY(-100%);
-    transition: all 500ms ease;
+    transition: transform 500ms ease;
   }
   &.head__pinned {
-    transition: all 500ms ease;
+    transition: transform 500ms ease;
     transform: translateY(0);
   }
   .head-container {
+    display: flex;
+    height: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    max-width: 960px;
+    align-items: center;
+    justify-content: space-between;
     padding: 0 1.0875rem; // 1.45rem
+    // .nofwl-navbar {
+    //   float: right;
+    // }
+  }
+  .logo {
+    display: inline-block;
+    max-width: 50px;
+    max-height: 50px;
+    line-height: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    &:hover {
+      animation: logoAni 3s linear infinite;
+    }
+    img {
+      margin: 0;
+    }
+  }
+  .toggle__theme {
+
   }
 }
 

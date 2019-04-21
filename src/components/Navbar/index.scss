@@ -1,0 +1,93 @@
+@import './../../styles/mixin';
+
+// Navigation Variables
+$breakpoint: 768px;
+
+.nofwl-navbar {
+  height: 100%;
+  // float: right;
+  // display: inline-block;
+  // background: #fff;
+  .nofwl__menu__btn {
+    height: 40px;
+  }
+  @media screen and (min-width: $breakpoint) {
+    .nofwl__menu__btn {
+      display: none;
+    }
+  }
+  @media screen and (max-width: $breakpoint - 1px) {
+    display: flex;
+    align-items: center;
+    .nofwl__menu {
+      display: none;
+      &.open {
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 80px;
+        // bottom: 0;
+        height: unset;
+        background: #000;
+        li {
+          display: block;
+          float: unset;
+        }
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    li {
+      list-style: none;
+      float: left;
+      // & + li {
+      //   margin-left: 10px;
+      // }
+    }
+  }
+  .nofwl__menu {
+    @include clearfix;
+    height: 100%;
+    li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      // padding: 0 10px;
+      & > *:not(.toggle__theme) {
+        padding: 5px 10px;
+        color: #fff;
+      }
+    }
+    .toggle__theme {
+      margin-left: 80px;
+    }
+    .submenus {
+      position: relative;
+      > span {
+        cursor: pointer;
+      }
+      ul {
+        position: absolute;
+        display: none;
+        top: 80px;
+        // @include clearfix;
+        &.open {
+          border: solid 1px #000;
+          display: block;
+          background: #fff;
+        }
+      }
+      li {
+        float: unset;
+        margin: 0;
+        width: 100%;
+        white-space: nowrap;
+        a {
+          color: #000;
+        }
+      }
+    }
+  }
+}

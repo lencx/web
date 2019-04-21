@@ -35,10 +35,11 @@ export default () => {
     window.__onThemeChange = () => {
       setTheme(window.__theme);
     };
-  }, [0]);
+  }, []);
 
   return (
     theme && <Toggle
+      className="toggle__theme"
       icons={ToggleIcons}
       checked={theme === 'dark'}
       onChange={e =>
