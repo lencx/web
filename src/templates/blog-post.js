@@ -1,19 +1,17 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-// import Helmet from 'react-helmet';
-import preCode from './../utils/pre-code';
+import Layout from '../components/base/layout';
 
-class BlogPostTemplate extends PureComponent {
-  componentDidMount() {
-    preCode();
-  }
-  render() {
-    const post = this.props.data.markdownRemark;
-    // const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next, translations, translationLinks } = this.props.pageContext;
-    // console.log(post, this.props.pageContext, '-+++')
-    return (
+// import Helmet from 'react-helmet';
+
+// blogPost
+export default (props) => {
+  const post = props.data.markdownRemark;
+  // const siteTitle = this.props.data.site.siteMetadata.title;
+  const { previous, next, translations, translationLinks } = props.pageContext;
+  return (
+    <Layout>
       <div className="nl_post">
         <h1>{post.frontmatter.title}</h1>
         <p>spoiler: {post.frontmatter.spoiler}</p>
@@ -42,11 +40,9 @@ class BlogPostTemplate extends PureComponent {
           </Link>
         )}
       </div>
-    )
-  }
+    </Layout>
+  )
 }
-
-export default BlogPostTemplate;
 
 export const postQuery = graphql`
   query BlogPostBySlug($slug: String!) {

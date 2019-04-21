@@ -39,16 +39,17 @@ export default {
   white: `#ffffff`,
   code: {
     bgInline: `#fbf2e9`,
-    // bg: `#fdfaf6`,
-    bg: `#fdf6e3`,
+    bg: `#fdf6e3`, // #fdf6e3 #fdfaf6
     border: `#faede5`,
     text: `#866c5b`,
+    parameter: `#1B998B`, // #FF628C
     remove: `#e45c5c`,
     add: `#4a9c59`,
-    selector: `#b3568b`,
-    tag: `#4084a1`,
-    keyword: `#538eb6`, //#e90
-    comment: `#6f8f39`,
+    selector: `#d121cb`, // #b3568b
+    tag: `#4084a1`, // #00A1E4 #4084a1
+    keyword: `#538eb6`, //#e90 #538eb6 #4D21FC
+    comment: `#a5a5a5`, // #6f8f39 #B362FF
+    // comment: `#6f8f39`,
     punctuation: `#53450e`,
     regex: `#d88489`,
     cssString: `#a2466c`,
@@ -56,6 +57,27 @@ export default {
     scrollbarThumb: `#f4d1c6`,
     lineHighlightBorder: `#f1beb6`,
   },
+  // code: {
+  //   bgInline: `#fbf2e9`,
+  //   bg: `#29292e`, // #fdf6e3 #fdfaf6
+  //   border: `#faede5`,
+  //   text: `#866c5b`,
+  //   parameter: `#1B998B`, // #FF628C
+  //   remove: `#e45c5c`,
+  //   add: `#4a9c59`,
+  //   selector: `#d121cb`, // #b3568b
+  //   tag: `#a6e22e`, // #00A1E4 #4084a1
+  //   keyword: `#66d9ef`, //#e90 #538eb6 #4D21FC
+  //   comment: `#a5a5a5`, // #6f8f39 #B362FF
+  //   // comment: `#6f8f39`,
+  //   punctuation: `#d2d2d2`,
+  //   regex: `#d88489`,
+  //   operator: `#f92672`,
+  //   cssString: `#a2466c`,
+  //   invisibles: `#e0d7d1`,
+  //   scrollbarThumb: `#f4d1c6`,
+  //   lineHighlightBorder: `#f1beb6`,
+  // },
   codeLangColor: {
     c: '#555555',
     css: '#FF9800', // #563D7C

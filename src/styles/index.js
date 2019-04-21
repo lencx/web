@@ -10,3 +10,4 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 // import 'prismjs/themes/prism-tomorrow.css';
 
 import './index.scss';
+import './global.css';

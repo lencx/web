@@ -88,6 +88,7 @@ const _options = {
         backgroundColor: `transparent`,
         border: 0,
         WebkitOverflowScrolling: `touch`,
+        // color: colors.white,
       },
       ".gatsby-highlight pre[class*='language-']::before": {
         background: `#ddd`,
@@ -268,6 +269,9 @@ const _options = {
       ".token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata": {
         color: colors.code.comment,
       },
+      ".token.parameter": {
+        color: colors.code.parameter,
+      },
       ".token.punctuation": {
         color: colors.code.punctuation,
       },
@@ -278,10 +282,11 @@ const _options = {
         color: colors.code.selector,
       },
       ".token.operator, .token.entity, .token.url, .token.variable": {
-        color: '#ba2821',
+        color: colors.code.operator,
       },
       ".token.atrule, .token.attr-value, .token.keyword, .token.class-name": {
         color: colors.code.keyword,
+        // fontWeight: `bold`,
       },
       ".token.inserted": {
         color: colors.code.add,

@@ -1,0 +1,40 @@
+/* nofwl css */
+
+header.nofwl-header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  height: 80px;
+  background: #292f36;
+  // color: #4a4a4a;
+  transition: all 500ms ease;
+  &.head__unpinned {
+    transform: translateY(-100%);
+    transition: all 500ms ease;
+  }
+  &.head__pinned {
+    transition: all 500ms ease;
+    transform: translateY(0);
+  }
+  .head-container {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 1.0875rem; // 1.45rem
+  }
+}
+
+.nofwl-container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 100px 1.0875rem 1.45rem;
+}
+
+.nofwl-title {
+  margin-right: 20px;
+}
+
+.nofwl-desc {
+  font-size: 14px;
+  color: pink;
+  text-transform: capitalize;
+}
