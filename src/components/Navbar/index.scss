@@ -33,6 +33,14 @@ $breakpoint: 768px;
         li {
           display: block;
           float: unset;
+          padding: 10px 20px;
+          margin-bottom: 0;
+        }
+      }
+      .toggleTheme {
+        text-align: center;
+        .toggle__theme {
+          margin: 0;
         }
       }
     }

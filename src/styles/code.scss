@@ -62,6 +62,10 @@
       background: var(--code-border);
     }
   }
+
+  [class*='language-'] {
+    padding-left: 26px;
+  }
 }
 
 .gatsby-highlight-code-line {

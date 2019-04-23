@@ -73,7 +73,7 @@ export default ({ menus }) => {
             )
           }
           if (!menuItem.link && menuItem.render) {
-            itemNode = <li key={menuItem.name}>{menuItem.render}</li>;
+            itemNode = <li key={menuItem.name} className={menuItem.name}>{menuItem.render}</li>;
           }
           if (menuItem.submenus) {
             itemNode = (
