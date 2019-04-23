@@ -8,3 +8,105 @@
 body {
   --font-def: var(--font-code);
 }
+
+body.light {
+  /* Common */
+  /* original palette by @SachaG
+  @see https://www.figma.com/file/J6IYJEtdRmwJQOrcZ2DfvxDD/Gatsby */
+  --common-gatsby: #663399; /* #744c9e */
+  --common-gatsby-dark: #442266;
+  --common-gatsby-darker: #221133;
+  --common-lemon: #ffdf37;
+  --common-mint: #73fff7;
+  --common-lilac: #8c65b3;
+  --common-lavender: #b190d5;
+  --common-wisteria: #ccb2e5;
+  /* accent color from the "bolder palette" by @ArchieHicklin
+  @see https://github.com/gatsbyjs/gatsby/issues/1173#issuecomment-309415650 */
+  --common-accent: #ffb238; /* Mustard */
+  --common-success: #37b635;
+  --common-warning: #ec1818;
+  --common-accent-light: #ffeccd;
+  --common-accent-dark: #9e6100;
+  --common-sky-light: #dcfffd;
+  --common-sky-dark: #0a75c2;
+
+  /* UI */
+  --ui-bright: #F1DEFA;
+  --ui-light: #F6EDFA;
+  --ui-whisper: #FCFAFF;
+  --ui-white: #fff;
+
+  /* Code */
+  --code-add: #4a9c59;
+  --code-bg-inline: #fbf2e9;
+  --code-bg: #fdf6e3;
+  --code-border: #faede5;
+  --code-comment: #a5a5a5;
+  --code-css-string: #a2466c;
+  --code-def-txet: #4a4a4a;
+  --code-invisibles: #e0d7d1;
+  --code-keyword: #538eb6;
+  --code-line-highlight-border: #f1beb6;
+  --code-operator: #f92672;
+  --code-parameter: #1B998B;
+  --code-punctuation: #53450e;
+  --code-regex: #d88489;
+  --code-remove: #e45c5c;
+  --code-scrollbar-thumb: #f4d1c6;
+  /* --code-selector: #d121cb; */
+  --code-selector: #FF628C;
+  --code-tag: #4084a1;
+  --code-text: #866c5b;
+}
+
+body.dark {
+  /* Common */
+  /* original palette by @SachaG
+  @see https://www.figma.com/file/J6IYJEtdRmwJQOrcZ2DfvxDD/Gatsby */
+  --common-gatsby: #663399; /* #744c9e */
+  --common-gatsby-dark: #442266;
+  --common-gatsby-darker: #221133;
+  --common-lemon: #ffdf37;
+  --common-mint: #73fff7;
+  --common-lilac: #8c65b3;
+  --common-lavender: #b190d5;
+  --common-wisteria: #ccb2e5;
+  /* accent color from the "bolder palette" by @ArchieHicklin
+  @see https://github.com/gatsbyjs/gatsby/issues/1173#issuecomment-309415650 */
+  --common-accent: #ffb238; /* Mustard */
+  --common-success: #37b635;
+  --common-warning: #ec1818;
+  --common-accent-light: #ffeccd;
+  --common-accent-dark: #9e6100;
+  --common-sky-light: #dcfffd;
+  --common-sky-dark: #0a75c2;
+
+  /* UI */
+  --ui-bright: #F1DEFA;
+  --ui-light: #F6EDFA;
+  --ui-whisper: #FCFAFF;
+  --ui-white: #fff;
+
+  /* Code */
+  --code-add: #4a9c59;
+  --code-bg-inline: #fbf2e9;
+  --code-bg: #29292e;
+  --code-border: #faede5;
+  --code-comment: #a5a5a5;
+  --code-css-string: #a2466c;
+  --code-def-txet: #F2EFEA;
+  --code-invisibles: #e0d7d1;
+  --code-keyword: #FF3366; /* #90E4AC #FE9920 */
+  --code-line-highlight-border: #f1beb6;
+  --code-operator: #76A5A5; /* #140D4F #f92672*/
+  --code-parameter: #F9B455;
+  --code-punctuation: #F17F71;
+  --code-regex: #d88489;
+  --code-remove: #e45c5c;
+  --code-scrollbar-thumb: #f4d1c6;
+  /* --code-selector: #d121cb; */
+  --code-selector: #C2E47A;
+  --code-tag: #18FF6D;
+  --code-text: #866c5b;
+}

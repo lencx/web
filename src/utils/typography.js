@@ -74,67 +74,63 @@ const _options = {
         WebkitFontFeatureSettings: `"clig" 0, "calt" 0`,
         fontFeatureSettings: `"clig" 0, "calt" 0`,
       },
+
       // gatsby-remark-prismjs styles
       ".gatsby-highlight": {
-        background: colors.code.bg,
-        // borderRadius: `${radii[1]}px`,
-        position: `relative`,
-        WebkitOverflowScrolling: `touch`,
         padding: `${rhythm(space[6])} ${rhythm(space[2])} ${rhythm(space[3])}`,
         // [raised, floating, overlay, dialog]
         boxShadow: shadows.raised,
-      },
-      ".gatsby-highlight pre[class*='language-']": {
-        backgroundColor: `transparent`,
-        border: 0,
-        WebkitOverflowScrolling: `touch`,
-        // color: colors.white,
+        // background: colors.code.bg,
+        // borderRadius: `${radii[1]}px`,
+        // position: `relative`,
+        // WebkitOverflowScrolling: `touch`,
       },
       ".gatsby-highlight pre[class*='language-']::before": {
-        background: `#ddd`,
         borderRadius: `0 0 ${radii[2]}px ${radii[2]}px`,
-        color: colors.gray.dark,
         fontSize: fontSizes[0],
         fontFamily: fonts.monospace.join(`,`),
         letterSpacing: letterSpacings.tracked,
         lineHeight: lineHeights.solid,
         padding: `${rhythm(space[1])} ${rhythm(space[2])}`,
-        position: `absolute`,
-        textAlign: `right`,
-        // textTransform: `uppercase`,
         top: rhythm(-space[6]),
         marginRight: rhythm(-space[3]),
+        color: colors.gray.dark,
+        background: `#ddd`,
+        //// position: `absolute`,
+        //// textAlign: `right`,
+        //// textTransform: `uppercase`,
       },
       ".gatsby-highlight pre code": {
-        display: `block`,
-        fontSize: `100%`,
-        // lineHeight: 1.5,
-        float: `left`,
-        minWidth: `100%`,
         // reset code vertical padding declared earlier
         paddingRight: rhythm(space[4]),
+        //   // display: `block`,
+        //   // fontSize: `100%`,
+        //   // lineHeight: 1.5,
+        //   // float: `left`,
+        //   // minWidth: `100%`,
       },
       ".gatsby-highlight-code-line": {
-        background: colors.code.border,
-        // marginRight: `${rhythm(-space[6])}`,
-        // marginLeft: `${rhythm(-space[6])}`,
         paddingRight: rhythm(space[6]),
         paddingLeft: rhythm(space[5]),
-        borderLeft: `${rhythm(space[1])} solid ${
-          colors.code.lineHighlightBorder
-        }`,
-        display: `block`,
+        borderLeft: `${rhythm(space[1])} solid`,
+        //// background: colors.code.border,
+        //// borderLeft: `${rhythm(space[1])} solid ${
+        ////   colors.code.lineHighlightBorder
+        //// }`,
+        //// display: `block`,
+        // marginRight: `${rhythm(-space[6])}`,
+        // marginLeft: `${rhythm(-space[6])}`,
       },
       ".gatsby-highlight pre::-webkit-scrollbar": {
         width: rhythm(space[2]),
         height: rhythm(space[2]),
       },
-      ".gatsby-highlight pre::-webkit-scrollbar-thumb": {
-        background: colors.code.scrollbarThumb,
-      },
+      // ".gatsby-highlight pre::-webkit-scrollbar-thumb": {
+      //   // background: colors.code.scrollbarThumb,
+      // },
       ".gatsby-highlight pre::-webkit-scrollbar-track": {
-        background: colors.code.border,
         borderRadius: `0 0 ${radii[2]}px ${radii[2]}px`,
+        //// background: colors.code.border,
       },
       // Target image captions.
       // This is kind of a fragile selector...
@@ -143,68 +139,74 @@ const _options = {
         lineHeight: lineHeights.dense,
         paddingTop: rhythm(3 / 8),
         marginBottom: rhythm(space[9]),
-        display: `block`,
-        fontStyle: `normal`,
         color: colors.gray.calm,
-        position: `relative`,
-      },
-      ".gatsby-resp-image-link + em a, .gatsby-resp-image-wrapper + em a": {
-        fontWeight: `normal`,
-        color: colors.lilac,
+        // // display: `block`,
+        // // fontStyle: `normal`,
+        // // position: `relative`,
       },
       ".main-body a": {
-        color: colors.lilac,
-        textDecoration: `none`,
         transition: `all ${transition.speed.fast} ${transition.curve.default}`,
-        borderBottom: `1px solid ${colors.lilac}`,
-      },
-      ".main-body a:hover": {
-        borderBottomColor: colors.ui.bright,
-      },
-      ".post-body figure img": {
-        marginBottom: 0,
+        //// color: colors.lilac,
+        //// textDecoration: `none`,
+        //// borderBottom: `1px solid ${colors.lilac}`,
       },
       ".post-body figcaption": {
         color: colors.gray.calm,
-        fontSize: `87.5%`,
         marginTop: rhythm(space[1]),
         marginBottom: rhythm(space[3]),
-      },
-      ".main-body a.anchor": {
-        color: `inherit`,
-        fill: colors.lilac,
-        textDecoration: `none`,
-        borderBottom: `none`,
-      },
-      ".main-body a.anchor:hover": {
-        background: `none`,
+        //// fontSize: `87.5%`,
       },
       ".main-body a.gatsby-resp-image-link": {
-        borderBottom: `transparent`,
         marginTop: rhythm(space[9]),
         marginBottom: rhythm(space[9]),
+        //// borderBottom: `transparent`,
       },
       ".main-body figure a.gatsby-resp-image-link": {
-        borderBottom: `transparent`,
         marginTop: rhythm(space[9]),
-        marginBottom: 0,
+        //// borderBottom: `transparent`,
+        //// marginBottom: 0,
       },
+      // ".gatsby-highlight pre[class*='language-']": {
+      //   // backgroundColor: `transparent`,
+      //   // border: 0,
+      //   // WebkitOverflowScrolling: `touch`,
+      //   // color: colors.white,
+      // },
+      // ".gatsby-resp-image-link + em a, .gatsby-resp-image-wrapper + em a": {
+      //   // fontWeight: `normal`,
+      //   // color: colors.lilac,
+      // },
+      // ".main-body a:hover": {
+      //   // borderBottomColor: colors.ui.bright,
+      // },
+      // ".post-body figure img": {
+      //   marginBottom: 0,
+      // },
+      // ".main-body a.anchor": {
+      //   color: `inherit`,
+      //   fill: colors.lilac,
+      //   textDecoration: `none`,
+      //   borderBottom: `none`,
+      // },
+      // ".main-body a.anchor:hover": {
+      //   background: `none`,
+      // },
       // ".gatsby-highlight, .gatsby-code-title, .post-body .gatsby-resp-image-link": {
       //   marginLeft: rhythm(-space[6]),
       //   marginRight: rhythm(-space[6]),
       // },
       ".gatsby-resp-image-link": {
         borderRadius: `${radii[1]}px`,
-        overflow: `hidden`,
+        //// overflow: `hidden`,
       },
       // gatsby-remark-code-titles styles
       // https://www.gatsbyjs.org/packages/gatsby-remark-code-titles/
       ".gatsby-code-title": {
-        background: colors.code.bg,
-        borderBottom: `1px solid ${colors.code.border}`,
-        color: colors.code.text,
         padding: `${rhythm(space[6])} ${rhythm(space[6])} ${rhythm(space[3])}`,
-        fontSize: `74%`,
+        //// background: colors.code.bg,
+        //// borderBottom: `1px solid ${colors.code.border}`,
+        //// color: colors.code.text,
+        //// fontSize: `74%`,
       },
       "@media (max-width:634px)": {
         ".gatsby-highlight, .gatsby-code-title, .gatsby-resp-image-link": {
@@ -238,94 +240,95 @@ const _options = {
           padding: `${rhythm(space[7])} 0`,
           marginBottom: rhythm(space[7]),
         },
-        // ".gatsby-highlight pre code": {
-        //   padding: `0 ${rhythm(space[7])}`,
-        // },
         ".gatsby-highlight-code-line": {
-          // marginRight: rhythm(-space[7]),
-          // marginLeft: rhythm(-space[7]),
           paddingRight: rhythm(space[7]),
           paddingLeft: rhythm(space[6]),
           borderLeftWidth: rhythm(space[2]),
-        },
-        ".gatsby-code-title": {
           // marginRight: rhythm(-space[7]),
           // marginLeft: rhythm(-space[7]),
+        },
+        ".gatsby-code-title": {
           padding: `${rhythm(space[6])} ${rhythm(space[7])} ${rhythm(
             space[3]
           )}`,
+          // marginRight: rhythm(-space[7]),
+          // marginLeft: rhythm(-space[7]),
         },
         ".gatsby-highlight pre[class*='language-']::before": {
           right: rhythm(space[7]),
         },
+        // ".gatsby-highlight pre code": {
+        //   padding: `0 ${rhythm(space[7])}`,
+        // },
       },
       [breakpoints.xxl]: {
         html: {
           fontSize: `${(18 / 16) * 100}%`,
         },
       },
+
+      ...codeLangs,
       // PrismJS syntax highlighting token styles
       // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
-      ".token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata": {
-        color: colors.code.comment,
-      },
-      ".token.parameter": {
-        color: colors.code.parameter,
-      },
-      ".token.punctuation": {
-        color: colors.code.punctuation,
-      },
-      ".token.property, .token.tag, .token.boolean, .token.number, .token.function-name, .token.constant, .token.symbol": {
-        color: colors.code.tag,
-      },
-      ".token.selector, .token.attr-name, .token.string, .token.char, .token.function, .token.builtin": {
-        color: colors.code.selector,
-      },
-      ".token.operator, .token.entity, .token.url, .token.variable": {
-        color: colors.code.operator,
-      },
-      ".token.atrule, .token.attr-value, .token.keyword, .token.class-name": {
-        color: colors.code.keyword,
-        // fontWeight: `bold`,
-      },
-      ".token.inserted": {
-        color: colors.code.add,
-      },
-      ".token.deleted": {
-        color: colors.code.remove,
-      },
-      ".token.regex, .token.important": {
-        color: colors.code.regex,
-      },
-      ".language-css .token.string, .style .token.string": {
-        color: colors.code.cssString,
-      },
-      ".token.important": {
-        fontWeight: `normal`,
-      },
-      ".token.bold": {
-        fontWeight: `bold`,
-      },
-      ".token.italic": {
-        fontStyle: `italic`,
-      },
-      ".token.entity": {
-        cursor: `help`,
-      },
-      ".namespace": {
-        opacity: 0.7,
-      },
+      // ".token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata": {
+      //   color: colors.code.comment,
+      // },
+      // ".token.parameter": {
+      //   color: colors.code.parameter,
+      // },
+      // ".token.punctuation": {
+      //   color: colors.code.punctuation,
+      // },
+      // ".token.property, .token.tag, .token.boolean, .token.number, .token.function-name, .token.constant, .token.symbol": {
+      //   color: colors.code.tag,
+      // },
+      // ".token.selector, .token.attr-name, .token.string, .token.char, .token.function, .token.builtin": {
+      //   color: colors.code.selector,
+      // },
+      // ".token.operator, .token.entity, .token.url, .token.variable": {
+      //   color: colors.code.operator,
+      // },
+      // ".token.atrule, .token.attr-value, .token.keyword, .token.class-name": {
+      //   color: colors.code.keyword,
+      //   // fontWeight: `bold`,
+      // },
+      // ".token.inserted": {
+      //   color: colors.code.add,
+      // },
+      // ".token.deleted": {
+      //   color: colors.code.remove,
+      // },
+      // ".token.regex, .token.important": {
+      //   color: colors.code.regex,
+      // },
+      // ".language-css .token.string, .style .token.string": {
+      //   color: colors.code.cssString,
+      // },
+      // ".token.important": {
+      //   fontWeight: `normal`,
+      // },
+      // ".token.bold": {
+      //   fontWeight: `bold`,
+      // },
+      // ".token.italic": {
+      //   fontStyle: `italic`,
+      // },
+      // ".token.entity": {
+      //   cursor: `help`,
+      // },
+      // ".namespace": {
+      //   opacity: 0.7,
+      // },
       // PrismJS plugin styles
-      ".token.tab:not(:empty):before, .token.cr:before, .token.lf:before": {
-        color: colors.code.invisibles,
-      },
+      // ".token.tab:not(:empty):before, .token.cr:before, .token.lf:before": {
+      //   color: colors.code.invisibles,
+      // },
       // Fancy external links in posts, borrowed from
       // https://github.com/comfusion/after-dark/
       // @see https://github.com/comfusion/after-dark/blob/8fdbe2f480ac40315cf0e01cece785d2b5c4b0c3/layouts/partials/critical-theme.css#L36-L39
-      ".gatsby-resp-image-link + em a[href*='//']:after": {
-        content: `" " url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20class='i-external'%20viewBox='0%200%2032%2032'%20width='14'%20height='14'%20fill='none'%20stroke='%23744C9E'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='9.38%'%3E%3Cpath%20d='M14%209%20L3%209%203%2029%2023%2029%2023%2018%20M18%204%20L28%204%2028%2014%20M28%204%20L14%2018'/%3E%3C/svg%3E")`,
-      },
-      ...codeLangs,
+      // ".gatsby-resp-image-link + em a[href*='//']:after": {
+      //   content: `" " url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20class='i-external'%20viewBox='0%200%2032%2032'%20width='14'%20height='14'%20fill='none'%20stroke='%23744C9E'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='9.38%'%3E%3Cpath%20d='M14%209%20L3%209%203%2029%2023%2029%2023%2018%20M18%204%20L28%204%2028%2014%20M28%204%20L14%2018'/%3E%3C/svg%3E")`,
+      // },
     }
   },
 }

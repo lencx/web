@@ -30,3 +30,210 @@
     }
   }
 }
+
+// code style
+.gatsby-highlight {
+  position: relative;
+  background: var(--code-bg);
+  -webkit-overflow-scrolling: touch;
+  color: var(--code-def-txet);
+  pre[class*="language-"] {
+    background-color: transparent;
+    border: 0;
+    -webkit-overflow-scrolling: touch;
+    &::before {
+      position: absolute;
+      text-align: right;
+    }
+  }
+
+  pre {
+    code {
+      display: block;
+      font-size: 100%;
+      float: left;
+      min-width: 100%;
+    }
+    // ::-webkit-scrollbar { }
+    ::-webkit-scrollbar-thumb {
+      background: var(--code-scrollbar-thumb);
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--code-border);
+    }
+  }
+}
+
+.gatsby-highlight-code-line {
+  display: block;
+  // TODO:
+  background: var(--code-border);
+  border-left-color: var(--code-line-highlight-border);
+}
+
+.gatsby-resp-image-link {
+  overflow: hidden;
+}
+.gatsby-resp-image-link,
+.gatsby-resp-image-wrapper {
+  + em {
+    position: relative;
+    display: block;
+    font-style: normal;
+    a {
+      font-weight: normal;
+      color: var(--common-lilac);
+    }
+  }
+}
+
+.gatsby-code-title {
+  background: var(--code-bg);
+  border-bottom: solid 1px var(--code-border);
+  color: var(--code-text);
+  font-size: 74%;
+}
+
+.main-body {
+  a {
+    color: var(--common-lilac);
+    text-decoration: none;
+    border-bottom: solid 1px var(--common-lilac);
+    &:hover {
+      border-bottom-color: var(--ui-bright);
+    }
+    &.anchor {
+      color: inherit;
+      fill: var(--common-lilac);
+      text-decoration: none;
+      border-bottom: none;
+      &:hover {
+        background: none;
+      }
+    }
+    &.gatsby-resp-image-link {
+      border-bottom: transparent;
+    }
+  }
+  figure {
+    a {
+      .gatsby-resp-image-link {
+        border-bottom: transparent;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.post-body {
+  figure img {
+    margin-bottom: 0;
+  }
+  figcaption {
+    font-size: 87.5%;
+  }
+}
+
+// PrismJS syntax highlighting token styles
+// https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--code-comment);
+}
+
+.token.parameter {
+  color: var(--code-parameter);
+}
+
+.token.punctuation {
+  color: var(--code-punctuation);
+}
+
+.token.tag,
+.token.property,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol {
+  color: var(--code-tag);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin {
+  color: var(--code-selector);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: var(--code-operator);
+}
+
+.token.keyword,
+.token.atrule,
+.token.attr-value,
+.token.class-name {
+  color: var(--code-keyword);
+  font-weight: bold;
+}
+
+.token.inserted {
+  color: var(--code-add);
+}
+
+.token.deleted {
+  color: var(--code-remove);
+}
+
+.token.regex,
+.token.important {
+  color: var(--code-regex);
+}
+
+.language-css .token.string,
+.style .token.string {
+  color: var(--code-css-string);
+}
+
+.token.important {
+  font-weight: normal;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+// PrismJS plugin styles
+.token.tab:not(:empty):before,
+.token.cr:before,
+.token.lf:before {
+  color: var(--code-invisibles);
+}
+
+// Fancy external links in posts, borrowed from
+// https://github.com/comfusion/after-dark/
+// @see https://github.com/comfusion/after-dark/blob/8fdbe2f480ac40315cf0e01cece785d2b5c4b0c3/layouts/partials/critical-theme.css#L36-L39
+.gatsby-resp-image-link + em a[href*='//']:after {
+  content: " " url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20class='i-external'%20viewBox='0%200%2032%2032'%20width='14'%20height='14'%20fill='none'%20stroke='%23744C9E'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='9.38%'%3E%3Cpath%20d='M14%209%20L3%209%203%2029%2023%2029%2023%2018%20M18%204%20L28%204%2028%2014%20M28%204%20L14%2018'/%3E%3C/svg%3E");
+}

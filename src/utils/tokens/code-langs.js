@@ -95,7 +95,7 @@ const genCodeLanguage = (languages) => {
           ...rest,
         }
         if (bg) {
-          codeLangs[langKey].background = bg;
+          codeLangs[langKey].background = `${bg} !important`;
         }
         return codeLangs;
       });
