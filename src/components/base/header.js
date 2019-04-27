@@ -37,18 +37,20 @@ const Header = () => {
         <Logo />
         <Navbar menus={[
           { name: 'home', link: '/' },
+          { name: 'explore', link: '/explore' },
+          { name: 'blog', link: '/blog' },
           { name: 'archive', link: '/archive' },
-          { name: 'about', link: '/about' },
           { name: 'tools', submenus: [
             { name: 'tool 1', link: '/tool/1' },
             { name: 'tool 2', link: '/tool/2' },
             { name: 'tool 3', link: '/tool/3' },
           ] },
-          { name: 'other', submenus: [
-            { name: 'other 1', link: '/other/1' },
-            { name: 'other 2', link: '/other/2' },
-            { name: 'other 3', link: '/other/3' },
-          ] },
+          { name: 'about', link: '/about' },
+          // { name: 'other', submenus: [
+          //   { name: 'other 1', link: '/other/1' },
+          //   { name: 'other 2', link: '/other/2' },
+          //   { name: 'other 3', link: '/other/3' },
+          // ] },
           { name: 'toggleTheme', render: <ToggleTheme /> },
         ]} />
       </div>

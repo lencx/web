@@ -29,7 +29,7 @@ $breakpoint: 768px;
         top: 80px;
         // bottom: 0;
         height: unset;
-        background: #000;
+        background: var(--ui-header-bg);
         li {
           display: block;
           float: unset;
@@ -65,7 +65,6 @@ $breakpoint: 768px;
       // padding: 0 10px;
       & > *:not(.toggle__theme) {
         padding: 5px 10px;
-        color: #fff;
       }
     }
     .toggle__theme {

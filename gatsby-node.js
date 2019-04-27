@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
     const blogIndexTemplate = path.resolve('./src/templates/blog-index.js');
     Object.keys(supportedLanguages).forEach(langKey => {
       createPage({
-        path: langKey === defaultLanguage ? '/' : `/${langKey}/`,
+        path: langKey === defaultLanguage ? '/blog' : `/blog${langKey}/`,
         component: blogIndexTemplate,
         context: {
           langKey,

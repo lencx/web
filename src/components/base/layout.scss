@@ -14,10 +14,15 @@ header.nofwl-header {
   width: 100%;
   z-index: 999;
   height: 80px;
-  background: #292f36;
+  // background: #292f36;
+  background: var(--ui-header-bg);
   // color: #4a4a4a;
   transition: transform 500ms ease;
   user-select: none;
+  &,
+  a {
+    color: var(--ui-header-txt);
+  }
   &.head__unpinned {
     transform: translateY(-100%);
     transition: transform 500ms ease;
@@ -46,7 +51,7 @@ header.nofwl-header {
     border-radius: 50%;
     overflow: hidden;
     &:hover {
-      @media screen and (min-width: vaar(--breakpoint)) {
+      @media screen and (min-width: 768px) {
         animation: logoAni 3s linear infinite;
       }
     }

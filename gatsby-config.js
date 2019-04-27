@@ -15,6 +15,13 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          { // images
+            resolve: `gatsby-source-filesystem`,
+            options: {
+              name: `images`,
+              path: `${__dirname}/src/assets/images`,
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -51,7 +58,7 @@ module.exports = {
     { // blog-post
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/posts`,
+        path: `${__dirname}/content`,
         name: `blog`,
       },
     },
@@ -87,7 +94,7 @@ module.exports = {
       options: {
         langKeyDefault: 'en',
         useLangKeyLayout: false,
-        pagesPaths: [`/content/posts`]
+        pagesPaths: [`/content`]
       },
     },
     { // theme

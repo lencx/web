@@ -20,7 +20,7 @@ export default ({ menus }) => {
       window.removeEventListener('scroll', handleHideMenu);
       window.removeEventListener('resize', getScreenWdith);
     };
-  }, [])
+  }, [isMenuOpen, isSmMenuOpen])
 
   const getScreenWdith = () => {
     setScreenSize(document.body.offsetWidth);
