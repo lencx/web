@@ -52,10 +52,7 @@
     "build": "gatsby build",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "now-build": "gatsby build",
-    "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) nofwl.com",
-    "dry": "yarn build && cp now.json public/ && cd public && now"
+    "serve": "gatsby serve"
   },
   "repository": {
     "type": "git",

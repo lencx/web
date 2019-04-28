@@ -1,9 +1,7 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Header from '../components/base/header'
-
-import Img from 'gatsby-image'
-// useStaticQuery
 
 import './../styles/pages/index.scss';
 
@@ -18,12 +16,19 @@ import './../styles/pages/index.scss';
 // // filter: blur(3px);
 // ]
 
-const invert = `invert(${Math.random().toFixed(1)})`
-const sepia = `sepia(${Math.random().toFixed(1)})`
-const grayscale = `grayscale(${Math.random().toFixed(1)})`
-const contrast = `invert(${Math.floor(Math.random() * 4)})`
-const brightness = `invert(${Math.floor(Math.random() * 2)})`
-const blur = ` blur(${Math.floor(Math.random() * 3)})`
+// const rdm = (num) => {
+//   let _n = Math.random();
+//   if (_n > 0) {
+
+//   }
+// }
+
+const invert = `invert(${Math.random().toFixed(3)})`
+const sepia = `sepia(${Math.random().toFixed(3)})`
+const grayscale = `grayscale(${Math.random().toFixed(3)})`
+const contrast = `contrast(${Math.random() * 3})`
+const brightness = `brightness(${(Math.random() * 3).toFixed(3)})`
+const blur = ` blur(${Math.floor(Math.random() * 3).toFixed(3)})`
 
 let cssMode = [invert, sepia, grayscale, contrast, brightness, blur]
 cssMode = cssMode.map(item => Math.random() > 0.5 ? item : null)

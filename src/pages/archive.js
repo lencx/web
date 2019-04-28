@@ -2,8 +2,6 @@ import React from 'react'
 
 import Layout from '../components/base/layout'
 
-{/* localStorage */}
-
 const ArchivePage = () => (
   <Layout>
     <h1>Archive</h1>
