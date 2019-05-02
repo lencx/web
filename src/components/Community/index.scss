@@ -1,0 +1,22 @@
+.community-icons {
+  margin: 10px;
+  max-width: 48px;
+  height: 48px;
+  padding: 3px !important;
+  border-radius: 50%;
+  img {
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+  }
+}
+
+.community {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

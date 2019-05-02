@@ -1,20 +1,24 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 // import SEO from "../components/seo"
 import Layout from '../components/base/layout';
 
 // blogIndex
 export default (props) => {
-  const { data } = props;
+  const { data } = props
   const posts = data.allMarkdownRemark.edges
-    .filter(({ node }) => node.fields.langKey === 'en');
+    .filter(({ node }) => node.fields.langKey === 'en')
   // const langKey = pageContext.langKey
   // console.log(data.allMarkdownRemark.edges, '------', langKey);
   // .filter(item => item.defaultLang === 'en')
   // console.log(data)
   return (
-    <Layout>
+    <Layout className="nl_blog">
+      <Helmet>
+        <title>Blog</title>
+      </Helmet>
       {posts.map(({ node }) => {
         // console.log(node);
         const post = node.frontmatter;
@@ -25,7 +29,7 @@ export default (props) => {
             </Link>
             {post.category && <span>category: {post.category}</span>}
             <p> {post.spoiler}</p>
-            <div dangerouslySetInnerHTML={{ __html: node.html }}></div>
+            {/* <div dangerouslySetInnerHTML={{ __html: node.html }}></div> */}
           </div>
         )
       })}

@@ -3,10 +3,11 @@
  * Add back the container background-color, border-radius, padding, margin
  * and overflow that we removed from <pre>.
  */
- .gatsby-highlight {
-   overflow: auto;
+.gatsby-highlight {
+  overflow: auto;
   // border-radius: 0.3em;
   margin: 0.5em 0;
+  box-shadow: var(--code-box-shadow);
 
   /**
   * Remove the default PrismJS theme background-color, border-radius, margin,
@@ -166,10 +167,13 @@
   color: var(--code-tag);
 }
 
+.token.string,
+.token.char {
+  color: var(--code-string);
+}
+
 .token.selector,
 .token.attr-name,
-.token.string,
-.token.char,
 .token.function,
 .token.builtin {
   color: var(--code-selector);

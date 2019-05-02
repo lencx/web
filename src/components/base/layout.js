@@ -14,7 +14,7 @@ import preCode from '../../utils/codenum';
 import './layout.scss';
 import '../../styles';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, className }) => {
   useEffect(preCode, []);
 
   return (
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
       render={data => {
         // const { title, description } = data.site.siteMetadata;
         return (
-          <>
+          <div className={className}>
             {/* <Header siteTitle={title} siteDesc={description} /> */}
             <Header />
             <div className="nofwl-container">
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
                 <a href="https://github.com/lencx/nofwl">nofwl</a>
               </footer>
             </div>
-          </>
+          </div>
         )
       }}
     />

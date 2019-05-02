@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Header from '../components/base/header'
+import Community from '../components/Community'
 
 import './../styles/pages/index.scss';
 
@@ -53,6 +54,7 @@ const HomePage = (props) => {
         backgroundImage: `url(${nofwlImg})`,
         filter: cssMode.join('')
       }} />
+      <Community />
     </div>
   )
 }

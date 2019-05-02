@@ -16,6 +16,7 @@ header.nofwl-header {
   height: 80px;
   // background: #292f36;
   background: var(--ui-header-bg);
+  box-shadow: var(--shadow-raised);
   // color: #4a4a4a;
   transition: transform 500ms ease;
   user-select: none;

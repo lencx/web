@@ -1,3 +1,30 @@
-.nl_post {
-  max-width: 1200px;
+.nl_blog {
+  background-color: var(--common-bg);
+  color: var(--common-color);
+  min-height: 100vh;
+  &.thinking {
+    font-family: var(--font-nl);
+  }
+  .nl_post {
+    max-width: 1200px;
+  }
+  blockquote {
+    margin: 15px 0;
+    padding-left: 10px;
+    border-left-color: var(--ui-pink);
+    color: var(--code-comment);
+  }
+  del {
+    text-decoration-color: var(--common-warning);
+  }
+  em {
+    font-family: var(--font-def);
+    // font-weight: bold;
+  }
+  .language-text {
+    background: var(--ui-light-pink);
+  }
+  a {
+    color: var(--ui-pink);
+  }
 }
