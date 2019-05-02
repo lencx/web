@@ -32,6 +32,7 @@ const _options = {
         textDecoration: `none`,
       },
       "h1, h2, h3, h4, h5, h6": {
+        fontFamily: 'unset',
         letterSpacing: letterSpacings.tight,
       },
       h1: { color: `#000` },

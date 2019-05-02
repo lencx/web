@@ -12,7 +12,9 @@ const system = [
   `Segoe UI Symbol`,
   `Noto Color Emoji`,
 ]
+
 const header = [`Futura PT`, ...system]
+
 const monospace = [
   `SFMono-Regular`,
   `Menlo`,

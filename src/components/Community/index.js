@@ -9,10 +9,10 @@ import './index.scss';
 const IconBtn = ({ className, link, icon }) => (
   <a href={link}>
     <Button className={`community-icons icon-${className}`}>
-      <img src={icon} />
+      <img src={icon} alt={className} />
     </Button>
   </a>
-);
+)
 
 export default () => {
   return (

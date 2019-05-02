@@ -1,6 +1,7 @@
 ---
 title: JS Tricks
 date: 2019-04-14
+type: technology
 spoiler: JavaScript methods
 category: js
 ---

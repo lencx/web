@@ -2,19 +2,19 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-
 import Layout from '../components/base/layout'
-
-// import Helmet from 'react-helmet';
 
 // blogPost
 export default (props) => {
   const post = props.data.markdownRemark
   // const siteTitle = this.props.data.site.siteMetadata.title;
   const { previous, next, translations, translationLinks } = props.pageContext
-  console.log(post)
+  // console.log(post)
+  const _type = post.frontmatter.type
+  const cls = _type ? ` ${_type}` : ''
+
   return (
-    <Layout className={`nl_blog ${post.frontmatter.type}`}>
+    <Layout className={`nl_blog${cls}`}>
       <Helmet>
         <title>{post.frontmatter.title}</title>
         <link
@@ -33,6 +33,15 @@ export default (props) => {
         <meta property="og:title" content={post.frontmatter.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta name="twitter:description" content={post.excerpt} />
+        <script
+          src="https://utteranc.es/client.js"
+          repo="lencx/nofwl-utterances"
+          issue-term="url"
+          label="nofwl"
+          theme="github-light"
+          crossorigin="anonymous"
+          async
+        />
       </Helmet>
       <div className="nl_post">
         <h1>{post.frontmatter.title}</h1>
@@ -62,6 +71,7 @@ export default (props) => {
           </Link>
         )}
       </div>
+      <div className="utterances" />
     </Layout>
   )
 }
