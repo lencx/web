@@ -3,9 +3,10 @@ import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import Layout from '../components/base/layout'
+import withUtterances from '../components/withUtterances'
 
 // blogPost
-export default (props) => {
+const BlogPostTemplate = (props) => {
   const post = props.data.markdownRemark
   // const siteTitle = this.props.data.site.siteMetadata.title;
   const { previous, next, translations, translationLinks } = props.pageContext
@@ -29,19 +30,9 @@ export default (props) => {
               : post.excerpt
           }
         />
-
         <meta property="og:title" content={post.frontmatter.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta name="twitter:description" content={post.excerpt} />
-        <script
-          src="https://utteranc.es/client.js"
-          repo="lencx/nofwl-utterances"
-          issue-term="url"
-          label="nofwl"
-          theme="github-light"
-          crossorigin="anonymous"
-          async
-        />
       </Helmet>
       <div className="nl_post">
         <h1>{post.frontmatter.title}</h1>
@@ -70,11 +61,14 @@ export default (props) => {
             {next.frontmatter.title} →
           </Link>
         )}
+        <div className="nofwl_comment" />
       </div>
-      <div className="utterances" />
     </Layout>
   )
 }
+
+export default withUtterances(BlogPostTemplate, '.nofwl_comment', 'lencx/nofwl-utterances')
+// export default BlogPostTemplate
 
 export const postQuery = graphql`
   query BlogPostBySlug($slug: String!) {
