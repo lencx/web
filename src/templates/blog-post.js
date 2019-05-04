@@ -85,7 +85,11 @@ const BlogPostTemplate = (props) => {
   )
 }
 
-export default withUtterances(BlogPostTemplate, '.nofwl_comment', 'lencx/nofwl-utterances')
+export default withUtterances(
+  BlogPostTemplate,
+  '.nofwl_comment',
+  'lencx/nofwl-utterances',
+)
 // export default BlogPostTemplate
 
 export const postQuery = graphql`
