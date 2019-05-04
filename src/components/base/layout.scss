@@ -50,18 +50,32 @@ header.nofwl-header {
   }
   .logo {
     display: inline-block;
-    max-width: 50px;
-    max-height: 50px;
+    width: 54px;
+    height: 54px;
     line-height: 0;
     border-radius: 50%;
     overflow: hidden;
-    &:hover {
-      @media screen and (min-width: 768px) {
-        animation: logoAni 3s linear infinite;
-      }
+    position: relative;
+    &::before {
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      display: block;
+      content: '';
+      top: 0;
+      bottom: 0;
+      z-index: 0;
+      background: conic-gradient(#ff8080, #ffbf80, #ffff80, #bfff80, #80ff80, #80ffbf, #80ffff, #80bfff, #8080ff, #bf80ff, #ff80ff, #ff80bf, #ff8080);
+      animation: logoAni 3s linear infinite;
     }
     img {
+      position: absolute;
+      width: 50px;
+      height: 50px;
       margin: 0;
+      z-index: 2;
+      top: 2px;
+      left: 2px;
     }
   }
   // .toggle__theme {}
