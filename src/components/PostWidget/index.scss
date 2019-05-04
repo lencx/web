@@ -1,0 +1,34 @@
+.post-widget {
+  text-align: center;
+  span {
+    margin-right: 15px;
+  }
+  img {
+    display: inline-block;
+    margin: 0;
+    vertical-align: -3px;
+  }
+  i {
+    font-size: 16px;
+    margin-left: 8px;
+    b {
+      margin-right: 5px;
+      // background: var(--common-color);
+      // color: var(--common-bg);
+      border: solid 1px var(--common-color);
+      padding: 2px 5px;
+      font-size: 12px;
+      border-radius: 5px;
+    }
+  }
+  .readtime {
+    display: block;
+    b {
+      font-size: 22px;
+      vertical-align: -3px;
+    }
+    i {
+      margin: 0;
+    }
+  }
+}

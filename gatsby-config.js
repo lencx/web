@@ -80,13 +80,19 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `pink`,
         display: `minimal-ui`,
-        icon: `${__dirname}/src/assets/nofwl.png`, // This path is relative to the root of the site.
+        // icon: `${__dirname}/src/assets/nofwl.png`, // This path is relative to the root of the site.
       },
     },
     { // dart-sass
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require('sass'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-76982222-3`,
       },
     },
     { // i18n

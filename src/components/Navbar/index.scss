@@ -5,11 +5,12 @@ $breakpoint: 768px;
 
 .nofwl-navbar {
   height: 100%;
-  // float: right;
-  // display: inline-block;
-  // background: #fff;
   .nofwl__menu__btn {
     height: 40px;
+    color: var(--common-color);
+    background: none;
+    outline: none;
+    border-radius: 5px;
   }
   @media screen and (min-width: $breakpoint) {
     .nofwl__menu__btn {
@@ -20,7 +21,12 @@ $breakpoint: 768px;
     display: flex;
     align-items: center;
     .nofwl__menu {
+      overflow-y: auto;
       display: none;
+      height: calc(100vh - 80px) !important;
+      > ul {
+        height: unset !important;
+      }
       &.open {
         display: block;
         position: absolute;
@@ -28,6 +34,7 @@ $breakpoint: 768px;
         left: 0;
         top: 80px;
         // bottom: 0;
+        // height: 100%;
         height: unset;
         background: var(--ui-header-bg);
         li {
@@ -35,6 +42,19 @@ $breakpoint: 768px;
           float: unset;
           padding: 10px 20px;
           margin-bottom: 0;
+        }
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+      .submenus {
+        ul {
+          position: unset !important;
+          background: transparent !important;
+          box-shadow: none !important;
+          padding: 0 !important;
         }
       }
       .toggleTheme {
@@ -58,10 +78,14 @@ $breakpoint: 768px;
   .nofwl__menu {
     @include clearfix;
     height: 100%;
+    > ul {
+      height: 100%;
+    }
     li {
       display: flex;
       align-items: center;
       height: 100%;
+      margin-bottom: 0;
       // padding: 0 10px;
       & > *:not(.toggle__theme) {
         padding: 5px 10px;
@@ -75,15 +99,20 @@ $breakpoint: 768px;
       > span {
         cursor: pointer;
       }
+      .arrow-icon {
+        vertical-align: -4px;
+        transition: all 300ms ease;
+      }
       ul {
         position: absolute;
         display: none;
         top: 80px;
-        // @include clearfix;
         &.open {
-          border: solid 1px #000;
           display: block;
-          background: #fff;
+          background: var(--common-bg);
+          box-shadow: var(--shadow-floating);
+          padding: 10px;
+          border-radius: 5px;
         }
       }
       li {
@@ -91,9 +120,6 @@ $breakpoint: 768px;
         margin: 0;
         width: 100%;
         white-space: nowrap;
-        a {
-          color: #000;
-        }
       }
     }
   }

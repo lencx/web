@@ -3,7 +3,9 @@ import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 // import SEO from "../components/seo"
-import Layout from '../components/base/layout';
+import Layout from '../components/base/layout'
+import PostWidget from '../components/PostWidget'
+import { formatReadingTime } from '../utils/helper'
 
 // blogIndex
 export default (props) => {
@@ -15,7 +17,7 @@ export default (props) => {
   // .filter(item => item.defaultLang === 'en')
   // console.log(data)
   return (
-    <Layout className="nl_blog">
+    <Layout className="nl_blog post_index">
       <Helmet>
         <title>Blog</title>
       </Helmet>
@@ -23,14 +25,19 @@ export default (props) => {
         // console.log(node);
         const post = node.frontmatter;
         return (
-          <div key={`${post.title}_${post.date}`}>
+          <article key={`${post.title}_${post.date}`}>
             <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-              <h2>{post.title} - <i>{post.date}</i></h2>
+              <h2>{post.title}</h2>
             </Link>
-            {post.category && <span>category: {post.category}</span>}
-            <p> {post.spoiler}</p>
+            <PostWidget
+              date={post.date}
+              category={post.category}
+              readTime={formatReadingTime(post.readtime || node.timeToRead)}
+            />
+            {/* {post.category && <span>category: {post.category}</span>} */}
+            <p className="spoiler"> {post.spoiler}</p>
             {/* <div dangerouslySetInnerHTML={{ __html: node.html }}></div> */}
-          </div>
+          </article>
         )
       })}
     </Layout>
@@ -54,11 +61,13 @@ export const pageQuery = graphql`
             langKey
           }
           html
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
             category
+            readtime
           }
         }
       }

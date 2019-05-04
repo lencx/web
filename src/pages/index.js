@@ -37,14 +37,14 @@ cssMode = cssMode.map(item => Math.random() > 0.5 ? item : null)
 const HomePage = (props) => {
   const { allImageSharp } = props.data
   const allImages = allImageSharp.edges
-  console.log(allImages)
+  // console.log(allImages)
   const randomImgIndex = Math.floor(Math.random() * allImages.length)
-  console.log(randomImgIndex)
+  // console.log(randomImgIndex)
   const filterImg = allImages.filter((item, index) => randomImgIndex === index)[0]
 
   const nofwlImg = filterImg.node.original.src
   // return item.node.original.src
-  console.log(nofwlImg)
+  // console.log(nofwlImg)
   return (
     <div className="nofwl__cool">
       {/* {console.log(props)} */}

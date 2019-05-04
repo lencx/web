@@ -4,6 +4,8 @@ date: 2019-04-14
 type: technology
 spoiler: JavaScript methods
 category: js
+tags: [js, tricks]
+readTime: 10 min
 ---
 
 <!-- ```js{5,7-12} -->

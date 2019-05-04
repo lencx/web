@@ -4,19 +4,16 @@
  *
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header';
-import preCode from '../../utils/codenum';
+import Header from './header'
 
-import './layout.scss';
-import '../../styles';
+import './layout.scss'
+import '../../styles'
 
 const Layout = ({ children, className }) => {
-  useEffect(preCode, []);
-
   return (
     <StaticQuery
       query={graphql`
@@ -35,14 +32,14 @@ const Layout = ({ children, className }) => {
           <div className={className}>
             {/* <Header siteTitle={title} siteDesc={description} /> */}
             <Header />
-            <div className="nofwl-container">
-              <main>{children}</main>
-              <footer>
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://github.com/lencx/nofwl">nofwl</a>
-              </footer>
-            </div>
+            <main className="nofwl-container">
+              {children}
+            </main>
+            <footer className="nofwl-footer">
+              © {new Date().getFullYear()}, Built with
+              {` `}
+              <a href="https://github.com/lencx/nofwl">nofwl</a>
+            </footer>
           </div>
         )
       }}

@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet'
 
 import Layout from '../components/base/layout'
 import withUtterances from '../components/withUtterances'
+import PostWidget from '../components/PostWidget'
+import { formatReadingTime } from '../utils/helper'
 
 // blogPost
 const BlogPostTemplate = (props) => {
@@ -34,8 +36,15 @@ const BlogPostTemplate = (props) => {
         <meta property="og:description" content={post.excerpt} />
         <meta name="twitter:description" content={post.excerpt} />
       </Helmet>
-      <div className="nl_post">
+      <article className="nl_post">
         <h1>{post.frontmatter.title}</h1>
+        <PostWidget
+          date={post.frontmatter.date}
+          category={post.frontmatter.category}
+          tags={post.frontmatter.tags}
+          readTime={formatReadingTime(post.frontmatter.readtime || post.timeToRead)}
+        />
+        {/* <div className="widget">{post.frontmatter.date}</div> */}
         {/* <p>spoiler: {post.frontmatter.spoiler}</p> */}
         <p>
           {translations.map(item => <span key={item}>
@@ -45,24 +54,33 @@ const BlogPostTemplate = (props) => {
             </Link>
           </span>)}
         </p>
-        <span>category: {post.frontmatter.category}</span>
+        {/* <span>category: {post.frontmatter.category}</span> */}
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
-        { previous && (
-          <Link
-            to={previous.fields.slug}
-            rel="prev"
-            style={{ marginRight: 20 }}
-          >
-            ← {previous.frontmatter.title}
-          </Link>
-        )}
-        { next && (
-          <Link to={next.fields.slug} rel="next">
-            {next.frontmatter.title} →
-          </Link>
+        {(previous || next) && (
+          <div className="post-btns">
+            { previous && (
+              <Link
+                to={previous.fields.slug}
+                rel="prev"
+                style={{ marginRight: 20 }}
+                className="prev-post"
+              >
+                ← {previous.frontmatter.title}
+              </Link>
+            )}
+            { next && (
+              <Link
+                to={next.fields.slug}
+                rel="next"
+                className="next-post"
+              >
+                {next.frontmatter.title} →
+              </Link>
+            )}
+          </div>
         )}
         <div className="nofwl_comment" />
-      </div>
+      </article>
     </Layout>
   )
 }
@@ -83,12 +101,15 @@ export const postQuery = graphql`
       id
       html
       excerpt
+      timeToRead
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
         spoiler
         category
         type
+        tags
+        readtime
       }
       fields {
         slug

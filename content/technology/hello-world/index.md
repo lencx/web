@@ -3,6 +3,7 @@ title: Hello world
 date: 2019-03-27
 spoiler: First blog
 category:
+readtime: 2
 ---
 
 ```js

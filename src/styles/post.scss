@@ -1,18 +1,76 @@
+@import './mixin';
+
 .nl_blog {
-  background-color: var(--common-bg);
-  color: var(--common-color);
-  min-height: 100vh;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-comic);
+  }
+  &.post_index {
+    .nofwl-container {
+      max-width: 1200px;
+      display: grid;
+      @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    article {
+      justify-content: space-around;
+      flex-direction: column;
+      margin: 0.5em;
+      // float: left;
+      box-shadow: var(--shadow-floating);
+      padding: 20px;
+      margin-bottom: 0.5em;
+      border-radius: 5px;
+      transition: all 300ms ease;
+      .post-widget {
+        text-align: left;
+      }
+      .spoiler {
+        margin-top: 10px;
+      }
+      &:hover {
+        transform: translateY(-5px);
+        transition: all 300ms ease;
+        box-shadow: var(--shadow-overlay);
+      }
+    }
+  }
   &.thinking {
     font-family: var(--font-nl);
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-nl);
+    }
   }
   .nl_post {
     max-width: 1200px;
+    min-height: 70vh;
+    h1 {
+      text-align: center;
+    }
+    .post-btns {
+      margin: 20px;
+      @include clearfix;
+      a {
+        margin: 5px 0;
+      }
+      .prev-post {
+        float: left;
+      }
+      .next-post {
+        float: right;
+      }
+    }
   }
   blockquote {
     margin: 15px 0;
     padding-left: 10px;
     border-left-color: var(--ui-pink);
     color: var(--code-comment);
+    blockquote {
+      color: var(--code-tag);
+      // color: var(--common-accent);
+      border-left-color: var(--common-accent);
+    }
   }
   del {
     text-decoration-color: var(--common-warning);
@@ -24,7 +82,17 @@
   .language-text {
     background: var(--ui-light-pink);
   }
+  hr {
+    background-color: transparent;
+    border-bottom: dashed 3px var(--ui-pink);
+    // border: dashed 2px var(--ui-pink);
+  }
   a {
     color: var(--ui-pink);
+  }
+  .nofwl_comment {
+    .utterances {
+      max-width: 100%;
+    }
   }
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const themeScript = `
 (function() {
@@ -62,7 +62,7 @@ const HTML = (props) => {
   )
 }
 
-export default HTML;
+export default HTML
 
 HTML.propTypes = {
   htmlAttributes: PropTypes.object,
@@ -71,4 +71,4 @@ HTML.propTypes = {
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
-};
+}

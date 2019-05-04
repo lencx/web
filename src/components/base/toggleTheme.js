@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
-import Toggle from '../Toggle';
-import moon from './../../assets/moon.png';
-import sun from './../../assets/sun.png';
+import Toggle from '../Toggle'
+import moon from './../../assets/moon.png'
+import sun from './../../assets/sun.png'
 
 const ToggleIcons = {
   checked: (
@@ -25,7 +25,7 @@ const ToggleIcons = {
       alt="light theme"
     />
   ),
-};
+}
 
 export default () => {
   const [theme, setTheme] = useState(null);

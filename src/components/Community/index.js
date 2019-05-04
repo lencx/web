@@ -7,7 +7,7 @@ import TwitterIcon from './icons/twitter.png';
 import './index.scss';
 
 const IconBtn = ({ className, link, icon }) => (
-  <a href={link}>
+  <a href={link} target="__blank">
     <Button className={`community-icons icon-${className}`}>
       <img src={icon} alt={className} />
     </Button>
