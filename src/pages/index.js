@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 import Header from '../components/base/header'
 import Community from '../components/Community'
@@ -46,16 +47,21 @@ const HomePage = (props) => {
   // return item.node.original.src
   // console.log(nofwlImg)
   return (
-    <div className="nofwl__cool">
-      {/* {console.log(props)} */}
-      {/* <h1>Home</h1> */}
-      <Header />
-      <section className="nofwl-awesome" style={{
-        backgroundImage: `url(${nofwlImg})`,
-        filter: cssMode.join('')
-      }} />
-      <Community />
-    </div>
+    <React.Fragment>
+      <Helmet>
+        <title>nofwl</title>
+      </Helmet>
+      <div className="nofwl__cool">
+        {/* {console.log(props)} */}
+        {/* <h1>Home</h1> */}
+        <Header />
+        <section className="nofwl-awesome" style={{
+          backgroundImage: `url(${nofwlImg})`,
+          filter: cssMode.join('')
+        }} />
+        <Community />
+      </div>
+    </React.Fragment>
   )
 }
 

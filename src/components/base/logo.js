@@ -13,7 +13,7 @@ export default () => {
         textDecoration: `none`,
       }}
     >
-      <Button style={{ padding: 1 }}>
+      <Button style={{ padding: 1, borderRadius: '50%' }}>
 
       <img src={NofwlIcon} alt="nofwl-logo" />
       </Button>
