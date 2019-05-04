@@ -1,3 +1,5 @@
+const _ = require('lodash')
+
 module.exports = {
   siteMetadata: {
     title: `nofwl`,
@@ -25,7 +27,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 480,
+              sizeByPixelDensity: true,
+              wrapperStyle: fluidResult => `flex:${_.round(fluidResult.aspectRatio, 2)};`
             },
           },
           {
