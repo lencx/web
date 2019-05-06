@@ -112,6 +112,7 @@ body.dark {
 
   --ui-header-bg: rgba(0, 0, 0, 0.9);
   --ui-header-txt: #fff;
+  --ui-red: #FC466B;
 
   /* Code */
   --code-add: #4a9c59;

@@ -3,6 +3,7 @@
 .nl_blog {
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-comic);
+    margin: 20px 0 15px;
   }
   &.post_index {
     .nofwl-container {
@@ -46,6 +47,10 @@
     min-height: 70vh;
     h1 {
       text-align: center;
+      background: -webkit-linear-gradient(var(--ui-pink), var(--ui-red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: initial;
     }
     .post-btns {
       margin: 20px;

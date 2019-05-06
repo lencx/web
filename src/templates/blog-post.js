@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
@@ -6,9 +6,12 @@ import Layout from '../components/base/layout'
 import withUtterances from '../components/withUtterances'
 import PostWidget from '../components/PostWidget'
 import { formatReadingTime } from '../utils/helper'
+import codenum from '../utils/codenum'
 
 // blogPost
 const BlogPostTemplate = (props) => {
+  useEffect(codenum, [])
+
   const post = props.data.markdownRemark
   // const siteTitle = this.props.data.site.siteMetadata.title;
   const { previous, next, translations, translationLinks } = props.pageContext

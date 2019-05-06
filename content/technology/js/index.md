@@ -5,7 +5,6 @@ type: technology
 spoiler: JavaScript methods
 category: js
 tags: [js, tricks]
-readTime: 10 min
 ---
 
 <!-- ```js{5,7-12} -->
@@ -46,4 +45,20 @@ const omit = key => object => {
   const { [key]: toRemove, ...rest } = object;
   return rest;
 }
+```
+
+## Array
+
+```js
+// To getting unique values from an array
+Array.prototype.unique = function() {
+  return this.filter((value, index, self) => (
+    self.indexOf(value) === index
+  ));
+}
+
+// Get a random value from the array
+Array.prototype.randomElement = function () {
+  return this[Math.floor(Math.random() * this.length)];
+};
 ```
