@@ -11,6 +11,8 @@ const AboutPage = () => (
       <title>About</title>
     </Helmet>
     <h1>About</h1>
+    <p>Github: lencx</p>
+    <p>Email: cxin1314@gmail.com</p>
     <Community />
   </Layout>
 )

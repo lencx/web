@@ -54,20 +54,21 @@ body.light {
   --code-bg: #E9E2D0;
   --code-box-shadow: 0 1px 2px 0 #696969;
   --code-border: #faede5;
-  --code-comment: #a5a5a5;
+  --code-comment: #859398;
   --code-css-string: #a2466c;
   --code-def-txet: #333;
   --code-invisibles: #e0d7d1;
-  --code-keyword: #3690cc;
+  --code-keyword: #5753C9;
   --code-line-highlight-border: #f1beb6;
-  --code-operator: #f92672;
-  --code-parameter: #1B998B;
+  --code-operator: #3CA55C;
+  /* --code-operator: #cc208e; */
+  --code-parameter: #E80505;
   --code-punctuation: #53450e;
   --code-regex: #d88489;
   --code-remove: #e45c5c;
   --code-scrollbar-thumb: #f4d1c6;
   /* --code-selector: #d121cb; */
-  --code-selector: #FF628C;
+  --code-selector: #b12a5b;
   --code-tag: #4084a1;
   --code-text: #866c5b;
   --code-string: #198;

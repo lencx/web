@@ -7,6 +7,8 @@ category: js
 tags: [js, tricks]
 ---
 
+## Matrix
+
 <!-- ```js{5,7-12} -->
 ```js
 /**
@@ -36,6 +38,8 @@ export const matrixTranspose = matrix => matrix[0]
   .map((_, i) => matrix.map(row => row[i]));
 ```
 
+## Object
+
 ```js
 /**
  * Returns a function that can be called with an object. The return value of the
@@ -60,5 +64,28 @@ Array.prototype.unique = function() {
 // Get a random value from the array
 Array.prototype.randomElement = function () {
   return this[Math.floor(Math.random() * this.length)];
+};
+```
+
+## Random
+
+```js
+const randomStr = () => Math.random().toString(36).substring(2);
+
+const randomDate = () => `${new Date(+(new Date()) - Math.floor(Math.random() * 10000000000))}`;
+```
+
+## Format
+
+```js
+const formatBytes = (bytes, decimals) => {
+  const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  const dm = decimals < 0 || !decimals ? 0 : decimals || 2;
+  let l = 0;
+  let n = parseInt(bytes, 10) || 0;
+  while (n >= 1024 && ++l) {
+    n = n / 1024;
+  }
+  return(n.toFixed(dm) + units[l]);
 };
 ```

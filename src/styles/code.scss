@@ -78,6 +78,9 @@
 
 .gatsby-resp-image-link {
   overflow: hidden;
+  img {
+    box-shadow: none !important;
+  }
 }
 .gatsby-resp-image-link,
 .gatsby-resp-image-wrapper {

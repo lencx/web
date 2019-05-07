@@ -16,6 +16,12 @@ const preCodeLanguages = [
     // bg: '#F7DF1E',
   },
   {
+    langs: ['typescript', 'ts'],
+    txt: 'TS',
+    bg: codeLangColor.ts,
+    color: colors.white,
+  },
+  {
     langs: ['html'],
     txt: 'HTML',
     bg: codeLangColor.html,
