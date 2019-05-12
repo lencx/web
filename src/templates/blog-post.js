@@ -103,7 +103,7 @@ const BlogPostTemplate = (props) => {
 export default withUtterances(
   BlogPostTemplate,
   '.nofwl_comment',
-  // 'lencx/nofwl-utterances',
+  'lencx/nofwl-utterances',
 )
 // export default BlogPostTemplate
 

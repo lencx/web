@@ -10,10 +10,11 @@ Run locally, `yarn`, then `yarn dev`, then open `https://localhost:8000`.
 
 - [x] theme: `dark/light`
 - [x] comment: [utterances](https://github.com/utterance/utterances)
-- [x] Google analytics
+- [x] google analytics
 - [x] i18n
+- [x] create post: `yarn new`
 - [ ] MDX
-- [ ] Highlight code-line
+- [ ] highlight-code-line
 
 ```markdown
     ```js{1,3-5}
