@@ -27,7 +27,7 @@ export default (props) => {
         return (
           <article key={`${post.title}_${post.date}`}>
             <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-              <h2>{post.title}</h2>
+              <h2 className="post_title">{post.title}</h2>
             </Link>
             <PostWidget
               date={post.date}

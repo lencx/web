@@ -123,6 +123,9 @@
     }
     &.gatsby-resp-image-link {
       border-bottom: transparent;
+      &::after {
+        display: none;
+      }
     }
   }
   figure {
@@ -131,6 +134,15 @@
         border-bottom: transparent;
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+.nofwl-container {
+  a.gatsby-resp-image-link {
+    border-bottom: transparent;
+    &::after {
+      display: none;
     }
   }
 }

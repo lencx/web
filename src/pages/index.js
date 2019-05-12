@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import Header from '../components/base/header'
-import Community from '../components/Community'
+// import Community from '../components/Community'
 
 import './../styles/pages/index.scss';
 
@@ -59,7 +59,7 @@ const HomePage = (props) => {
           backgroundImage: `url(${nofwlImg})`,
           filter: cssMode.join('')
         }} />
-        <Community />
+        {/* <Community /> */}
       </div>
     </React.Fragment>
   )

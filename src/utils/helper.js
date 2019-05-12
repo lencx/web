@@ -1,5 +1,5 @@
 export function formatReadingTime(minutes) {
-  if (minutes === -1) return `<i>∞ min read</i>`;
+  if (minutes === -1) return `<b>🍺</b> <i>∞ min read</i>`;
   const cups = Math.round(minutes / 5);
   const txt = `<i>${minutes} min read</i>`;
   if (cups > 5) {

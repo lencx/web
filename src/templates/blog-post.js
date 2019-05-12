@@ -8,6 +8,23 @@ import PostWidget from '../components/PostWidget'
 import { formatReadingTime } from '../utils/helper'
 import codenum from '../utils/codenum'
 
+const TranslateLanguage = ({ translations, translationLinks, langKey }) => {
+  return (
+    translations.length > 0 && <div className="post_translate">
+      {translations.map((_lang, i) => <span key={_lang}>
+        {
+          _lang === langKey
+            ? <b>{_lang}</b>
+            : (<Link to={translationLinks[_lang]} rel="translations">
+                {_lang}
+              </Link>)
+        }
+        {i === translations.length - 1 ? '' : ' • '}
+      </span>)}
+    </div>
+  )
+}
+
 // blogPost
 const BlogPostTemplate = (props) => {
   useEffect(codenum, [])
@@ -18,6 +35,8 @@ const BlogPostTemplate = (props) => {
   // console.log(post)
   const _type = post.frontmatter.type
   const cls = _type ? ` ${_type}` : ''
+
+  const translationProps = { translations, translationLinks, langKey: post.fields.langKey }
 
   return (
     <Layout className={`nl_blog${cls}`}>
@@ -49,23 +68,11 @@ const BlogPostTemplate = (props) => {
         />
         {/* <div className="widget">{post.frontmatter.date}</div> */}
         {/* <p>spoiler: {post.frontmatter.spoiler}</p> */}
-        <p>
-          {translations.map((_lang, i) => <span key={_lang}>
-            {post.fields.directoryName}
-            {
-              _lang === post.fields.langKey
-                ? <b>{_lang}</b>
-                : (<Link to={translationLinks[_lang]} rel="translations">
-                    {_lang}
-                  </Link>)
-            }
-            {i === translations.length - 1 ? '' : ' • '}
-          </span>)}
-        </p>
+        <TranslateLanguage {...translationProps} />
         {/* <span>category: {post.frontmatter.category}</span> */}
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
         {(previous || next) && (
-          <div className="post-btns">
+          <div className="post-btns__prev_next">
             { previous && (
               <Link
                 to={previous.fields.slug}
@@ -96,7 +103,7 @@ const BlogPostTemplate = (props) => {
 export default withUtterances(
   BlogPostTemplate,
   '.nofwl_comment',
-  'lencx/nofwl-utterances',
+  // 'lencx/nofwl-utterances',
 )
 // export default BlogPostTemplate
 

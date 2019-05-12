@@ -5,6 +5,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-comic);
     margin: 20px 0 15px;
+    line-height: normal;
   }
   &.post_index {
     .nofwl-container {
@@ -34,6 +35,11 @@
         transform: translateY(-5px);
         transition: all 300ms ease;
         box-shadow: var(--shadow-overlay);
+        .post_title {
+          background: linear-gradient(45deg, #eb4d9c,#d33024,#e48233,#f4e24d,#b4dc48,#54b2ea,#663399);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
     }
   }
@@ -53,17 +59,29 @@
       -webkit-text-fill-color: transparent;
       line-height: initial;
     }
-    .post-btns {
+    .post-btns__prev_next {
       margin: 20px;
       @include clearfix;
       a {
         margin: 5px 0;
+        font-weight: bold;
+        padding: 5px 10px;
       }
       .prev-post {
         float: left;
       }
       .next-post {
         float: right;
+      }
+    }
+    .post_translate {
+      // background: #eee;
+      margin: 10px 0 25px;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: inset 0 0 1px var(--ui-red);
+      a {
+        color: var(--ui-red);
       }
     }
   }
@@ -92,9 +110,6 @@
     background-color: transparent;
     border-bottom: dashed 3px var(--ui-pink);
     // border: dashed 2px var(--ui-pink);
-  }
-  a {
-    color: var(--ui-pink);
   }
   .nofwl_comment {
     .utterances {

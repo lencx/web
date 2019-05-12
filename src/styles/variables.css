@@ -29,6 +29,7 @@ body.light {
   --common-accent-dark: #9e6100;
   --common-sky-light: #dcfffd;
   --common-sky-dark: #0a75c2;
+  --common-link: #d23669;
 
   /* UI */
   --ui-bright: #F1DEFA;
@@ -102,6 +103,7 @@ body.dark {
   --common-accent-dark: #9e6100;
   --common-sky-light: #dcfffd;
   --common-sky-dark: #0a75c2;
+  --common-link: #f4709b;
 
   /* UI */
   --ui-bright: #F1DEFA;

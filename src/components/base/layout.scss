@@ -28,6 +28,11 @@ header.nofwl-header {
   a {
     color: var(--ui-header-txt);
   }
+  a {
+    &::after {
+      display: none;
+    }
+  }
   &.head__unpinned {
     transform: translateY(-100%);
     transition: transform 500ms ease;
@@ -100,6 +105,8 @@ header.nofwl-header {
 }
 
 .nofwl-footer {
-  margin: 20px;
+  // margin: 20px;
+  padding: 10px;
   text-align: center;
+  font-size: 14px;
 }
