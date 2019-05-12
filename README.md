@@ -4,6 +4,8 @@
 
 My personal blog. Forked from [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog).
 
+Reference: [overreacted](https://github.com/gaearon/overreacted.io)，[gatsby/www](https://github.com/gatsbyjs/gatsby)
+
 Run locally, `yarn`, then `yarn dev`, then open `https://localhost:8000`.
 
 ## Feature
