@@ -72,8 +72,10 @@
 .gatsby-highlight-code-line {
   display: block;
   // TODO:
-  background: var(--code-border);
-  border-left-color: var(--code-line-highlight-border);
+  background: var(--common-bg);
+  border-left: solid 3px var(--ui-red);
+  text-indent: 7px;
+  margin-left: -9px;
 }
 
 .gatsby-resp-image-link {

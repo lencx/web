@@ -1,6 +1,7 @@
 @import './mixin';
 
 .nl_blog {
+  font-family: var(--font-nl);
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-comic);
     margin: 20px 0 15px;

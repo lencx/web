@@ -110,18 +110,18 @@ const _options = {
         //   // float: `left`,
         //   // minWidth: `100%`,
       },
-      ".gatsby-highlight-code-line": {
-        paddingRight: rhythm(space[6]),
-        paddingLeft: rhythm(space[5]),
-        borderLeft: `${rhythm(space[1])} solid`,
-        //// background: colors.code.border,
-        //// borderLeft: `${rhythm(space[1])} solid ${
-        ////   colors.code.lineHighlightBorder
-        //// }`,
-        //// display: `block`,
-        // marginRight: `${rhythm(-space[6])}`,
-        // marginLeft: `${rhythm(-space[6])}`,
-      },
+      // ".gatsby-highlight-code-line": {
+      //   // paddingRight: rhythm(space[6]),
+      //   // paddingLeft: rhythm(space[5]),
+      //   // borderLeft: `${rhythm(space[1])} solid`,
+      //   //// background: colors.code.border,
+      //   //// borderLeft: `${rhythm(space[1])} solid ${
+      //   ////   colors.code.lineHighlightBorder
+      //   //// }`,
+      //   //// display: `block`,
+      //   // marginRight: `${rhythm(-space[6])}`,
+      //   // marginLeft: `${rhythm(-space[6])}`,
+      // },
       ".gatsby-highlight pre::-webkit-scrollbar": {
         width: rhythm(space[2]),
         height: rhythm(space[2]),
@@ -241,13 +241,13 @@ const _options = {
           padding: `${rhythm(space[7])} 0`,
           marginBottom: rhythm(space[7]),
         },
-        ".gatsby-highlight-code-line": {
-          paddingRight: rhythm(space[7]),
-          paddingLeft: rhythm(space[6]),
-          borderLeftWidth: rhythm(space[2]),
-          // marginRight: rhythm(-space[7]),
-          // marginLeft: rhythm(-space[7]),
-        },
+        // ".gatsby-highlight-code-line": {
+        //   paddingRight: rhythm(space[7]),
+        //   paddingLeft: rhythm(space[6]),
+        //   borderLeftWidth: rhythm(space[2]),
+        //   // marginRight: rhythm(-space[7]),
+        //   // marginLeft: rhythm(-space[7]),
+        // },
         ".gatsby-code-title": {
           padding: `${rhythm(space[6])} ${rhythm(space[7])} ${rhythm(
             space[3]

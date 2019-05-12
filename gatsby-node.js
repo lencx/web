@@ -85,7 +85,7 @@ exports.createPages = ({ actions, graphql }) => {
           translationLinks[lang] = `/${lang}${slug}`;
         });
 
-        console.log('translations', directoryName, translations, slug, translationLinks);
+        // console.log('translations', directoryName, translations, slug, translationLinks);
         createPage({
           path: slug,
           component: blogPostTemplate,
@@ -102,7 +102,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       let translationLinks = {};
       otherLangPosts.map((post) => {
-        console.log(post, '-----other')
+        // console.log(post, '-----other')
         const { directoryName, slug, langKey } = post.node.fields;
 
         const translations = ['original', ...translationsByDirectory[directoryName]] || [];
