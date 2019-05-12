@@ -13,16 +13,5 @@ Run locally, `yarn`, then `yarn dev`, then open `https://localhost:8000`.
 - [x] google analytics
 - [x] i18n
 - [x] create post: `yarn new`
+- [x] highlight-code-line: `example: ```js{1, 4-8}`
 - [ ] MDX
-- [ ] highlight-code-line
-
-```markdown
-    ```js{1,3-5}
-    console.log(1);
-    console.log(2);
-    console.log(3);
-    console.log(4);
-    console.log(5);
-    console.log(6);
-    ```
-```
