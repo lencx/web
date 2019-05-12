@@ -50,11 +50,16 @@ const BlogPostTemplate = (props) => {
         {/* <div className="widget">{post.frontmatter.date}</div> */}
         {/* <p>spoiler: {post.frontmatter.spoiler}</p> */}
         <p>
-          {translations.map(item => <span key={item}>
-            {/* {console.log(item, translationLinks[item])} */}
-            <Link to={translationLinks[item]} rel="translations">
-              {item} /
-            </Link>
+          {translations.map((_lang, i) => <span key={_lang}>
+            {post.fields.directoryName}
+            {
+              _lang === post.fields.langKey
+                ? <b>{_lang}</b>
+                : (<Link to={translationLinks[_lang]} rel="translations">
+                    {_lang}
+                  </Link>)
+            }
+            {i === translations.length - 1 ? '' : ' • '}
           </span>)}
         </p>
         {/* <span>category: {post.frontmatter.category}</span> */}
@@ -91,7 +96,7 @@ const BlogPostTemplate = (props) => {
 export default withUtterances(
   BlogPostTemplate,
   '.nofwl_comment',
-  'lencx/nofwl-utterances',
+  // 'lencx/nofwl-utterances',
 )
 // export default BlogPostTemplate
 
@@ -120,6 +125,7 @@ export const postQuery = graphql`
       }
       fields {
         slug
+        langKey
       }
     }
   }

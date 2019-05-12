@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
     const blogIndexTemplate = path.resolve('./src/templates/blog-index.js');
     Object.keys(supportedLanguages).forEach(langKey => {
       createPage({
-        path: langKey === defaultLanguage ? '/blog' : `/blog${langKey}/`,
+        path: langKey === defaultLanguage ? '/blog' : `/blog/${langKey}/`,
         component: blogIndexTemplate,
         context: {
           langKey,
@@ -60,12 +60,6 @@ exports.createPages = ({ actions, graphql }) => {
       // console.log(JSON.stringify(result));
       const allPosts = result.data.allMarkdownRemark.edges;
 
-      // all posts path
-      // const allSlugs = allPosts.reduce((result, post) => {
-      //   result.add(post.node.fields.slug);
-      //   return result;
-      // }, new Set());
-
       const translationsByDirectory = allPosts.reduce((result, post) => {
         const { directoryName, langKey } = post.node.fields;
         if (directoryName && langKey && langKey !== 'en') {
@@ -73,8 +67,10 @@ exports.createPages = ({ actions, graphql }) => {
         }
         return result;
       }, {});
+      // console.log(translationsByDirectory, '------');
 
-      const defaultLangPosts = allPosts.filter(post => post.node.fields.langKey === defaultLanguage)
+      const defaultLangPosts = allPosts.filter(post => post.node.fields.langKey === defaultLanguage);
+      const otherLangPosts = allPosts.filter(post => post.node.fields.langKey !== defaultLanguage);
 
       defaultLangPosts.map((post, index) => {
         const { directoryName, slug } = post.node.fields;
@@ -86,10 +82,10 @@ exports.createPages = ({ actions, graphql }) => {
         let translationLinks = {};
         const translations = translationsByDirectory[directoryName] || [];
         translations.map(lang => {
-          translationLinks[lang] = `/${lang}/${directoryName}/`;
+          translationLinks[lang] = `/${lang}${slug}`;
         });
 
-        // console.log('translations', directoryName, translations);
+        console.log('translations', directoryName, translations, slug, translationLinks);
         createPage({
           path: slug,
           component: blogPostTemplate,
@@ -101,22 +97,34 @@ exports.createPages = ({ actions, graphql }) => {
             next
           }
         });
-        // if (langKey === defaultLanguage) {
-        //   // Page turning
-        // } else {
-        //   translationLinks['raw'] = `/${directoryName}/`;
-        //   translations.pop('raw');
-        //   createPage({
-        //     path: slug,
-        //     component: blogPostTemplate,
-        //     context: {
-        //       slug,
-        //       translations,
-        //       translationLinks,
-        //     }
-        //   })
-        // }
       });
+
+
+      let translationLinks = {};
+      otherLangPosts.map((post) => {
+        console.log(post, '-----other')
+        const { directoryName, slug, langKey } = post.node.fields;
+
+        const translations = ['original', ...translationsByDirectory[directoryName]] || [];
+        translations.map(lang => {
+          if (lang === 'original') {
+            translationLinks[lang] = slug.split(langKey)[1];
+          }
+          if (new RegExp(`^/${lang}`).test(slug)) {
+            translationLinks[lang] = slug;
+          }
+        });
+
+        createPage({
+          path: slug,
+          component: blogPostTemplate,
+          context: {
+            slug,
+            translations,
+            translationLinks,
+          },
+        });
+      })
     }))
   })
 }

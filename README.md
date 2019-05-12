@@ -11,5 +11,5 @@ Run locally, `yarn`, then `yarn dev`, then open `https://localhost:8000`.
 - [x] theme: `dark/light`
 - [x] comment: [utterances](https://github.com/utterance/utterances)
 - [x] Google analytics
+- [x] i18n
 - [ ] MDX
-- [ ] i18n
