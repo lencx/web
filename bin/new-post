@@ -31,7 +31,6 @@ spoiler: ${spoiler}
 tags: ${tags}
 # readtime:
 ---
-
 `;
 
 // console.log(process.argv[2]);
