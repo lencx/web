@@ -9,6 +9,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import BackTop from './../BackTop'
 
 import './layout.scss'
 import '../../styles'
@@ -35,6 +36,7 @@ const Layout = ({ children, className }) => {
             <main className="nofwl-container">
               {children}
             </main>
+            <BackTop />
             <footer className="nofwl-footer">
               © {new Date().getFullYear()}, Built with
               {` `}
