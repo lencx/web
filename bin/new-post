@@ -17,7 +17,7 @@ const randomStr = () => Math.random().toString(36).substring(7);
 const now = () => {
   const date = new Date();
   const y = date.getFullYear();
-  const m = `00${date.getMonth()}`;
+  const m = `00${date.getMonth() + 1}`;
   const d = `00${date.getDate()}`;
   return `${y}-${m.substring(m.length-2)}-${d.substring(d.length-2)}`
 };

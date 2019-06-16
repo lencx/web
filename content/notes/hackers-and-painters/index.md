@@ -1,6 +1,6 @@
 ---
 title: “Hackers & Painters” Notes
-date: 2019-05-16
+date: 2019-06-16
 type: notes
 category: notes
 spoiler: notes
