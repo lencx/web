@@ -43,7 +43,7 @@
       }
     }
   }
-  &.thinking {
+  &.thinking, &.notes {
     font-family: var(--font-nl);
     background-color: var(--main-light-silver);
     color: var(--main-black) !important;
@@ -104,6 +104,34 @@
     .language-text {
       font-size: 14px;
       background: var(--main-silver2);
+    }
+  }
+  &.notes {
+    h2 {
+      font-size: 18px;
+
+      background: var(--main-silver2) !important;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      padding: 5px 15px;
+      display: inline-block;
+      margin-bottom: 0;
+      a {
+        display: none;
+      }
+    }
+    article {
+      blockquote {
+        padding: 2px 8px 2px 6px;
+        border-radius: 0;
+        blockquote {
+          padding: 0 4px;
+          border-radius: 0;
+        }
+      }
+      .language-text {
+        padding: 0;
+      }
     }
   }
   .nl_post {
