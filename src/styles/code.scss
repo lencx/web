@@ -166,6 +166,10 @@
   color: var(--code-comment);
 }
 
+.token.function {
+  color: var(--code-function);
+}
+
 .token.parameter {
   color: var(--code-parameter);
 }
@@ -191,7 +195,6 @@
 
 .token.selector,
 .token.attr-name,
-.token.function,
 .token.builtin {
   color: var(--code-selector);
 }

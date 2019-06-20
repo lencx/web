@@ -16,7 +16,7 @@ tags: [js, tricks]
  * @param {array} MatrixA - 2D-array
  * @param {array} MatrixB - 2D-array
  */
-export const matrixMultiply = (MatrixA, MatrixB) => {
+function matrixMultiply(MatrixA, MatrixB) {
   const result = new Array(MatrixA.length).fill(0)
     .map(_row => new Array(MatrixB[0].length).fill(0));
 
@@ -34,7 +34,7 @@ export const matrixMultiply = (MatrixA, MatrixB) => {
  * => matrixTranspose([[1, 2, 3], [4, 5, 6]])
  * => result: [[1, 4], [2, 5], [3, 6]]
  */
-export const matrixTranspose = matrix => matrix[0]
+const matrixTranspose = matrix => matrix[0]
   .map((_, i) => matrix.map(row => row[i]));
 ```
 
@@ -65,6 +65,34 @@ Array.prototype.unique = function() {
 Array.prototype.randomElement = function () {
   return this[Math.floor(Math.random() * this.length)];
 };
+
+function arrayMove(arr, oldIndex, newIndex) {
+  while (oldIndex < 0) {
+    oldIndex += arr.length;
+  }
+  while (newIndex < 0) {
+    newIndex += arr.length;
+  }
+  if (newIndex >= arr.length) {
+    let k = newIndex - arr.length;
+    while ((k--) + 1) {
+      arr.push(undefined);
+    }
+  }
+  arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]);
+  return arr;
+}
+
+function arrayDeleteItem(array, record) {
+  if (Array.isArray(array)) {
+    const index = array.indexOf(record);
+    if (index !== -1) {
+      array.splice(index, 1);
+    }
+    return array;
+  }
+  return console.error('arrayDeleteItem(array: T[], record: T)');
+};
 ```
 
 ## Random
@@ -78,7 +106,7 @@ const randomDate = () => `${new Date(+(new Date()) - Math.floor(Math.random() * 
 ## Format
 
 ```js
-const formatBytes = (bytes, decimals) => {
+function formatBytes(bytes, decimals) {
   const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
   const dm = decimals < 0 || !decimals ? 0 : decimals || 2;
   let l = 0;
@@ -88,4 +116,34 @@ const formatBytes = (bytes, decimals) => {
   }
   return(n.toFixed(dm) + units[l]);
 };
+
+Date.prototype.format = function(fmt) {
+  const o = {
+    'Y+': this.getFullYear(),
+    'M+': this.getMonth() + 1,
+    'D+': this.getDate(),
+    'h+': this.getHours(),
+    'm+': this.getMinutes(),
+    's+': this.getSeconds(),
+    'q+': Math.floor((this.getMonth() + 3) / 3),
+    'S+': this.getMilliseconds(),
+  };
+  for (const k in o) {
+    if (new RegExp(`(${k})`).test(fmt)) {
+      if (k === 'Y+') {
+        fmt = fmt.replace(RegExp.$1, (`${o[k]}`).substr(4 - RegExp.$1.length));
+      } else if (k === 'S+') {
+        let lens = RegExp.$1.length;
+        lens = lens === 1 ? 3 : lens;
+        fmt = fmt.replace(RegExp.$1, (`00${o[k]}`).substr((`${o[k]}`).length - 1, lens));
+      } else {
+        fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : ((`00${o[k]}`).substr((`${o[k]}`).length)));
+      }
+    }
+  }
+  return fmt;
+};
 ```
+
+<!-- ```js
+``` -->
