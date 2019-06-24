@@ -136,6 +136,7 @@ body.dark {
   --code-css-string: #a2466c;
   --code-def-txet: #F2EFEA;
   --code-invisibles: #e0d7d1;
+  /*--code-keyword: #f36;*/ /* #90E4AC #FE9920 */
   --code-keyword: #E84279; /* #90E4AC #FE9920 */
   --code-line-highlight-border: #f1beb6;
   --code-operator: #0ac; /* #140D4F #f92672*/
