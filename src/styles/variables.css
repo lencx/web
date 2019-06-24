@@ -96,7 +96,8 @@ body.dark {
   --common-gatsby: #663399; /* #744c9e */
   --common-gatsby-dark: #442266;
   --common-gatsby-darker: #221133;
-  --common-bg: #282c35;
+  --common-bg: #000;
+  /* --common-bg: #282c35; */
   --common-color: hsla(0,0%,100%,0.88);
   --common-lemon: #ffdf37;
   --common-mint: #73fff7;
