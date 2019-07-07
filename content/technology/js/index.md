@@ -145,5 +145,33 @@ Date.prototype.format = function(fmt) {
 };
 ```
 
-<!-- ```js
-``` -->
+```js
+// https://stackoverflow.com/questions/18017869/build-tree-array-from-flat-array-in-javascript
+/**
+const list = [
+  { text: 'a', id: 1, parentId: 0 },
+  { text: 'a-x', id: 2, parentId: 1 },
+  { text: 'a-y', id: 3, parentId: 1 },
+  { text: 'a-x-1', id: 4, parentId: 2 },
+  { text: 'a-x-2', id: 5, parentId: 2 },
+  // ...
+]
+*/
+function listToTree(list, parentId = 'parentId') {
+  let map = {}, node, roots = [], i;
+  for (i = 0; i < list.length; i += 1) {
+    map[list[i].id] = i; // initialize the map
+    list[i].children = []; // initialize the children
+  }
+  for (i = 0; i < list.length; i += 1) {
+      node = list[i];
+      if (node[parentId] !== 0) {
+          // if you have dangling branches check that map[node[parentId]] exists
+          list[map[node[parentId]]].children.push(node);
+      } else {
+          roots.push(node);
+      }
+  }
+  return roots;
+}
+```
