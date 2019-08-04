@@ -67,6 +67,13 @@
   [class*='language-'] {
     padding-left: 26px;
   }
+  .language-symbol {
+    text-align: center;
+    // text-shadow: 1px 1px 1px #000;
+    .line-numbers-rows {
+      display: none !important;
+    }
+  }
 }
 
 .gatsby-highlight-code-line {

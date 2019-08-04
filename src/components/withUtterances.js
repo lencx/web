@@ -14,7 +14,7 @@ export default function withUtterances (
       script.src = 'https://utteranc.es/client.js'
       script.async = true
       script.setAttribute('repo', repo)
-      script.setAttribute('theme', _theme)
+      script.setAttribute('theme', _theme || 'dark')
       script.setAttribute('issue-term', term)
       script.setAttribute('crossorigin', 'anonymous')
       document.querySelector(container).appendChild(script)
