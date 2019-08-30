@@ -143,6 +143,9 @@ Date.prototype.format = function(fmt) {
   }
   return fmt;
 };
+
+// Timestamp
+const timestamp = time => Date.parse(time) / 1000
 ```
 
 ```js
@@ -174,4 +177,10 @@ function listToTree(list, parentId = 'parentId') {
   }
   return roots;
 }
+```
+
+## URL
+
+```js
+const getParam = key => new URLSearchParams(window.location.search.substring(1)).get(key) || ''
 ```
