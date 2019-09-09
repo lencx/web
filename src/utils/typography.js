@@ -97,6 +97,7 @@ const _options = {
         marginRight: rhythm(-space[3]),
         color: colors.gray.dark,
         background: `#ddd`,
+        left: rhythm(space[2]),
         //// position: `absolute`,
         //// textAlign: `right`,
         //// textTransform: `uppercase`,
@@ -255,9 +256,9 @@ const _options = {
           // marginRight: rhythm(-space[7]),
           // marginLeft: rhythm(-space[7]),
         },
-        ".gatsby-highlight pre[class*='language-']::before": {
-          right: rhythm(space[7]),
-        },
+        // ".gatsby-highlight pre[class*='language-']::before": {
+        //   left: rhythm(space[2]),
+        // },
         // ".gatsby-highlight pre code": {
         //   padding: `0 ${rhythm(space[7])}`,
         // },

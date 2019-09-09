@@ -35,6 +35,9 @@ plugins=(
   history-substring-search
 )
 
+# starship: https://github.com/starship/starship
+eval "$(starship init zsh)"
+
 source $ZSH/oh-my-zsh.sh
 ```
 
@@ -46,6 +49,8 @@ source $ZSH/oh-my-zsh.sh
   * `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 * [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
   * `git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search`
+* [starship](https://github.com/starship/starship)
+  * `brew install starship`
 
 ## [Z](https://github.com/rupa/z) <small>-jump around</small>
 

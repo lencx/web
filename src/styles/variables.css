@@ -98,7 +98,8 @@ body.dark {
   --common-gatsby-darker: #221133;
   --common-bg: #000;
   /* --common-bg: #282c35; */
-  --common-color: hsla(0,0%,100%,0.88);
+  --common-color: rgb(195, 195, 195);
+  /* --common-color: hsla(0,0%,100%,0.88); */
   --common-lemon: #ffdf37;
   --common-mint: #73fff7;
   --common-lilac: #8c65b3;
@@ -133,7 +134,7 @@ body.dark {
   --code-bg: #29292e;
   --code-box-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
   --code-border: #faede5;
-  --code-comment: rgb(95, 95, 77);
+  --code-comment: #666;
   --code-css-string: #a2466c;
   --code-def-txet: #F2EFEA;
   --code-invisibles: #e0d7d1;
