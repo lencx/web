@@ -27,7 +27,10 @@
 
   .line-numbers {
     .line-numbers-rows {
-      top: 5px;
+      font-family: var(--font-code);
+      top: 3px;
+      line-height: 21px;
+      font-size: 12px;
     }
   }
 }
@@ -54,6 +57,9 @@
       font-size: 100%;
       float: left;
       min-width: 100%;
+      font-family: var(--font-code);
+      font-size: 14px;
+      line-height: 21px;
     }
     // ::-webkit-scrollbar { }
     ::-webkit-scrollbar-thumb {
@@ -218,7 +224,7 @@
 .token.attr-value,
 .token.class-name {
   color: var(--code-keyword);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .token.inserted {
