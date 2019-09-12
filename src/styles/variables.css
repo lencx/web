@@ -1,6 +1,6 @@
 :root {
   --font-code: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-  /* --font-code: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace; */
+  /* --font-code: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Menlo, Courier, monospace; */
   --font-def:  -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-normal: normal normal 100% 'Trebuchet MS', verdana, sans-serif;
   --font-comic: 'Comic Sans', 'Comic Sans MS', 'Chalkboard', 'ChalkboardSE-Regular', -apple-system, Consolas, sans-serif;

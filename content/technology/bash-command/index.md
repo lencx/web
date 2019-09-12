@@ -14,3 +14,12 @@ brew install wget
 # download website file
 wget --mirror --convert-links --page-requisites --no-parent -P <path> <url>
 ```
+
+## macOS Install
+
+* tree
+* tig: `tig - text-mode interface for Git`
+
+```bash
+tree -L <level>
+```

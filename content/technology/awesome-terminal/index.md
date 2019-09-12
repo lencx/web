@@ -55,3 +55,7 @@ source $ZSH/oh-my-zsh.sh
 ## [Z](https://github.com/rupa/z) <small>-jump around</small>
 
 > Tracks your most used directories, based on 'frecency'.
+
+---
+
+<video src="./cmd-use.mp4" style="max-width: 640px" controls="controls" loop autoplay></video>
