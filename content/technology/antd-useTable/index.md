@@ -119,4 +119,6 @@ const { tableProps, fetchTable } = useTable({
 // --snip--
 ```
 
-<iframe src="https://codesandbox.io/embed/lencx-antd-usetable-vgs9s?autoresize=1&fontsize=14&hidenavigation=1" title="lencx-antd-useTable" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<div style="max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+  <iframe src="https://codesandbox.io/embed/lencx-antd-usetable-vgs9s?autoresize=1&fontsize=14&hidenavigation=1" title="lencx-antd-useTable" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<div>
