@@ -183,6 +183,10 @@ function listToTree(list, parentId = 'parentId') {
 
 ```js
 const getParam = key => new URLSearchParams(window.location.search.substring(1)).get(key) || ''
+
+// genParams({a: 1, b: 2})
+// output: a=1&b=2
+const genParams = obj => Object.entries(obj).map(([key, val]) => `${key}=${val}`).join('&');
 ```
 
 ## Cookie
