@@ -30,13 +30,14 @@ export const formatQuery = ({ pagination, sorter, filters, ...other }) => {
   return query;
 };
 
-export default (tabConf = {}) => {
+export default (tableConf = {}) => {
   const {
-    search,
-    autoFirstFetch = true,
+    search, // trigger request
+    autoFirstFetch = true, // initial request
     defaultPageSize = 10,
     defaultCurrent = 1,
-  } = tabConf;
+    paginationOptions = {},
+  } = tableConf;
 
   const [state, setState] = useReducer((o, n) => ({...o, ...n}), {
     dataSource: [],
@@ -84,6 +85,7 @@ export default (tabConf = {}) => {
       defaultPageSize,
       defaultCurrent,
       total: state.pagination.total,
+      ...paginationOptions,
     },
     loading: state.loading,
     dataSource: state.dataSource,
@@ -98,7 +100,13 @@ export default (tabConf = {}) => {
 
 ```js
 // --snip--
+
 const { tableProps, fetchTable } = useTable({
+  paginationOptions: {
+    // antd pagination
+    pageSizeOptions: ['5', '10', '15'],
+    // ...
+  },
   autoFirstFetch: false, // default: true
   async search(params) { // fetch table data
     const { current, pageSize, ...other } = params;
@@ -116,6 +124,7 @@ const { tableProps, fetchTable } = useTable({
       }
     }
 });
+
 // --snip--
 ```
 
