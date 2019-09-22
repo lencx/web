@@ -56,13 +56,17 @@
       }
       .color-copy {
         cursor: pointer;
+        background: #fff;
+        color: #666;
+        padding: 3px 10px;
+        border-radius: 4px;
       }
       .color-block {
         width: 18px;
         height: 18px;
         display: inline-block;
-        vertical-align: middle;
-        margin-left: 10px;
+        vertical-align: -3px;
+        margin-right: 5px;
         border-radius: 4px;
       }
     }

@@ -16,4 +16,6 @@ Run locally, `yarn`, then `yarn dev`, then open `https://localhost:8000`.
 - [x] i18n
 - [x] create post: `yarn new`
 - [x] highlight-code-line: `example: ```js{1, 4-8}`
+- [x] tools/converter:
+  - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)
 - [ ] MDX

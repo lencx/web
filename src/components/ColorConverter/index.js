@@ -27,12 +27,15 @@ const fns  = [
 
 // const formatStr = str => str.match(/(.*)(To)(.*)/)
 
+
 export default () => {
+  const msg = 'Please enter the color value you want to convert'
+  const msg2 = 'Invalid input color'
   const [value, setValue] = useState('')
   const [fn, setFn] = useState('hexToRGB')
   const [converterValue, setConverter] = useState('')
   const handleConverter = () => {
-    if (!value) return setConverter('Please enter the color value you want to convert')
+    if (!value) return setConverter(msg)
     // fix: space cause invalid colors
     const val = value.replace(/\s/g, '')
     // console.log(val, c, fn)
@@ -45,9 +48,9 @@ export default () => {
     }
   }
   const handleCopy = () => {
-    if (converterValue !== 'Invalid input color') {
+    if (converterValue !== msg2) {
       copy(converterValue)
-      toast.success(`Copy ${converterValue} to clipboard`, {
+      toast.success(`😎 Copy ${converterValue} to clipboard`, {
         position: 'bottom-right',
         autoClose: 2500,
         pauseOnHover: true,
@@ -57,19 +60,20 @@ export default () => {
     }
   }
   const handleReset = () => {
-    setValue('');
-    setConverter('');
+    setValue('')
+    setConverter('')
   }
   const renderOutput = (
     <span className="color-copy" onClick={handleCopy}>
-      {converterValue}
-      {converterValue !== 'Invalid input color'
+      {converterValue !== msg
+        && converterValue !== msg2
         && <i className="color-block"  style={{ background: converterValue }} />}
+      {converterValue}
     </span>
   )
   return (
     <div className="n__card converter">
-      <h3>Color</h3>
+      <h3 id="color_converter">🎨 Color</h3>
       <ul>
         <li>name(colors-names): `red`, `green`, ...</li>
         <li>click the `converter` button or press Enter to start the conversion.</li>
