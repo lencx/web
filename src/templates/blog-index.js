@@ -3,9 +3,9 @@ import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 // import SEO from "../components/seo"
-import Layout from '../components/base/layout'
-import PostWidget from '../components/PostWidget'
-import { formatReadingTime } from '../utils/helper'
+import Layout from '~components/base/layout'
+import PostWidget from '~components/PostWidget'
+import { formatReadingTime } from '~utils/helper'
 
 // blogIndex
 export default (props) => {

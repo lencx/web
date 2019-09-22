@@ -1,4 +1,5 @@
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'react-toastify/dist/ReactToastify.css';
 // import 'prismjs/themes/prism.css';
 // import 'prismjs/themes/prism-dark.css';
 // import 'prismjs/themes/prism-coy.css';

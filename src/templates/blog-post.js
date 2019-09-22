@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-import Layout from '../components/base/layout'
-import withUtterances from '../components/withUtterances'
-import PostWidget from '../components/PostWidget'
-import { formatReadingTime } from '../utils/helper'
-import codenum from '../utils/codenum'
+import Layout from '~components/base/layout'
+import withUtterances from '~components/withUtterances'
+import PostWidget from '~components/PostWidget'
+import { formatReadingTime } from '~utils/helper'
+import codenum from '~utils/codenum'
 
 const TranslateLanguage = ({ translations, translationLinks, langKey }) => {
   return (

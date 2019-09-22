@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+
+import { getScrollPosition } from '~utils/tools'
 import Logo from './logo'
 
 import ToggleTheme from './toggleTheme'
 import Navbar from './../Navbar'
-
-const getScrollPosition = (el = window) => ({
-  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
-  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
-})
 
 const Header = () => {
   const [prefixCls, setPrefixCls] = useState(['nofwl-header'])
@@ -41,9 +38,7 @@ const Header = () => {
           { name: 'Blog', link: '/blog' },
           { name: 'Archive', link: '/archive' },
           { name: 'Tools', submenus: [
-            { name: 'tool 1', link: '/tool/1' },
-            { name: 'tool 2', link: '/tool/2' },
-            { name: 'tool 3', link: '/tool/3' },
+            { name: 'Converter', link: '/tools/converter' },
           ] },
           { name: 'About', link: '/about' },
           { name: 'toggleTheme', render: <ToggleTheme /> },

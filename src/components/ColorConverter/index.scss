@@ -1,0 +1,30 @@
+.n__card {
+  &.converter {
+    select {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      height: 30px;
+      margin-right: 5px;
+      box-sizing: border-box;
+      vertical-align: middle;
+    }
+
+    .output {
+      margin: 10px 0;
+      .color-copy {
+        cursor: pointer;
+      }
+      .color-block {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
