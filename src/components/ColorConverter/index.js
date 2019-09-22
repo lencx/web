@@ -83,8 +83,8 @@ export default () => {
       <h3 id="color_converter">🎨 Color</h3>
       <ul>
         <li>name(colors-names): `red`, `green`, ...</li>
-        <li>click the `converter` button or press Enter to start the conversion.</li>
-        <li>click on the output color to copy to the clipboard.</li>
+        <li>converter: click the `converter` button or press Enter to start the conversion.</li>
+        <li>copy: click on the output color to copy to the clipboard.</li>
       </ul>
       <select value={fn} onChange={handleSelect}>
         {fns.map(item => {
