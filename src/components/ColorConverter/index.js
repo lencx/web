@@ -29,14 +29,14 @@ const fns  = [
 
 export default () => {
   const [value, setValue] = useState('')
-  const [Fn, setFn] = useState('hexToRGB')
+  const [fn, setFn] = useState('hexToRGB')
   const [converterValue, setConverter] = useState('')
   const handleConverter = () => {
     if (!value) return setConverter('Please enter the color value you want to convert')
     // fix: space cause invalid colors
     const val = value.replace(/\s/g, '')
-    console.log(val, c, Fn)
-    setConverter(c[Fn](val))
+    // console.log(val, c, fn)
+    setConverter(c[fn](val))
   }
   const handleInput = e => {
     setValue(e.target.value)
@@ -55,6 +55,10 @@ export default () => {
         closeOnClick: true,
       })
     }
+  }
+  const handleReset = () => {
+    setValue('');
+    setConverter('');
   }
   const renderOutput = (
     <span className="color-copy" onClick={handleCopy}>
@@ -78,7 +82,7 @@ export default () => {
       </select>
       <div className="color-input">
         <input type="text" onChange={handleInput} value={value} onKeyPress={handleInput} />
-        {value && <button className="reset-btn btn" onClick={() => setValue('')}><CloseIcon /></button>}
+        {value && <button className="reset-btn btn" onClick={handleReset}><CloseIcon /></button>}
       </div>
       <button className="btn" onClick={handleConverter}>Converter</button>
       <p className="output"><b>Output:</b> {converterValue ? renderOutput : '⌛️Waiting for input...'}</p>
