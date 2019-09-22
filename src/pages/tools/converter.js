@@ -8,7 +8,7 @@ export default () => {
   return (
     <Layout>
       <Helmet>
-        <title>About</title>
+        <title>Tools/Converter</title>
       </Helmet>
       <h2>Converter</h2>
       <ColorConverter />

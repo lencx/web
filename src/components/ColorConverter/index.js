@@ -27,19 +27,18 @@ const fns  = [
 
 // const formatStr = str => str.match(/(.*)(To)(.*)/)
 
-
 export default () => {
   const msg = 'Please enter the color value you want to convert'
   const msg2 = 'Invalid input color'
   const [value, setValue] = useState('')
   const [fn, setFn] = useState('hexToRGB')
   const [converterValue, setConverter] = useState('')
-  const handleConverter = () => {
+  const handleConverter = (_fn) => {
     if (!value) return setConverter(msg)
     // fix: space cause invalid colors
     const val = value.replace(/\s/g, '')
     // console.log(val, c, fn)
-    setConverter(c[fn](val))
+    setConverter(c[_fn || fn](val))
   }
   const handleInput = e => {
     setValue(e.target.value)
@@ -63,6 +62,14 @@ export default () => {
     setValue('')
     setConverter('')
   }
+  const handleSelect = e => {
+    setFn(e.target.value)
+    // fix: re-output after option change
+    if (value) {
+      handleConverter(e.target.value)
+    }
+  }
+
   const renderOutput = (
     <span className="color-copy" onClick={handleCopy}>
       {converterValue !== msg
@@ -79,7 +86,7 @@ export default () => {
         <li>click the `converter` button or press Enter to start the conversion.</li>
         <li>click on the output color to copy to the clipboard.</li>
       </ul>
-      <select defaultValue="hexToRGB" onChange={e => setFn(e.target.value)}>
+      <select value={fn} onChange={handleSelect}>
         {fns.map(item => {
           return <option key={item} value={item}>{item.replace('To', ' => ')}</option>
         })}
