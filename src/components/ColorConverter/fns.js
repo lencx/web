@@ -1,21 +1,21 @@
 // https://css-tricks.com/converting-color-spaces-in-javascript/
 
 /**
-* 1. RGBToHex
-* 2. RGBAToHexA
-* 3. hexToRGB
-* 4. hexAToRGBA
-* 5. RGBToHSL
-* 6. RGBAToHSLA
-* 7. HSLToRGB
-* 8. HSLAToRGBA
-* 9. hexToHSL
-* 10. hexAToHSLA
-* 11. HSLToHex
-* 12. HSLAToHexA
-* 13. nameToRGB
-* 14. nameToHex
-* 15. nameToHSL
+ 1. RGBToHex
+ 2. RGBAToHexA
+ 3. hexToRGB
+ 4. hexAToRGBA
+ 5. RGBToHSL
+ 6. RGBAToHSLA
+ 7. HSLToRGB
+ 8. HSLAToRGBA
+ 9. hexToHSL
+ 10. hexAToHSLA
+ 11. HSLToHex
+ 12. HSLAToHexA
+ 13. nameToRGB
+ 14. nameToHex
+ 15. nameToHSL
 */
 
 /*------------ Functions -------------*/

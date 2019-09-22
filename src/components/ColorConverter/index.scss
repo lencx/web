@@ -3,17 +3,33 @@
     select {
       display: block;
       margin-bottom: 10px;
+      background-color: #fff;
     }
 
-    input {
+    input, .btn {
       height: 30px;
       margin-right: 5px;
       box-sizing: border-box;
       vertical-align: middle;
+      background-color: #fff;
+      border: solid 1px #ddd;
+      border-radius: 4px;
+    }
+
+    input {
+      padding: 0 5px;
+    }
+    .btn {
+      outline: none;
+      cursor: pointer;
     }
 
     .output {
       margin: 10px 0;
+      b {
+        margin-right: 10px;
+        user-select: none;
+      }
       .color-copy {
         cursor: pointer;
       }

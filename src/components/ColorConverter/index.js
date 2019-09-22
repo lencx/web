@@ -29,7 +29,10 @@ export default () => {
   const [converterValue, setConverter] = useState('')
   const handleConverter = () => {
     if (!value) return setConverter('Please enter the color value you want to convert')
-    setConverter(c[Fn](value))
+    // fix: spaces cause invalid colors
+    const val = value.replace(/\s/g, '')
+    console.log(val)
+    setConverter(c[Fn](val))
   }
   const handleInput = e => {
     setValue(e.target.value)
@@ -45,13 +48,15 @@ export default () => {
         autoClose: 2500,
         pauseOnHover: true,
         draggable: true,
+        closeOnClick: true,
       })
     }
   }
   const renderOutput = (
     <span className="color-copy" onClick={handleCopy}>
       {converterValue}
-      <i className="color-block"  style={{ background: converterValue }} />
+      {converterValue !== 'Invalid input color'
+        && <i className="color-block"  style={{ background: converterValue }} />}
     </span>
   )
   return (
@@ -65,8 +70,8 @@ export default () => {
         {fns.map(item => <option key={item}>{item}</option>)}
       </select>
       <input type="text" onChange={handleInput} onKeyPress={handleInput} />
-      <input type="button" value="Converter" onClick={handleConverter} />
-      <p className="output">Output: {converterValue ? renderOutput : '⌛️Waiting for input...'}</p>
+      <button className="btn" onClick={handleConverter}>Converter</button>
+      <p className="output"><b>Output:</b> {converterValue ? renderOutput : '⌛️Waiting for input...'}</p>
       <ToastContainer />
     </div>
   )

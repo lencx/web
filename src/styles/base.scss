@@ -590,5 +590,6 @@ pre {
 .n__card {
   width: 100%;
   padding: 20px;
-  box-shadow: var(--shadow-floating);
+  box-shadow: 0 0 2px 2px inset;
+  border-radius: 12px;
 }

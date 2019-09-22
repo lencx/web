@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import './index.scss'
 
-import arrowIcon from './arrow.svg'
+import ArrowIcon from './arrow'
 
 const breakpoint = 768
 
@@ -84,7 +84,7 @@ export default ({ menus }) => {
                 >
                   <span>
                     {menuItem.name}
-                    <img className="arrow-icon" alt="arrow" style={{ transform: `rotateZ(${active ? 0 : '-90deg'})` }} src={arrowIcon} />
+                    <ArrowIcon className="arrow-icon" alt="arrow" style={{ transform: `rotateZ(${active ? 0 : '-90deg'})` }} />
                   </span>
                   <ul className={active ? 'open' : ''}>
                     {menuItem.submenus.map(subMenuItem => {
