@@ -56,6 +56,18 @@ source $ZSH/oh-my-zsh.sh
 
 > Tracks your most used directories, based on 'frecency'.
 
+## [navi](https://github.com/denisidoro/navi)
+
+> An interactive cheatsheet tool for the command-line
+
+```bash
+# install
+brew install denisidoro/tools/navi
+
+# upgrade
+brew update; brew reinstall navi
+```
+
 ---
 
 <video src="./cmd-use.mp4" style="max-width: 640px" controls="controls" loop autoplay></video>
