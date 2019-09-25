@@ -17,8 +17,10 @@ wget --mirror --convert-links --page-requisites --no-parent -P <path> <url>
 
 ## macOS Install
 
-* tree
-* tig: `tig - text-mode interface for Git`
+- **tree**
+- **tig**: `text-mode interface for Git`
+- **starship**: `the cross-shell prompt for astronauts`
+- **navi**: `an interactive cheatsheet tool for the command-line`
 
 ```bash
 tree -L <level>

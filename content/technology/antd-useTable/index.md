@@ -72,7 +72,7 @@ export default (tableConf = {}) => {
   }
 
   const fetchTable = (params) => {
-    requestData({ ...state.pagination, ...params })
+    requestData({ pagination: state.pagination, ...params })
   }
 
   const tableProps = {

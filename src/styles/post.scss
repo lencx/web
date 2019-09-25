@@ -7,6 +7,10 @@
     margin: 20px 0 15px;
     line-height: normal;
   }
+  .language-text {
+    padding: 2px;
+    background: rgba(rgb(95, 180, 219), .3);
+  }
   &.post_index {
     .nofwl-container {
       max-width: 1200px;
@@ -174,7 +178,8 @@
     margin: 15px 0;
     padding-left: 10px;
     border-left-color: var(--ui-pink);
-    color: var(--common-accent);
+    color: var(--common-accent-dark);
+    // color: var(--common-success);
     blockquote {
       color: var(--code-tag);
       // color: var(--common-accent);
