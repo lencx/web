@@ -144,11 +144,18 @@ Date.prototype.format = function(fmt) {
   return fmt;
 };
 
-// Timestamp
+// timestamp
 const timestamp = time => Date.parse(time) / 1000
 
-//
+/// numberFormat
 const numberFormat = num => (/^\d+$/.test(num) ? `${num}`.replace(/\B(?=(\d{3})+$)/g, ',') : '--');
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
+const numberFormat2 = (num) => num.toLocaleString('en-US');
+
+// currencyFormat
+// https://www.currency-iso.org/en/home/tables/table-a1.html
+// currency: USD, EUR, CNY, ...
+const currencyFormat = (num, currency = 'USD') => num.toLocaleString('en-US', {style: 'currency', currency});
 ```
 
 ```js
