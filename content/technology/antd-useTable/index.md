@@ -48,9 +48,10 @@ export default (tableConf = {}) => {
     loading: false,
   })
 
-  const requestData = async (params) => {
+  // fix: rest parameters - keep query parameters when paginating
+  const requestData = async (params, ...args) => {
     setState({ loading: true });
-    let result = await search(formatQuery(params));
+    let result = await search(formatQuery(params), ...args);
     setState({ ...result, loading: false });
   }
 
@@ -71,8 +72,8 @@ export default (tableConf = {}) => {
     requestData(_params);
   }
 
-  const fetchTable = (params) => {
-    requestData({ pagination: state.pagination, ...params })
+  const fetchTable = (params, ...args) => {
+    requestData({ pagination: state.pagination, ...params }, ...args)
   }
 
   const tableProps = {
@@ -108,7 +109,7 @@ const { tableProps, fetchTable } = useTable({
     // ...
   },
   autoFirstFetch: false, // default: true
-  async search(params) { // fetch table data
+  async search(params, ...args) { // fetch table data
     const { current, pageSize, ...other } = params;
 
     let requestData = await new Promise(); // request

@@ -146,6 +146,9 @@ Date.prototype.format = function(fmt) {
 
 // Timestamp
 const timestamp = time => Date.parse(time) / 1000
+
+//
+const numberFormat = num => (/^\d+$/.test(num) ? `${num}`.replace(/\B(?=(\d{3})+$)/g, ',') : '--');
 ```
 
 ```js
