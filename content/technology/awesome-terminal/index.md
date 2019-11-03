@@ -49,8 +49,6 @@ source $ZSH/oh-my-zsh.sh
   * `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 * [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
   * `git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search`
-* [starship](https://github.com/starship/starship)
-  * `brew install starship`
 
 ## [Z](https://github.com/rupa/z) <small>-jump around</small>
 
@@ -68,6 +66,19 @@ brew install denisidoro/tools/navi
 brew update; brew reinstall navi
 ```
 
----
+<!-- <video src="./cmd-use.mp4" style="max-width: 640px" controls="controls" loop autoplay></video> -->
 
-<video src="./cmd-use.mp4" style="max-width: 640px" controls="controls" loop autoplay></video>
+## Rust(command-line)
+
+* [ripgrep](https://github.com/BurntSushi/ripgrep) - recursively searches directories for a regex pattern
+* [fd](https://github.com/sharkdp/fd) - a simple, fast and user-friendly alternative to `find`
+* [starship](https://github.com/starship/starship) - the cross-shell prompt for astronauts
+* [exa](https://github.com/ogham/exa) - is a replacement for `ls` written in Rust
+* [lsd](https://github.com/Peltoche/lsd) - the next gen `ls` command
+* [hexyl](https://github.com/sharkdp/hexyl) - a command-line hex viewer
+* [xsv](https://github.com/BurntSushi/xsv) - a fast CSV command line toolkit written in Rust
+
+```bash
+brew install ripgrep fd starship exa
+brew install lsd hexyl xsv
+```
