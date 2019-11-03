@@ -82,3 +82,5 @@ brew update; brew reinstall navi
 brew install ripgrep fd starship exa
 brew install lsd hexyl xsv
 ```
+
+<!-- https://learnku.com/rust/wikis/29014 -->

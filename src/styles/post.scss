@@ -3,13 +3,19 @@
 .nl_blog {
   font-family: var(--font-nl);
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-comic);
     margin: 20px 0 15px;
     line-height: normal;
+  }
+  h1, .post_title, .post-btns__prev_next {
+    font-family: var(--font-comic);
   }
   .language-text {
     padding: 2px;
     background: rgba(rgb(95, 180, 219), .3);
+    &::before,
+    &::after {
+      display: none;
+    }
   }
   &.post_index {
     .nofwl-container {
