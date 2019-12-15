@@ -19,11 +19,11 @@ tags: [tricks]
 // javascript.json
 {
   "Line number printing": {
-		"prefix": "ln",
-		"body": [
-			"console.log(`[$TM_LINE_NUMBER] $TM_FILENAME: `, $1);",
-		],
-		"description": "Log output to console"
-	}
+    "prefix": "ln",
+    "body": [
+      "console.log(`[$TM_LINE_NUMBER] $TM_FILENAME: `, $1);",
+    ],
+    "description": "Log output to console"
+  }
 }
 ```

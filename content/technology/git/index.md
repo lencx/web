@@ -19,6 +19,15 @@ git pull
 
 git tag <tagname>
 
+# push an 'empty' reference to the remote tag name
+git push origin :tagname
+
+# https://stackoverflow.com/questions/5480258/how-to-delete-a-remote-tag
+git push --delete origin <tagname>
+
+# delete the local tag
+git tag --delete tagname
+
 # Cherry picking is the act of picking a commit from a branch and applying it to another.
 git cherry-pick
 ```
