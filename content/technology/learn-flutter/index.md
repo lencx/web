@@ -16,9 +16,7 @@ tags: [flutter]
 * [Flutter SDK](https://flutter.dev/docs/get-started/install/macos)
 * [Android Studio](https://developer.android.com/studio/index.html)
 
-```
-Android Studio > Preferences > Plugins > Marketplace > Flutter
-```
+> Android Studio > Preferences > Plugins > Marketplace > Flutter
 
 ```bash
 unzip ~/Downloads/flutter_macos_v1.12.13+hotfix.5-stable.zip
@@ -70,4 +68,14 @@ flutter create <app_name>
 cd <app_name>
 
 flutter run
+```
+
+## FAQ
+
+```bash
+# https://stackoverflow.com/questions/51679269/waiting-for-another-flutter-command-to-release-the-startup-lock
+# Waiting for another flutter command to release the startup lock...
+killall -9 dart
+
+rm <YOUR_FLUTTER_PATH>/flutter/bin/cache/lockfile
 ```
