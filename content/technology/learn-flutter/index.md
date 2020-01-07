@@ -45,6 +45,8 @@ echo $PATH
 
 # /Users/<USER_ROOT>/flutter/bin/flutter
 which flutter
+
+flutter upgrade
 ```
 
 ## iOS setup
@@ -78,4 +80,16 @@ flutter run
 killall -9 dart
 
 rm <YOUR_FLUTTER_PATH>/flutter/bin/cache/lockfile
+```
+
+```bash
+# https://flutter.dev/community/china
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+git clone -b dev https://github.com/flutter/flutter.git
+
+export PATH="$PWD/flutter/bin:$PATH"
+cd ./flutter
+flutter doctor
 ```
