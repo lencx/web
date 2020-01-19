@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": false,
+    "baseUrl": ".",
+    "paths": {
+      "~common/*": ["./src/common/*"],
+      "~layout/*": ["./src/layout/*"],
+      "~comps/*": ["./src/components/*"],
+      "~hooks/*": ["./src/hooks/*"],
+      "~utils/*": ["./src/utils/*"]
+    }
+  },
+  "exclude": ["node_modules", "public", ".cache"]
+}

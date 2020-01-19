@@ -1,76 +1,29 @@
-const _ = require('lodash')
-
+/* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
     title: `nofwl`,
-    description: `No free working life`,
-    author: `lencx`,
-    social: {
-      twitter: `lencx`
-    }
+    description: `No Free working life`,
+    author: `@lencx`,
   },
-  pathPrefix: '/',
   plugins: [
-    // SEO
     `gatsby-plugin-react-helmet`,
-    { // markdown -> html
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          { // images
-            resolve: `gatsby-source-filesystem`,
-            options: {
-              name: `images`,
-              path: `${__dirname}/src/assets/images`,
-            },
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 480,
-              sizeByPixelDensity: true,
-              wrapperStyle: fluidResult => `flex:${_.round(fluidResult.aspectRatio, 2)};`
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          'gatsby-remark-autolink-headers',
-          {
-            resolve: 'gatsby-remark-prismjs',
-            options: {
-              // inlineCodeMarker: '±',
-              classPrefix: 'language-',
-              // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
-              showLineNumbers: true,
-            },
-          },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-          {
-            resolve: 'gatsby-remark-external-links',
-            options: {
-              target: '_blank',
-            },
-          },
-        ],
-      },
-    },
-    { // blog-post
+    // https://www.gatsbyjs.org/docs/sass
+    `gatsby-plugin-sass`,
+    // https://www.gatsbyjs.org/packages/gatsby-plugin-typescript
+    `gatsby-plugin-typescript`,
+    // {
+    //   resolve: `gatsby-plugin-typescript`,
+    //   options: {
+    //     isTSX: true, // defaults to false
+    //     jsxPragma: `jsx`, // defaults to "React"
+    //     allExtensions: true, // defaults to false
+    //   },
+    // },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content`,
-        name: `blog`,
-      },
-    },
-    { // blog-assets
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
         name: `assets`,
+        path: `${__dirname}/src/assets`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -78,44 +31,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `NoFWL`,
-        short_name: `nofwl`,
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
-        theme_color: `pink`,
+        theme_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `${__dirname}/src/assets/nofwl.png`, // This path is relative to the root of the site.
+        icon: `static/lencx.png`, // This path is relative to the root of the site.
       },
     },
-    { // dart-sass
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        implementation: require('sass'),
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-76982222-3`,
-      },
-    },
-    { // i18n
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyDefault: 'en',
-        useLangKeyLayout: false,
-        pagesPaths: [`/content`]
-      },
-    },
-    { // theme
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
-    `gatsby-plugin-catch-links`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
+    // `gatsby-plugin-offline`,
   ],
-}
+};
