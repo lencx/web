@@ -30,4 +30,7 @@ git tag --delete tagname
 
 # Cherry picking is the act of picking a commit from a branch and applying it to another.
 git cherry-pick
+
+# delete remote branch
+git push origin --delete <branch_name>
 ```
