@@ -1,0 +1,55 @@
+$colorGradient: #ff8080,
+#ffbf80,
+#ffff80,
+#bfff80,
+#80ff80,
+#80ffbf,
+#80ffff,
+#80bfff,
+#8080ff,
+#bf80ff,
+#ff80ff,
+#ff80bf,
+#ff8080;
+
+$logoSize: 3rem;
+$logoGutter: 0.2rem;
+
+@keyframes logoAni {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  width: $logoSize;
+  height: $logoSize;
+  text-decoration: none;
+  border-radius: 50%;
+
+  &::before {
+    width: $logoSize;
+    height: $logoSize;
+    display: block;
+    content: '';
+    background: conic-gradient($colorGradient);
+    animation: logoAni 3s linear infinite;
+    border-radius: 50%;
+  }
+
+  img {
+    position: absolute;
+    border-radius: 50%;
+    width: $logoSize - $logoGutter * 2;
+    top: $logoGutter;
+    left: $logoGutter;
+    margin: 0;
+    z-index: 1;
+  }
+}

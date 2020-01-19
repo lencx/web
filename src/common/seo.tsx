@@ -1,4 +1,7 @@
 /**
+ * @author: lencx
+ * @create_at: Jan 19, 2020
+ *
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
  *

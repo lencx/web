@@ -1,3 +1,8 @@
+/**
+ * @author: lencx
+ * @create_at: Jan 19, 2020
+ */
+
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
