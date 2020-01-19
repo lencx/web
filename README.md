@@ -8,6 +8,12 @@ Reference: [overreacted](https://github.com/gaearon/overreacted.io)，[gatsby/ww
 
 Run locally, `yarn`, then `yarn dev`, then open `https://localhost:8000`.
 
+[install error](https://github.com/gatsbyjs/gatsby/issues/13780)
+
+```
+node < 12.0
+```
+
 ## Feature
 
 - [x] theme: `dark/light`

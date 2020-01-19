@@ -21,6 +21,7 @@ wget --mirror --convert-links --page-requisites --no-parent -P <path> <url>
 - **tig**: `text-mode interface for Git`
 - **starship**: `the cross-shell prompt for astronauts`
 - **navi**: `an interactive cheatsheet tool for the command-line`
+- [**bat**](https://github.com/sharkdp/bat)
 
 ```bash
 tree -L <level>
