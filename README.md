@@ -1,11 +1,9 @@
-<p align="center">
+<p align="center" style="margin-bottom: 0">
   <a href="https://nofwl.com">
     <img alt="Gatsby" src="./static/lencx.png" width="80" />
   </a>
 </p>
-<h1 align="center">
-  nofwl
-</h1>
+<h1 align="center" style="margin-top: 0">nofwl</h1>
 
 > No free working life
 
@@ -19,4 +17,8 @@
 - [x] highlight-code-line: `example: ```js{1, 4-8}`
 - [x] tools/converter:
   - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)
+
+## TODO
+
 - [ ] MDX
+- [ ] github login: create, edit, delete post
