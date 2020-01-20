@@ -33,4 +33,8 @@ git cherry-pick
 
 # delete remote branch
 git push origin --delete <branch_name>
+
+# fatal: The upstream branch of your current branch does not match the name of your current branch.
+# To push to the upstream branch on the remote, use ...
+git branch <branch_name> -u origin/<branch_name>
 ```
