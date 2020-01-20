@@ -7,8 +7,8 @@ import React from 'react';
 // import { useStaticQuery, graphql } from 'gatsby';
 import Header from '~layout/header';
 import Footer from '~layout/footer';
+import '~styles';
 import styles from './index.mod.scss';
-import '~layout/normal.css';
 
 interface PostLayoutProps {
   children: React.ReactNode;

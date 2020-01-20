@@ -1,12 +1,12 @@
 .post {
   width: 100vw;
-  min-height: 100vh;
-  background-image: url("../../assets/nofwl-bg.png");
+  background-image: url('../../assets/nofwl-bg.png');
   background-repeat: repeat;
-  background-size: 160px 160px;
-  // background-color: #999;
+  background-size: 120px 120px;
+  background-color: rgba(#000, 0.2);
+  overflow-x: hidden;
 }
 
 .main {
-  min-height: 90vh;
+  padding: calc(var(--layout-header-height) + 1rem) var(--layout-side-pad) 0;
 }

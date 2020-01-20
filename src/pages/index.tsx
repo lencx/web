@@ -11,6 +11,8 @@ import SEO from '~common/seo';
 const IndexPage = () => (
   <PostLayout>
     <SEO title="Home" />
+    <h2>TODO:</h2>
+    <p>...</p>
   </PostLayout>
 );
 

@@ -47,6 +47,8 @@
     "husky": "^4.0.10",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
+    "stylelint": "^13.0.0",
+    "stylelint-config-standard": "^19.0.0",
     "typescript": "^3.7.5"
   },
   "keywords": [
@@ -67,9 +69,9 @@
       "yarn lint:fix",
       "git add"
     ],
-    "*.scss": [
+    "*.{css,scss}": [
       "prettier --write",
-      "stylelint --fix",
+      "stylelint --syntax=scss --fix",
       "git add"
     ],
     "{*.{json,md}}": [

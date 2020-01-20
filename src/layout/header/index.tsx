@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <Logo className={styles.logo} />
-      <span>Menu</span>
+      {/* <span>Menu</span> */}
     </div>
   );
 }

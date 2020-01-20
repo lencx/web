@@ -16,7 +16,8 @@
       "~comps/*": ["./src/components/*"],
       "~hooks/*": ["./src/hooks/*"],
       "~utils/*": ["./src/utils/*"],
-      "~assets/*": ["./src/assets/*"]
+      "~assets/*": ["./src/assets/*"],
+      "~styles/*": ["./src/styles/*"]
     }
   },
   "exclude": ["node_modules", "public", ".cache"]

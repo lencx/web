@@ -1,0 +1,18 @@
+:root {
+  /* layout */
+  --layout-header-height: 3.6rem;
+  --layout-gutter: 0.5rem;
+  --layout-side-pad: 1.5rem;
+  --fons-size-xs: 0.5rem;
+  --fons-size-sm: 0.75rem;
+  --fons-size-md: 1rem;
+  --fons-size-lg: 1.25rem;
+  --fons-size-xl: 1.5rem;
+
+  /* logo */
+  --logo-size: 3rem;
+  --logo-gutter: 0.2rem;
+
+  /* theme */
+  --theme-primary: #fac;
+}

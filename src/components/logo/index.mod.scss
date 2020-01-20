@@ -1,19 +1,5 @@
-$colorGradient: #ff8080,
-#ffbf80,
-#ffff80,
-#bfff80,
-#80ff80,
-#80ffbf,
-#80ffff,
-#80bfff,
-#8080ff,
-#bf80ff,
-#ff80ff,
-#ff80bf,
-#ff8080;
-
-$logoSize: 3rem;
-$logoGutter: 0.2rem;
+$colorGradient: #ff8080, #ffbf80, #ffff80, #bfff80, #80ff80, #80ffbf, #80ffff,
+  #80bfff, #8080ff, #bf80ff, #ff80ff, #ff80bf, #ff8080;
 
 @keyframes logoAni {
   from {
@@ -28,14 +14,14 @@ $logoGutter: 0.2rem;
 .logo {
   position: relative;
   display: inline-block;
-  width: $logoSize;
-  height: $logoSize;
+  width: var(--logo-size);
+  height: var(--logo-size);
   text-decoration: none;
   border-radius: 50%;
 
   &::before {
-    width: $logoSize;
-    height: $logoSize;
+    width: var(--logo-size);
+    height: var(--logo-size);
     display: block;
     content: '';
     background: conic-gradient($colorGradient);
@@ -46,9 +32,9 @@ $logoGutter: 0.2rem;
   img {
     position: absolute;
     border-radius: 50%;
-    width: $logoSize - $logoGutter * 2;
-    top: $logoGutter;
-    left: $logoGutter;
+    width: calc(var(--logo-size) - var(--logo-gutter) * 2);
+    top: var(--logo-gutter);
+    left: var(--logo-gutter);
     margin: 0;
     z-index: 1;
   }
