@@ -1,0 +1,2 @@
+# Set language
+*.tsx linguist-language=TypeScript
