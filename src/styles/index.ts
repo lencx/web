@@ -1,3 +1,3 @@
 import './variables.css';
-import './normal.css';
-import './base.global.scss';
+import './base.scss';
+import './reset.scss';

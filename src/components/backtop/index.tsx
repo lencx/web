@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getScrollPosition } from '~utils/tools';
 
-import styles from './index.mod.scss';
+import styles from './backtop.mod.scss';
 
 interface BackTopProps {
   // visible height

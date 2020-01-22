@@ -5,7 +5,8 @@
 
 import React from 'react';
 import Logo from '~comps/logo';
-import styles from './index.mod.scss';
+
+import styles from './header.mod.scss';
 
 export default function Header() {
   return (

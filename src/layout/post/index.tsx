@@ -10,7 +10,7 @@ import Footer from '~layout/footer';
 import BackTop from '~comps/backtop';
 import '~styles';
 
-import styles from './index.mod.scss';
+import styles from './post.mod.scss';
 
 interface PostLayoutProps {
   children: React.ReactNode;

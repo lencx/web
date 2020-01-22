@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import styles from './index.mod.scss';
+import styles from './footer.mod.scss';
 
 export default function Footer() {
   return (
