@@ -7,7 +7,9 @@ import React from 'react';
 // import { useStaticQuery, graphql } from 'gatsby';
 import Header from '~layout/header';
 import Footer from '~layout/footer';
+import BackTop from '~comps/backtop';
 import '~styles';
+
 import styles from './index.mod.scss';
 
 interface PostLayoutProps {
@@ -31,6 +33,7 @@ export default function PostLayout({ children }: PostLayoutProps) {
       <Header />
       <main className={styles.main}>{children}</main>
       <Footer />
+      <BackTop />
     </div>
   );
 }
