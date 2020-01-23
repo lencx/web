@@ -1,5 +1,14 @@
+/**
+ * @author: lencx
+ * @create_at: Jan 23, 2020
+ */
+
+exports.baseURL = '/blog';
+
+// --- i18n ---
 // Please keep keys lowercase!
-module.exports = {
+exports.defaultLanguage = 'en';
+exports.supportedLangs = {
   en: 'English',
   ru: 'Русский',
   tr: 'Türkçe',

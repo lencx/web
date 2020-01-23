@@ -5,7 +5,7 @@
  */
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
-const supportedLangs = require('./i18n');
+const { supportedLangs, defaultLanguage, baseURL } = require('./config');
 
 const langs = Object.keys(supportedLangs);
 
@@ -21,6 +21,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '~utils': path.resolve(__dirname, 'src/utils'),
         '~assets': path.resolve(__dirname, 'src/assets'),
         '~styles': path.resolve(__dirname, 'src/styles'),
+        '@': path.resolve(__dirname, 'src'),
       },
     },
   });
@@ -32,7 +33,18 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   // post template
-  const postTpl = path.resolve('./src/templates/post.tsx');
+  const blogIndexTemplate = path.resolve('./src/templates/blog_index.tsx');
+  const blogPostTemplate = path.resolve('./src/templates/blog_post.tsx');
+
+  langs.forEach(langKey => {
+    createPage({
+      path: langKey === defaultLanguage ? baseURL : `${baseURL}/${langKey}/`,
+      component: blogIndexTemplate,
+      context: {
+        langKey,
+      },
+    });
+  });
 
   // console.log('[30] gatsby-node.js: ', postTpl);
 
@@ -69,8 +81,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const slug = post.node.fields.slug;
 
     createPage({
-      path: slug,
-      component: postTpl,
+      path: `${baseURL}${slug}`,
+      component: blogPostTemplate,
       context: {
         slug,
         previous,
@@ -92,8 +104,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const ext = path
       .basename(node.fileAbsolutePath)
       .match(/^([\w-_]+.)(.*).mdx?$/);
-    let _lang = null;
-    if (langs.includes(ext[2])) _lang = ext[2];
+    let _lang = defaultLanguage;
+    if (ext && ext[2] && langs.includes(ext[2])) _lang = ext[2];
 
     // path
     createNodeField({

@@ -17,7 +17,8 @@
       "~hooks/*": ["./src/hooks/*"],
       "~utils/*": ["./src/utils/*"],
       "~assets/*": ["./src/assets/*"],
-      "~styles/*": ["./src/styles/*"]
+      "~styles/*": ["./src/styles/*"],
+      "@/*": ["./src/*"]
     }
   },
   "exclude": ["node_modules", "public", ".cache"]
