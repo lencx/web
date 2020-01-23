@@ -1,3 +1,3 @@
-import './variables.css';
+import './variables.scss';
 import './base.scss';
 import './reset.scss';

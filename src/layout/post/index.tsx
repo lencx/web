@@ -8,7 +8,7 @@ import React from 'react';
 import Header from '~layout/header';
 import Footer from '~layout/footer';
 import BackTop from '~comps/backtop';
-import '~styles';
+import '@/styles';
 
 import styles from './post.mod.scss';
 
