@@ -14,9 +14,15 @@ import styles from './post.mod.scss';
 
 interface PostLayoutProps {
   children: React.ReactNode;
+  style?: React.CSSProperties;
+  mainProps?: React.HTMLAttributes<HTMLElement>;
 }
 
-export default function PostLayout({ children }: PostLayoutProps) {
+export default function PostLayout({
+  children,
+  style,
+  mainProps,
+}: PostLayoutProps) {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -28,10 +34,12 @@ export default function PostLayout({ children }: PostLayoutProps) {
   // `);
 
   return (
-    <div className={styles.post}>
+    <div className={styles.post} style={style}>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <Header />
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main} {...mainProps}>
+        {children}
+      </main>
       <Footer />
       <BackTop />
     </div>

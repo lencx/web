@@ -4,16 +4,18 @@
  */
 
 import React from 'react';
-
-import PostLayout from '~layout/post';
 import SEO from '~common/seo';
+import Header from '~layout/header';
+import ChasmChart from '@/charts/chasm';
+
+import './index.scss';
 
 const IndexPage = () => (
-  <PostLayout>
+  <>
     <SEO title="Home" />
-    <h2>TODO:</h2>
-    <p>...</p>
-  </PostLayout>
+    <Header className="home-header" />
+    <ChasmChart />
+  </>
 );
 
 export default IndexPage;
