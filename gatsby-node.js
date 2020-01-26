@@ -34,16 +34,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogIndexTemplate = path.resolve('./src/templates/blog_index.tsx');
   const blogPostTemplate = path.resolve('./src/templates/blog_post.tsx');
 
-  langs.forEach(langKey => {
-    createPage({
-      path: langKey === defaultLanguage ? baseURL : `${baseURL}/${langKey}/`,
-      component: blogIndexTemplate,
-      context: {
-        langKey,
-      },
-    });
-  });
-
   // console.log('[30] gatsby-node.js: ', postTpl);
 
   const result = await graphql(`
@@ -56,6 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             fields {
               slug
+              lang
             }
             frontmatter {
               title
@@ -77,7 +68,24 @@ exports.createPages = async ({ graphql, actions }) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
     const slug = post.node.fields.slug;
+    const langKey = post.node.fields.lang;
+    const hasLang = langs.includes(langKey);
 
+    // language page
+    createPage({
+      path:
+        langKey === defaultLanguage
+          ? baseURL
+          : hasLang
+          ? `${baseURL}/${langKey}/`
+          : baseURL,
+      component: blogIndexTemplate,
+      context: {
+        langKey,
+      },
+    });
+
+    // post page
     createPage({
       path: `${baseURL}${slug}`,
       component: blogPostTemplate,

@@ -1,0 +1,57 @@
+$breakpoint: 768px;
+
+.navbar {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint) {
+  .navicon {
+    display: none;
+  }
+
+  .navbar {
+    li {
+      float: left;
+      margin-left: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint - 1) {
+  .navbar {
+    ul {
+      position: absolute;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      left: 0;
+      top: var(--layout-header-height);
+      background-color: rgba(245, 245, 245, 0.9);
+      background-image: url('../../assets/nofwl-bg.png');
+      background-size: 200px 200px;
+      visibility: hidden;
+      transition: all 0.5s ease;
+      box-shadow: var(--shadow-overlay);
+      opacity: 0;
+
+      a {
+        color: #000;
+      }
+
+      &.open {
+        padding: var(--layout-side-pad);
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+      }
+    }
+  }
+}

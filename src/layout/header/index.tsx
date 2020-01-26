@@ -4,20 +4,39 @@
  */
 
 import React from 'react';
-import classnames from 'classnames';
+import { Link } from 'gatsby';
+import cns from 'classnames';
 import Logo from '~comps/logo';
+import NavBar from '~layout/navbar';
 
 import styles from './header.mod.scss';
 
 interface HeaderProps {
   className?: string;
+  isHome?: boolean;
 }
 
-export default function Header({ className }: HeaderProps) {
+export default function Header({ className, isHome = false }: HeaderProps) {
   return (
-    <div className={classnames(styles.header, className)}>
+    <div className={cns(styles.header, className)}>
       <Logo className={styles.logo} />
-      {/* <span>Menu</span> */}
+      <div className={styles.menu}>
+        {isHome ? (
+          <Link className={styles.about} to="/about">
+            @lencx
+          </Link>
+        ) : (
+          <NavBar
+            menu={[
+              { title: 'Explore', link: '/explore' },
+              { title: 'Archive', link: '/archive' },
+              { title: 'Blog', link: '/blog' },
+              { title: 'Tools', link: '/tools' },
+              { title: 'About', link: '/about' },
+            ]}
+          />
+        )}
+      </div>
     </div>
   );
 }

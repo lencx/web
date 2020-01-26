@@ -13,7 +13,7 @@ import './index.scss';
 const IndexPage = () => (
   <>
     <SEO title="Home" />
-    <Header className="home-header" />
+    <Header className="home-header" isHome />
     <ChasmChart />
   </>
 );

@@ -4,7 +4,6 @@
  */
 
 import React from 'react';
-
 import Layout from '~layout/post';
 import SEO from '~common/seo';
 

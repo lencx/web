@@ -9,4 +9,5 @@
 
 .main {
   padding: calc(var(--layout-header-height) + 1rem) var(--layout-side-pad) 0;
+  min-height: calc(100vh - var(--layout-header-height) + 0.6rem);
 }
