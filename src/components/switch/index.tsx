@@ -12,8 +12,9 @@ import './switch.scss';
 export interface SwitchProps {
   checked?: boolean;
   defaultChecked?: boolean;
+  disabled?: boolean;
   onChange?: (value: boolean) => void;
-  icons: {
+  icons?: {
     checked: React.ReactNode;
     unchecked: React.ReactNode;
   };
@@ -22,6 +23,7 @@ export interface SwitchProps {
 export default function Switch({
   checked = false,
   defaultChecked = false,
+  disabled = false,
   icons,
   onChange,
 }: SwitchProps) {
@@ -32,7 +34,6 @@ export default function Switch({
     hasFocus: false,
     touchStarted: false,
     touchMoved: false,
-    disabled: false,
   });
 
   useEffect(() => {
@@ -44,6 +45,7 @@ export default function Switch({
   };
 
   const handleClick = () => {
+    if (disabled) return;
     setState({
       checked: !state.checked,
       hasFocus: false,
@@ -52,6 +54,7 @@ export default function Switch({
   };
 
   const handleTouchStart = (e: any) => {
+    if (disabled) return;
     setState({
       startX: pointerCoord(e).x,
       touchStarted: true,
@@ -106,13 +109,13 @@ export default function Switch({
   };
 
   const getIcon = (type: 'checked' | 'unchecked') => {
-    return icons[type] || null;
+    return (icons && icons[type]) || null;
   };
 
   const classes = cns('switch', {
     'switch--checked': state.checked,
     'switch--focus': state.hasFocus,
-    'switch--disabled': state.disabled,
+    'switch--disabled': disabled,
   });
 
   return (
@@ -138,7 +141,6 @@ export default function Switch({
         onChange={() => null}
         className="switch-input"
         type="checkbox"
-        aria-label="Switch between Dark and Light mode"
       />
     </div>
   );

@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import cns from 'classnames';
 import NavIcon from '~comps/nav_icon';
+import ThemeSwitch from '~comps/theme_switch';
 
 import styles from './navbar.mod.scss';
 
@@ -46,6 +47,9 @@ export default function NavBar({ menu = [] }: NavBarProps) {
             </li>
           );
         })}
+        <li className={styles.theme}>
+          <ThemeSwitch />
+        </li>
       </ul>
     </div>
   );

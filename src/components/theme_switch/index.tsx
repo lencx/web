@@ -35,20 +35,16 @@ export default function ThemeSwitch() {
         checked: (
           <img
             src={moonIcon}
-            width="16"
-            height="16"
             role="presentation"
-            style={{ pointerEvents: 'none' }}
+            style={{ pointerEvents: 'none', verticalAlign: 'top' }}
             alt="dark theme"
           />
         ),
         unchecked: (
           <img
             src={sunIcon}
-            width="16"
-            height="16"
             role="presentation"
-            style={{ pointerEvents: 'none' }}
+            style={{ pointerEvents: 'none', verticalAlign: 'top' }}
             alt="light theme"
           />
         ),

@@ -49,6 +49,7 @@ $breakpoint: 768px;
 
       li {
         padding: 0.5rem 0;
+        text-align: center;
       }
 
       &.open {
@@ -56,6 +57,10 @@ $breakpoint: 768px;
         visibility: visible;
         opacity: 1;
         height: auto;
+      }
+
+      .theme {
+        margin-top: 1.5rem;
       }
     }
   }
