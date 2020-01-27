@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
+const postCssPlugins = require('./postcss-config.js');
+
 module.exports = {
   siteMetadata: {
     title: `nofwl`,
@@ -19,6 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
+        postCssPlugins: [...postCssPlugins],
         // Override the file regex for SASS
         sassRuleTest: /(\.global)?\.s(a|c)ss$/,
         // Override the file regex for CSS modules

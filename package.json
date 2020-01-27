@@ -30,7 +30,9 @@
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.7",
+    "lost": "^8.3.1",
     "node-sass": "^4.13.1",
+    "postcss-pxtorem": "^4.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1"

@@ -8,6 +8,11 @@ $breakpoint: 768px;
 
     li {
       margin-bottom: 0;
+
+      span {
+        color: #000;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -42,8 +47,8 @@ $breakpoint: 768px;
       box-shadow: var(--shadow-overlay);
       opacity: 0;
 
-      a {
-        color: #000;
+      li {
+        padding: 0.5rem 0;
       }
 
       &.open {

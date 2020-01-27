@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 import cns from 'classnames';
 import NavIcon from '~comps/nav_icon';
 
@@ -22,7 +22,11 @@ export default function NavBar({ menu = [] }: NavBarProps) {
 
   return (
     <div className={styles.navbar}>
-      <NavIcon className={styles.navicon} onChange={e => setOpen(e)} />
+      <NavIcon
+        toggle={isOpen}
+        className={styles.navicon}
+        onChange={e => setOpen(e)}
+      />
       <ul
         className={cns({
           [styles.open]: isOpen,
@@ -31,7 +35,14 @@ export default function NavBar({ menu = [] }: NavBarProps) {
         {menu.map(menuItem => {
           return (
             <li key={menuItem.title}>
-              <Link to={menuItem.link}>{menuItem.title}</Link>
+              <span
+                onClick={() => {
+                  navigate(menuItem.link);
+                  setOpen(false);
+                }}
+              >
+                {menuItem.title}
+              </span>
             </li>
           );
         })}

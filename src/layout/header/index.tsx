@@ -8,6 +8,7 @@ import { Link } from 'gatsby';
 import cns from 'classnames';
 import Logo from '~comps/logo';
 import NavBar from '~layout/navbar';
+// import ThemeSwitch from '~comps/theme_switch';
 
 import styles from './header.mod.scss';
 
@@ -20,6 +21,7 @@ export default function Header({ className, isHome = false }: HeaderProps) {
   return (
     <div className={cns(styles.header, className)}>
       <Logo className={styles.logo} />
+      {/* <ThemeSwitch /> */}
       <div className={styles.menu}>
         {isHome ? (
           <Link className={styles.about} to="/about">
