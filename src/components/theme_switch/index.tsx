@@ -28,27 +28,31 @@ export default function ThemeSwitch() {
   }, []);
 
   return (
-    <Switch
-      checked={theme === 'dark'}
-      onChange={e => (window as any).__setPreferredTheme(e ? 'dark' : 'light')}
-      icons={{
-        checked: (
-          <img
-            src={moonIcon}
-            role="presentation"
-            style={{ pointerEvents: 'none', verticalAlign: 'top' }}
-            alt="dark theme"
-          />
-        ),
-        unchecked: (
-          <img
-            src={sunIcon}
-            role="presentation"
-            style={{ pointerEvents: 'none', verticalAlign: 'top' }}
-            alt="light theme"
-          />
-        ),
-      }}
-    />
+    theme && (
+      <Switch
+        checked={theme === 'dark'}
+        onChange={e =>
+          (window as any).__setPreferredTheme(e ? 'dark' : 'light')
+        }
+        icons={{
+          checked: (
+            <img
+              src={moonIcon}
+              role="presentation"
+              style={{ pointerEvents: 'none', verticalAlign: 'top' }}
+              alt="dark theme"
+            />
+          ),
+          unchecked: (
+            <img
+              src={sunIcon}
+              role="presentation"
+              style={{ pointerEvents: 'none', verticalAlign: 'top' }}
+              alt="light theme"
+            />
+          ),
+        }}
+      />
+    )
   );
 }

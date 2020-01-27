@@ -12,7 +12,7 @@ const { defaultLanguage, baseURL } = require('../../config');
 
 export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
   const data = props.data.allMarkdownRemark.nodes;
-  console.log(`[23] post.tsx: `, props);
+  // console.log(`[23] post.tsx: `, props);
   return (
     <PostLayout>
       {/* <pre>{JSON.stringify(data, null, 4)}</pre> */}

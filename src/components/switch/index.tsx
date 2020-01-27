@@ -29,7 +29,7 @@ export default function Switch({
 }: SwitchProps) {
   const input = useRef<HTMLInputElement>(null);
   const [state, setState] = useReducer((o: any, n: any) => ({ ...o, ...n }), {
-    checked: checked || defaultChecked,
+    checked: !!(checked || defaultChecked),
     startX: null,
     hasFocus: false,
     touchStarted: false,
@@ -37,7 +37,7 @@ export default function Switch({
   });
 
   useEffect(() => {
-    setState({ checked: checked });
+    setState({ checked: !!(checked || defaultChecked) });
   }, [checked]);
 
   const handleChange = (checked: boolean) => {

@@ -32,10 +32,12 @@
   --light-silver: #f0f0f0;
 }
 
+// theme: dark
 body.dark {
-  --theme-primary: #222;
+  --theme-bg: #999;
 }
 
+// theme: light
 body.light {
-  --theme-primary: #fee;
+  --theme-bg: --light-silver;
 }

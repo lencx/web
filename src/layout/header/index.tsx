@@ -29,9 +29,9 @@ export default function Header({ className, isHome = false }: HeaderProps) {
           <NavBar
             menu={[
               { title: 'Explore', link: '/explore' },
-              { title: 'Archive', link: '/archive' },
               { title: 'Blog', link: '/blog' },
               { title: 'Tools', link: '/tools' },
+              { title: 'Archive', link: '/archive' },
               { title: 'About', link: '/about' },
             ]}
           />

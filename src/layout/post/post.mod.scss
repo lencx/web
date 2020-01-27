@@ -3,8 +3,9 @@
   background-image: url('../../assets/nofwl-bg.png');
   background-repeat: repeat;
   background-size: 120px 120px;
-  background-color: var(--light-silver);
+  background-color: var(--theme-bg);
   overflow-x: hidden;
+  transition: background-color 0.3s ease;
 }
 
 .main {
