@@ -22,3 +22,5 @@
 
 - [ ] MDX
 - [ ] github login: create, edit, delete post
+<!-- https://www.gatsbyjs.org/docs/adding-search/ -->
+- [ ] Search

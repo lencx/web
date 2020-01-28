@@ -1,0 +1,12 @@
+.line-numbers-rows {
+  padding: 20px 0 1rem 0.8em;
+  line-height: 1.5em;
+}
+
+.gatsby-highlight {
+  pre[class*='language-'],
+  code[class*='language-'] {
+    display: block;
+    overflow: auto;
+  }
+}
