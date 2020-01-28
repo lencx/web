@@ -5,9 +5,10 @@
  */
 
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import PostLayout from '~layout/post';
-import { BlogIndexTemplateProps } from './interface';
+import PostOverview from '~comps/post/overview';
+import { BlogIndexTemplateProps } from '~comps/post/interface';
 const { defaultLanguage, baseURL } = require('../../config');
 
 export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
@@ -15,21 +16,13 @@ export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
   // console.log(`[23] post.tsx: `, props);
   return (
     <PostLayout>
-      {/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
       {data.map(item => {
         return (
           item.fields.lang === defaultLanguage && (
-            <div key={item.id}>
-              <Link to={`${baseURL}/${item.fields.slug}`}>
-                <h2>{item.frontmatter.title}</h2>
-              </Link>
-              <p>{item.frontmatter.spoiler}</p>
-              <pre>{JSON.stringify(item, null, 4)}</pre>
-            </div>
+            <PostOverview baseURL={baseURL} key={item.id} dataSource={item} />
           )
         );
       })}
-      {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
     </PostLayout>
   );
 }
@@ -41,7 +34,7 @@ export const query = graphql`
         id
         frontmatter {
           category
-          date
+          date(formatString: "MMMM DD, YYYY")
           readtime
           spoiler
           tags

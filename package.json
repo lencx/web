@@ -27,6 +27,8 @@
     "gatsby-plugin-sass": "^2.1.27",
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-typescript": "^2.1.26",
+    "gatsby-remark-images": "^3.1.42",
+    "gatsby-remark-responsive-iframe": "^2.2.31",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.7",

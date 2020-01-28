@@ -3,6 +3,18 @@
  * @create_at: Jan 23, 2020
  */
 
+export interface PostOverviewData {
+  id?: string;
+  frontmatter: {
+    title: string;
+    date?: string;
+    category?: string;
+    spoiler?: string;
+    tags?: string[];
+  };
+  fields: { slug: string; directoryName: string; lang?: string };
+}
+
 // blog index template
 export interface BlogIndexTemplateProps {
   readonly data: AllPostQueryData;
@@ -10,17 +22,7 @@ export interface BlogIndexTemplateProps {
 
 export interface AllPostQueryData {
   allMarkdownRemark: {
-    nodes: Array<{
-      id?: string;
-      frontmatter: {
-        title: string;
-        date?: string;
-        category?: string;
-        spoiler?: string;
-        tags?: string[];
-      };
-      fields: { slug: string; directoryName: string; lang?: string };
-    }>;
+    nodes: Array<PostOverviewData>;
   };
 }
 

@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-interface HTMLProps {
+export interface HTMLProps {
   body: string;
   htmlAttributes?: React.HTMLAttributes<HTMLElement>;
   bodyAttributes?: React.HTMLAttributes<HTMLElement>;

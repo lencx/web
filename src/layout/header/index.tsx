@@ -11,7 +11,7 @@ import NavBar from '~layout/navbar';
 
 import styles from './header.mod.scss';
 
-interface HeaderProps {
+export interface HeaderProps {
   className?: string;
   isHome?: boolean;
 }

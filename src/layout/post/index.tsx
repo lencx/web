@@ -12,7 +12,7 @@ import '@/styles';
 
 import styles from './post.mod.scss';
 
-interface PostLayoutProps {
+export interface PostLayoutProps {
   children: React.ReactNode;
   style?: React.CSSProperties;
   mainProps?: React.HTMLAttributes<HTMLElement>;

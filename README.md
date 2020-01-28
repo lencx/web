@@ -1,6 +1,6 @@
 <p align="center" style="margin-bottom: 0">
   <a href="https://nofwl.com">
-    <img alt="Gatsby" src="./static/lencx.png" width="80" />
+    <img alt="nofwl" src="./static/lencx.png" width="80" />
   </a>
 </p>
 <h1 align="center" style="margin-top: 0">nofwl</h1>

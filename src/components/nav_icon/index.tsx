@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import cns from 'classnames';
 import styles from './navicon.mod.scss';
 
-interface NavIconProps {
+export interface NavIconProps {
   className?: string;
   onChange?: (isOpen: boolean) => void;
   toggle?: boolean;

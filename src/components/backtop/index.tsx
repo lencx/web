@@ -3,7 +3,7 @@ import { getScrollPosition } from '~utils/tools';
 
 import styles from './backtop.mod.scss';
 
-interface BackTopProps {
+export interface BackTopProps {
   // visible height
   minHeight?: number;
 }

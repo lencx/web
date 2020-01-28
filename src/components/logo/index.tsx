@@ -10,7 +10,7 @@ import NofwlIcon from '@/assets/lencx.png';
 
 import styles from './logo.mod.scss';
 
-interface LogoProps {
+export interface LogoProps {
   className?: string;
 }
 

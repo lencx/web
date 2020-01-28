@@ -11,7 +11,7 @@ import ThemeSwitch from '~comps/theme_switch';
 
 import styles from './navbar.mod.scss';
 
-interface NavBarProps {
+export interface NavBarProps {
   menu: Array<{
     title: string;
     link: string;

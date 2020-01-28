@@ -6,7 +6,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PostLayout from '~layout/post';
-import { PostTemplateProps } from './interface';
+import { PostTemplateProps } from '~comps/post/interface';
 
 export default function postTemplate(props: PostTemplateProps) {
   const post = props.data.markdownRemark;

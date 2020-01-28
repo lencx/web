@@ -1,15 +1,17 @@
 :root {
-  /* layout */
+  /* *** layout *** */
   --layout-header-height: 3.6rem;
   --layout-gutter: 0.5rem;
   --layout-side-pad: 1.5rem;
+  // max-content-width
+  --layout-content-zone: 1080px;
   --fons-size-xs: 0.5rem;
   --fons-size-sm: 0.75rem;
   --fons-size-md: 1rem;
   --fons-size-lg: 1.25rem;
   --fons-size-xl: 1.5rem;
 
-  // shadow
+  /* *** shadow *** */
   --shadow-raised:
     0 1px 2px rgba(46, 41, 51, 0.08),
     0 2px 4px rgba(71, 63, 79, 0.08);
@@ -23,21 +25,21 @@
     0 4px 16px rgba(46, 41, 51, 0.08),
     0 8px 24px rgba(71, 63, 79, 0.16);
 
-  /* logo */
+  /* *** logo *** */
   --logo-size: 3rem;
   --logo-gutter: 0.2rem;
 
-  /* theme */
+  /* *** theme *** */
   --theme-primary: #fac;
   --light-silver: #f0f0f0;
 }
 
-// theme: dark
+/* *** theme: dark *** */
 body.dark {
   --theme-bg: #999;
 }
 
-// theme: light
+/* *** theme: light *** */
 body.light {
   --theme-bg: --light-silver;
 }
