@@ -11,6 +11,11 @@
   --fons-size-lg: 1.25rem;
   --fons-size-xl: 1.5rem;
 
+  /* *** z-index *** */
+  --z-mask: 1000;
+  --z-fixed: 999;
+  --z-modal: 998;
+
   /* *** shadow *** */
   --shadow-raised:
     0 1px 2px rgba(46, 41, 51, 0.08),

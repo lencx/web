@@ -10,12 +10,12 @@ import ChasmChart from '@/charts/chasm';
 
 import './index.scss';
 
-const IndexPage = () => (
-  <>
-    <SEO title="Home" />
-    <Header className="home-header" isHome />
-    <ChasmChart />
-  </>
-);
-
-export default IndexPage;
+export default function IndexPage() {
+  return (
+    <>
+      <SEO title="nofwl" />
+      <Header className="nofwl-header" isHome />
+      <ChasmChart />
+    </>
+  );
+}
