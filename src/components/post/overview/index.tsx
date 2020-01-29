@@ -23,9 +23,9 @@ export default function PostOverview({
   const _fields = dataSource.fields;
   return (
     <div className={styles.post}>
-      <Link to={`${baseURL}/${_fields.slug}`}>
-        <h2>{_data.title}</h2>
-      </Link>
+      <h2>
+        <Link to={`${baseURL}/${_fields.slug}`}>{_data.title}</Link>
+      </h2>
       <PostWidget tags={_data.tags} date={_data.date} spoiler={_data.spoiler} />
     </div>
   );

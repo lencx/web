@@ -48,7 +48,7 @@ void main() {
       if (iterationCount == 254){
         gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
       } else {
-    gl_FragColor = vec4(0.0, 0.0, 0.0, map(float(iterationCount), 0.0, 253.0, 0.0, 1.0) + .85);
+    gl_FragColor = vec4(0.0, 0.0, 0.0, map(float(iterationCount), 0.0, 253.0, 0.0, 1.0) + .75);
   }
 }
 `;

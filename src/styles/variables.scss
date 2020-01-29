@@ -14,7 +14,7 @@
   /* *** scrollbar *** */
   --scrollbar-width: 6px;
   --scrollbar-bg: #fff;
-  --scrollbar-thumb: var(--green);
+  --scrollbar-thumb: var(--theme-primary);
 
   /* *** z-index *** */
   --z-mask: 1000;
@@ -40,7 +40,7 @@
   --logo-gutter: 0.2rem;
 
   /* *** theme *** */
-  --theme-primary: #fac;
+  --theme-primary: #3eaf7c;
   --light-silver: #f0f0f0;
   --green: #3eaf7c;
 }

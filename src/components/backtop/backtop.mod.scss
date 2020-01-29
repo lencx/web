@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   transition: all 500ms ease;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5px var(--theme-primary);
   cursor: pointer;
 
   @media screen and (max-width: 767px) {
