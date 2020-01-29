@@ -45,15 +45,20 @@ module.exports = {
         name: `NoFWL`,
         short_name: `NoFWL`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#3eaf7c`,
+        theme_color: `#3eaf7c`,
+        lang: `en`,
+        display: `standalone`,
         icon: `static/lencx.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
+
+    // Removing the Service Worker
+    // this will ensure the service worker is properly unregistered.
+    // `gatsby-plugin-remove-serviceworker`,
 
     // https://www.gatsbyjs.org/packages/gatsby-transformer-remark
     {
