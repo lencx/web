@@ -3,7 +3,8 @@
  * @create_at: Jan 19, 2020
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import cns from 'classnames';
 // import { useStaticQuery, graphql } from 'gatsby';
 import Header from '~layout/header';
 import Footer from '~layout/footer';
@@ -14,6 +15,7 @@ import styles from './post.mod.scss';
 
 export interface PostLayoutProps {
   children: React.ReactNode;
+  className?: string;
   style?: React.CSSProperties;
   mainProps?: React.HTMLAttributes<HTMLElement>;
 }
@@ -22,6 +24,7 @@ export default function PostLayout({
   children,
   style,
   mainProps,
+  className,
 }: PostLayoutProps) {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
@@ -32,9 +35,16 @@ export default function PostLayout({
   //     }
   //   }
   // `);
+  useEffect(() => {
+    const html: any = document.querySelector('html');
+    html.setAttribute('type', 'nofwl-blog');
+    return () => {
+      html.setAttribute('type', 'nofwl');
+    };
+  }, []);
 
   return (
-    <div className={styles.post} style={style}>
+    <div className={cns(styles.post, className, 'nofwl-post')} style={style}>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <Header />
       <main className={styles.main} {...mainProps}>

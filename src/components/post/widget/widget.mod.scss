@@ -1,0 +1,14 @@
+.widget {
+  .spoiler {
+    color: rgb(67, 167, 170);
+  }
+
+  .tags {
+    > span {
+      margin-right: 10px;
+      border: solid 1px #aaa;
+      border-radius: 4px;
+      padding: 2px 4px;
+    }
+  }
+}

@@ -5,11 +5,16 @@
   --layout-side-pad: 1.5rem;
   // max-content-width
   --layout-content-zone: 1080px;
-  --fons-size-xs: 0.5rem;
-  --fons-size-sm: 0.75rem;
-  --fons-size-md: 1rem;
-  --fons-size-lg: 1.25rem;
-  --fons-size-xl: 1.5rem;
+  --font-size-xs: 0.5rem;
+  --font-size-sm: 0.75rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+
+  /* *** scrollbar *** */
+  --scrollbar-width: 6px;
+  --scrollbar-bg: #fff;
+  --scrollbar-thumb: var(--green);
 
   /* *** z-index *** */
   --z-mask: 1000;
@@ -37,6 +42,7 @@
   /* *** theme *** */
   --theme-primary: #fac;
   --light-silver: #f0f0f0;
+  --green: #3eaf7c;
 }
 
 /* *** theme: dark *** */

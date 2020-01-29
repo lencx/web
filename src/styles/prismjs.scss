@@ -1,12 +1,17 @@
-.line-numbers-rows {
-  padding: 20px 0 1rem 0.8em;
-  line-height: 1.5em;
-}
-
 .gatsby-highlight {
+  .line-numbers-rows {
+    padding: 0.9rem 0 0.9rem 0.5rem;
+    line-height: 1.5em;
+  }
+
   pre[class*='language-'],
   code[class*='language-'] {
+    font-size: var(--font-size-sm);
     display: block;
-    overflow: auto;
+    overflow-x: auto;
   }
+}
+
+.language-text {
+  white-space: normal !important;
 }

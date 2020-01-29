@@ -1,3 +1,8 @@
+/**
+ * @author: lencx
+ * @create_at: Jan 22, 2020
+ */
+
 import React, { useEffect, useState } from 'react';
 import { getScrollPosition } from '~utils/tools';
 

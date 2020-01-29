@@ -7,8 +7,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PostLayout from '~layout/post';
-import PostOverview from '~comps/post/overview';
-import { BlogIndexTemplateProps } from '~comps/post/interface';
+import { PostOverview, BlogIndexTemplateProps } from '~comps/post';
 const { defaultLanguage, baseURL } = require('../../config');
 
 export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {

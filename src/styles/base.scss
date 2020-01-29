@@ -21,4 +21,35 @@ body {
     'TITUS Cyberbit Basic',
     sans-serif;
   font-size: var(--fons-size-md);
+  // overflow-x: hidden;
+}
+
+.nofwl-post.blog {
+  h1.title {
+    text-align: center;
+  }
+
+  .post-widget {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+// scroll
+html[type='nofwl-blog'] {
+  overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+    background-color: var(--scrollbar-bg);
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+  }
 }

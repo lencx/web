@@ -6,13 +6,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PostLayout from '~layout/post';
-import { PostTemplateProps } from '~comps/post/interface';
+import { PostTemplateProps, PostWidget } from '~comps/post';
 
 export default function postTemplate(props: PostTemplateProps) {
   const post = props.data.markdownRemark;
+  const _data = post.frontmatter;
   // console.log(`[23] post.tsx: `, props);
   return (
-    <PostLayout>
+    <PostLayout className="blog">
+      <h1 className="title">{_data.title}</h1>
+      <PostWidget className="post-widget" tags={_data.tags} date={_data.date} />
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </PostLayout>
   );
@@ -25,6 +28,11 @@ export const query = graphql`
         slug
         directoryName
         lang
+      }
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        tags
       }
       html
     }
