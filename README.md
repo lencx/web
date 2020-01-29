@@ -17,6 +17,7 @@
 - [x] highlight-code-line: `example: ```js{1, 4-8}`
 - [x] tools/converter:
   - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)
+- [x] PWA
 
 ## TODO
 
