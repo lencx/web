@@ -35,6 +35,12 @@
       padding: 0 4px;
       font-size: var(--font-size-md);
       box-shadow: inset var(--shadow-floating);
+
+      &:hover {
+        box-shadow: var(--shadow-raised);
+        cursor: pointer;
+        border-color: #eee;
+      }
     }
   }
 }
