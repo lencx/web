@@ -15,7 +15,7 @@ export default function postTemplate(props: PostTemplateProps) {
   return (
     <PostLayout className="blog">
       <h1 className="title">{_data.title}</h1>
-      <PostWidget className="post-widget" tags={_data.tags} date={_data.date} />
+      <PostWidget className="post-widget" dataSource={_data} />
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </PostLayout>
   );

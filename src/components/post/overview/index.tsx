@@ -26,7 +26,7 @@ export default function PostOverview({
       <h2>
         <Link to={`${baseURL}/${_fields.slug}`}>{_data.title}</Link>
       </h2>
-      <PostWidget tags={_data.tags} date={_data.date} spoiler={_data.spoiler} />
+      <PostWidget dataSource={_data} />
     </div>
   );
 }

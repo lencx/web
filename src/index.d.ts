@@ -11,3 +11,12 @@ declare module '*.png';
 declare module '*.jpeg';
 declare module '*.jpg';
 declare module '*.gif';
+
+/** interface */
+// SVG
+interface SVGProps {
+  className?: string;
+  fill?: string;
+  size?: number | string;
+  style?: React.CSSProperties;
+}

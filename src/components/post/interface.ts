@@ -3,16 +3,17 @@
  * @create_at: Jan 23, 2020
  */
 
-type PostFrontmatter = {
+export type PostFrontmatter = {
   title: string;
   date?: string;
   type?: string;
   category?: string;
   spoiler?: string;
   tags?: string[];
+  readtime?: number;
 };
 
-type PostFields = { slug: string; directoryName: string; lang?: string };
+export type PostFields = { slug: string; directoryName: string; lang?: string };
 
 export interface PostOverviewData {
   id?: string;

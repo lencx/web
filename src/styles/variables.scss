@@ -40,9 +40,16 @@
   --logo-gutter: 0.2rem;
 
   /* *** theme *** */
-  --theme-primary: #3eaf7c;
+  --theme-primary: var(--blue);
   --light-silver: #f0f0f0;
-  --green: #3eaf7c;
+  // --green: #3eaf7c;
+  --red: rgb(255, 70, 66);
+  --cyan: rgb(3, 209, 235);
+  --blue: rgb(56, 132, 255);
+  --green: rgb(38, 203, 124);
+  --orange: rgb(247, 125, 5);
+  --purple: rgb(164, 78, 237);
+  --yellow: rgb(255, 209, 57);
 }
 
 /* *** theme: dark *** */

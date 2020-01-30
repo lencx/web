@@ -2,22 +2,27 @@
   padding: 1rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
+  box-shadow: var(--shadow-floating);
 
   h2 {
-    a:hover {
-      background:
-        linear-gradient(
-          45deg,
-          #eb4d9c,
-          #d33024,
-          #e48233,
-          #f4e24d,
-          #b4dc48,
-          #54b2ea,
-          #639
-        );
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+    a {
+      color: var(--theme-primary);
+
+      &:hover {
+        background:
+          linear-gradient(
+            45deg,
+            #eb4d9c,
+            #d33024,
+            #e48233,
+            #f4e24d,
+            #b4dc48,
+            #54b2ea,
+            #639
+          );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 }

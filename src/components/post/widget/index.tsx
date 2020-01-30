@@ -5,37 +5,49 @@
 
 import React from 'react';
 import cns from 'classnames';
+import { formatReadingTime } from '~utils/helper';
+import { XTag, XDate } from '@/icons';
+
+import { PostFrontmatter } from '../interface';
 
 import styles from './widget.mod.scss';
 
 export interface PostWidgetProps {
+  dataSource: PostFrontmatter;
   className?: string;
-  tags?: string[];
-  date?: string;
-  spoiler?: string;
 }
 
-export default function PostWidget({
-  tags = [],
-  date,
-  spoiler,
-  className,
-}: PostWidgetProps) {
+export default function PostWidget({ dataSource, className }: PostWidgetProps) {
+  const { tags = [], date, spoiler, readtime } = dataSource;
   // console.log(`[10] widget.tsx: `, tags);
   return (
     <div className={cns(className, styles.widget)}>
-      {/* date */}
-      {date && <time>{date}</time>}
+      {/* time */}
+      <div className={styles.time}>
+        {date && (
+          <time>
+            <XDate size={16} />
+            {date}
+          </time>
+        )}
+        {readtime && (
+          <span
+            className={styles.readtime}
+            dangerouslySetInnerHTML={{ __html: formatReadingTime(readtime) }}
+          />
+        )}
+      </div>
       {/* tags */}
       {Array.isArray(tags) && (
         <div className={styles.tags}>
+          <XTag size={18} className={styles.tagsicon} />
           {tags.map((tag: string, idx: number) => {
             return <span key={`${tag}-${idx}`}>{tag}</span>;
           })}
         </div>
       )}
       {/* spoiler */}
-      {spoiler && <p>{spoiler}</p>}
+      {spoiler && <p className={styles.spoiler}>{spoiler}</p>}
     </div>
   );
 }
