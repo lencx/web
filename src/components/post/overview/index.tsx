@@ -11,20 +11,16 @@ import PostWidget from '../widget';
 import styles from './overview.mod.scss';
 
 export interface PostOverviewProps {
-  baseURL: string;
   dataSource: PostOverviewData;
 }
 
-export default function PostOverview({
-  baseURL,
-  dataSource,
-}: PostOverviewProps) {
+export default function PostOverview({ dataSource }: PostOverviewProps) {
   const _data = dataSource.frontmatter;
   const _fields = dataSource.fields;
   return (
     <div className={styles.post}>
       <h2>
-        <Link to={`${baseURL}/${_fields.slug}`}>{_data.title}</Link>
+        <Link to={_fields.slug}>{_data.title}</Link>
       </h2>
       <PostWidget dataSource={_data} />
     </div>

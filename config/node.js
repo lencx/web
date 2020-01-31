@@ -1,3 +1,8 @@
+/**
+ * @author: lencx
+ * @create_at: Jan 28, 2020
+ */
+
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { supportedLangs, defaultLanguage, baseURL } = require('.');
@@ -33,6 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
               lang
+              directoryName
             }
             internal {
               type
@@ -53,12 +59,26 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = result.data.allMdx.edges;
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
-    const slug = post.node.fields.slug;
+  const defaultLangPosts = [],
+    translationsByDirectory = {};
+  posts.forEach(post => {
     const langKey = post.node.fields.lang;
     const hasLang = langs.includes(langKey);
+
+    if (post.node.fields.lang === defaultLanguage) {
+      defaultLangPosts.push(post);
+    } else {
+      const dirName = post.node.fields.directoryName;
+      // console.log('[68] node.js: ', post);
+      translationsByDirectory[dirName] = [
+        ...(translationsByDirectory[dirName] || []),
+        {
+          slug: post.node.fields.slug,
+          lang: langKey,
+          directoryName: dirName,
+        },
+      ];
+    }
 
     // language page
     createPage({
@@ -73,20 +93,44 @@ exports.createPages = async ({ graphql, actions }) => {
         langKey,
       },
     });
+  });
 
-    // post page
-    createPage({
-      path: `${baseURL}${slug}`,
-      component: blogPostTemplate,
-      context: {
-        slug,
-        previous,
-        next,
-      },
+  // console.log('[88] node.js: ', translationsByDirectory);
+  Object.keys(translationsByDirectory).forEach(key => {
+    translationsByDirectory[key].map(post => {
+      createPage({
+        path: post.slug,
+        component: blogPostTemplate,
+        context: {
+          slug: post.slug,
+          directoryName: post.directoryName,
+          lang: post.lang,
+          otherLangs: translationsByDirectory[key],
+        },
+      });
     });
   });
 
-  // return postTpl;
+  // post page
+  defaultLangPosts.forEach((post, index) => {
+    const previous =
+      index === defaultLangPosts.length - 1
+        ? null
+        : defaultLangPosts[index + 1].node;
+    const next = index === 0 ? null : defaultLangPosts[index - 1].node;
+    const slug = post.node.fields.slug;
+
+    // post page
+    createPage({
+      path: slug,
+      component: blogPostTemplate,
+      context: {
+        slug,
+        previous: next,
+        next: previous,
+      },
+    });
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -95,6 +139,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode });
 
+    // get language from file name
     // index.zh-hant.md => zh-hant
     const ext = path
       .basename(node.fileAbsolutePath)
@@ -106,7 +151,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       node,
       name: `slug`,
-      value,
+      value:
+        _lang === defaultLanguage
+          ? `${baseURL}${value}`
+          : `${baseURL}/${_lang}${value}`.replace(/(\/[\w-_.]+\/)$/, '/'),
     });
     // field: post name
     // the same article may be in multiple languages,

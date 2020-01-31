@@ -15,6 +15,8 @@ export type PostFrontmatter = {
 
 export type PostFields = { slug: string; directoryName: string; lang?: string };
 
+export type PageContext = { slug?: string; previous?: any; next?: any };
+
 export interface PostOverviewData {
   id?: string;
   frontmatter: PostFrontmatter;
@@ -35,10 +37,7 @@ export interface AllPostQueryData {
 // post template
 export interface PostTemplateProps {
   readonly data: PostQueryData;
-  readonly pageContext: {
-    previous?: any;
-    next?: any;
-  };
+  readonly pageContext: PageContext;
 }
 
 export interface PostQueryData {

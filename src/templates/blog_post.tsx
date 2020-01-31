@@ -8,23 +8,25 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PostLayout from '~layout/post';
 import { PostTemplateProps, PostWidget } from '~comps/post';
+import PrevNext from '~comps/pagination/prev_next';
 
 export default function postTemplate(props: PostTemplateProps) {
   const post = props.data.mdx;
+  console.log(`[15] blog_post.tsx: `, props);
   const _data = post.frontmatter;
-  // console.log(`[23] post.tsx: `, props);
   return (
     <PostLayout className="blog">
       <h1 className="title">{_data.title}</h1>
       <PostWidget className="post-widget" dataSource={_data} />
       {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
       <MDXRenderer>{post.body}</MDXRenderer>
+      <PrevNext dataSource={props.pageContext} />
     </PostLayout>
   );
 }
 
 export const query = graphql`
-  query mdBlogPost($slug: String) {
+  query mdxBlogPost($slug: String) {
     mdx(fields: { slug: { eq: $slug } }) {
       fields {
         slug
