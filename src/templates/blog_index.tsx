@@ -11,7 +11,7 @@ import { PostOverview, BlogIndexTemplateProps } from '~comps/post';
 const { defaultLanguage, baseURL } = require('../../config');
 
 export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
-  const data = props.data.allMarkdownRemark.nodes;
+  const data = props.data.allMdx.nodes;
   // console.log(`[23] post.tsx: `, props);
   return (
     <PostLayout>
@@ -28,7 +28,7 @@ export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
 
 export const query = graphql`
   {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         id
         frontmatter {

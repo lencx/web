@@ -18,10 +18,11 @@
 - [x] tools/converter:
   - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)
 - [x] PWA
+- [x] MDX
+- [x] RSS
 
 ## TODO
 
-- [ ] MDX
 - [ ] github login: create, edit, delete post
 <!-- https://www.gatsbyjs.org/docs/adding-search/ -->
 - [ ] Search

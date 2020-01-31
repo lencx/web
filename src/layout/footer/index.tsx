@@ -11,7 +11,17 @@ export default function Footer() {
     <footer className={styles.footer}>
       © {new Date().getFullYear()}, Built with
       {` `}
-      <a href="https://github.com/lencx/nofwl">nofwl</a>
+      <a
+        href="https://github.com/lencx/nofwl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        nofwl
+      </a>
+      {' · '}
+      <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+        RSS
+      </a>
     </footer>
   );
 }

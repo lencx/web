@@ -27,7 +27,7 @@ export interface BlogIndexTemplateProps {
 }
 
 export interface AllPostQueryData {
-  allMarkdownRemark: {
+  allMdx: {
     nodes: Array<PostOverviewData>;
   };
 }
@@ -42,10 +42,10 @@ export interface PostTemplateProps {
 }
 
 export interface PostQueryData {
-  markdownRemark: {
+  mdx: {
     id?: string;
     excerpt?: string;
-    html: string;
+    body: string;
     frontmatter: PostFrontmatter;
     fields: PostFields;
   };
