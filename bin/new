@@ -17,6 +17,8 @@ const _ = require('lodash');
 const fuzzy = require('fuzzy');
 const chalk = require('chalk');
 
+// TODO: create mdx
+
 inquirer.registerPrompt(
   'autocomplete',
   require('inquirer-autocomplete-prompt')
