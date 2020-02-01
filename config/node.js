@@ -106,6 +106,7 @@ exports.createPages = async ({ graphql, actions }) => {
           directoryName: post.directoryName,
           lang: post.lang,
           otherLangs: translationsByDirectory[key],
+          originURL: post.slug.replace(`${post.lang}/`, ''),
         },
       });
     });
@@ -120,6 +121,12 @@ exports.createPages = async ({ graphql, actions }) => {
     const next = index === 0 ? null : defaultLangPosts[index - 1].node;
     const slug = post.node.fields.slug;
 
+    // console.log(
+    //   '[123] node.js: ',
+    //   post.node.fields.directoryName,
+    //   translationsByDirectory[post.node.fields.directoryName]
+    // );
+
     // post page
     createPage({
       path: slug,
@@ -128,6 +135,9 @@ exports.createPages = async ({ graphql, actions }) => {
         slug,
         previous: next,
         next: previous,
+        lang: defaultLanguage,
+        otherLangs:
+          translationsByDirectory[post.node.fields.directoryName] || [],
       },
     });
   });
@@ -170,6 +180,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       name: 'lang',
       value: _lang,
+    });
+    createNodeField({
+      node,
+      name: 'defaultLang',
+      value: defaultLanguage,
     });
   }
 };

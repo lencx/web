@@ -8,7 +8,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PostLayout from '~layout/post';
 import { PostOverview, BlogIndexTemplateProps } from '~comps/post';
-const { defaultLanguage } = require('../../config');
 
 export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
   const data = props.data.allMdx.nodes;
@@ -17,7 +16,7 @@ export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
     <PostLayout>
       {data.map(item => {
         return (
-          item.fields.lang === defaultLanguage && (
+          item.fields.lang === item.fields.defaultLang && (
             <PostOverview key={item.id} dataSource={item} />
           )
         );
@@ -43,8 +42,9 @@ export const query = graphql`
         }
         fields {
           slug
-          directoryName
           lang
+          directoryName
+          defaultLang
         }
       }
     }

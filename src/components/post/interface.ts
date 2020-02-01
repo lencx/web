@@ -13,9 +13,21 @@ export type PostFrontmatter = {
   readtime?: number;
 };
 
-export type PostFields = { slug: string; directoryName: string; lang?: string };
+export type PostFields = {
+  slug: string;
+  directoryName: string;
+  defaultLang: string;
+  lang?: string;
+};
 
-export type PageContext = { slug?: string; previous?: any; next?: any };
+export type PageContext = {
+  slug?: string;
+  previous?: any;
+  next?: any;
+  lang?: string;
+  otherLangs?: any;
+  originURL?: string;
+};
 
 export interface PostOverviewData {
   id?: string;

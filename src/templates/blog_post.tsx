@@ -7,17 +7,25 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PostLayout from '~layout/post';
-import { PostTemplateProps, PostWidget } from '~comps/post';
+import { PostTemplateProps, PostWidget, PostLangs } from '~comps/post';
 import PrevNext from '~comps/pagination/prev_next';
 
 export default function postTemplate(props: PostTemplateProps) {
   const post = props.data.mdx;
-  console.log(`[15] blog_post.tsx: `, props);
+  // console.log(`[15] blog_post.tsx: `, props);
   const _data = post.frontmatter;
+  const _page = props.pageContext;
+  const otherLangs = _page.otherLangs;
   return (
     <PostLayout className="blog">
       <h1 className="title">{_data.title}</h1>
       <PostWidget className="post-widget" dataSource={_data} />
+      <PostLangs
+        originURL={_page.originURL}
+        lang={_page.lang}
+        dataSource={otherLangs}
+        defaultLang={post.fields.defaultLang}
+      />
       {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
       <MDXRenderer>{post.body}</MDXRenderer>
       <PrevNext dataSource={props.pageContext} />
@@ -30,8 +38,9 @@ export const query = graphql`
     mdx(fields: { slug: { eq: $slug } }) {
       fields {
         slug
-        directoryName
         lang
+        defaultLang
+        directoryName
       }
       frontmatter {
         title
