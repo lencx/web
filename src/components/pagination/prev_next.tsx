@@ -10,7 +10,7 @@ import { PageContext } from '~comps/post/interface';
 import styles from './prev_next.mod.scss';
 
 export default function PrevNext({ dataSource }: { dataSource: PageContext }) {
-  console.log(`[10] prev_next.tsx: `, dataSource);
+  // console.log(`[10] prev_next.tsx: `, dataSource);
   const { previous, next } = dataSource;
   return (
     <div>

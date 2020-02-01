@@ -22,10 +22,15 @@ export default function NavBar({ menu = [] }: NavBarProps) {
   const [isOpen, setOpen] = useState(false);
 
   const _menu = menu.map(item => item.link);
-  const tmp = window.location.pathname.match(/^(\/\w+)\/?/);
   let currPath = '';
-  if (tmp && _menu.includes(tmp[1])) {
-    currPath = tmp[1];
+  // fix build error
+  // "window" is not available during server side rendering.
+  // WebpackError: ReferenceError: window is not defined
+  if (typeof window !== 'undefined') {
+    const tmp = window && window.location.pathname.match(/^(\/\w+)\/?/);
+    if (tmp && _menu.includes(tmp[1])) {
+      currPath = tmp[1];
+    }
   }
 
   return (
