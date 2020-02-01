@@ -1,7 +1,7 @@
 @mixin clearfix {
   &::after {
     display: table;
-    content: "";
+    content: '';
     clear: both;
   }
 }
@@ -25,19 +25,28 @@
 
 @mixin placeholder($color) {
   ::-webkit-input-placeholder {
-      color: $color;
-      @content;
+    color: $color;
+    @content;
   }
+
   ::-moz-placeholder {
-      color: $color;
-      @content;
+    color: $color;
+    @content;
   }
+
   :-ms-input-placeholder {
-      color: $color;
-      @content;
+    color: $color;
+    @content;
   }
+
   :-moz-placeholder {
-      color: $color;
-      @content;
+    color: $color;
+    @content;
   }
+}
+
+@mixin textGradient {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

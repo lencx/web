@@ -15,17 +15,17 @@ readtime: 20
 * 出于兴趣而解决某个难题，不管它有没有用，这就是黑客。
 
 * 黑客伦理(hacker ethic)
-  - 使用计算机以及所有有助于了解这个世界本质的事物都不应该受到任何限制。任何事情都应该亲手尝试。\
+  - 使用计算机以及所有有助于了解这个世界本质的事物都不应该受到任何限制。任何事情都应该亲手尝试。<br />
     (Access to computers-and anything that might teach you something about the way the world works-should be unlimited and total. Always yield to the Hands-On Imperative!)
-  - 信息应该全部免费。 \
+  - 信息应该全部免费。 <br />
     (All information should be free.)
-  - 不信任权威，提倡去中心化。\
+  - 不信任权威，提倡去中心化。<br />
     (Mistrust Authority-Promote Decentralization.)
-  - 判断一名黑客的水平应该看他的技术能力，而不是看他的学历、年龄或地位等其他标准。\
+  - 判断一名黑客的水平应该看他的技术能力，而不是看他的学历、年龄或地位等其他标准。<br />
     (Hackers should be judged by their hacking, not bogus criteria such as degrees, age, race, or position.)
-  - 你可以用计算机创造美和艺术。\
+  - 你可以用计算机创造美和艺术。<br />
     (You can create art and beauty on a computer.)
-  - 计算机使生活更美好。\
+  - 计算机使生活更美好。<br />
     (Computers can change your life for the better.)
 
   **根据这六条“黑客伦理”，黑客价值观的核心原则可以概括成这样几点：分享、开放、民主、计算机的自由使用、进步。**

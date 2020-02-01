@@ -1,18 +1,11 @@
-# nofwl
+<p align="center" style="margin-bottom: 0">
+  <a href="https://nofwl.com">
+    <img alt="nofwl" src="./static/lencx.png" width="80" />
+  </a>
+</p>
+<h1 align="center" style="margin-top: 0">nofwl</h1>
 
 > No free working life
-
-My personal blog. Forked from [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog).
-
-Reference: [overreacted](https://github.com/gaearon/overreacted.io)，[gatsby/www](https://github.com/gatsbyjs/gatsby)
-
-Run locally, `yarn`, then `yarn dev`, then open `https://localhost:8000`.
-
-[install error](https://github.com/gatsbyjs/gatsby/issues/13780)
-
-```
-node < 12.0
-```
 
 ## Feature
 
@@ -24,4 +17,12 @@ node < 12.0
 - [x] highlight-code-line: `example: ```js{1, 4-8}`
 - [x] tools/converter:
   - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)
-- [ ] MDX
+- [x] PWA
+- [x] MDX
+- [x] RSS
+
+## TODO
+
+- [ ] github login: create, edit, delete post
+<!-- https://www.gatsbyjs.org/docs/adding-search/ -->
+- [ ] Search

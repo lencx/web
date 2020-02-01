@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--layout-header-height);
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 0 var(--layout-side-pad);
+  box-shadow: var(--shadow-dialog);
+  z-index: var(--z-fixed);
+}
+
+.logo {
+  // margin-top: 0.3rem;
+  margin-top: calc((var(--layout-header-height) - var(--logo-size)) / 2);
+}
+
+.menu {
+  pointer-events: auto;
+  float: right;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  color: #999;
+}

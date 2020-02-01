@@ -1,0 +1,21 @@
+@import '@/styles/mixin';
+
+.prev_next {
+  margin: 20px;
+
+  @include clearfix;
+
+  a {
+    margin: 5px 0;
+    font-weight: bold;
+    padding: 5px 10px;
+
+    &[rel='prev-post'] {
+      float: left;
+    }
+
+    &[rel='next-post'] {
+      float: right;
+    }
+  }
+}

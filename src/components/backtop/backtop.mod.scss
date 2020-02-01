@@ -1,0 +1,33 @@
+#backtop {
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms ease;
+  box-shadow: inset 0 0 5px var(--theme-primary);
+  cursor: pointer;
+
+  @media screen and (max-width: 767px) {
+    width: 36px;
+    height: 36px;
+  }
+
+  svg {
+    width: 50%;
+  }
+}
+
+.hiden {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.show {
+  transform: scale(1);
+  opacity: 1;
+}
