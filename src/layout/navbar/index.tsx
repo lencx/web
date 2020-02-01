@@ -21,6 +21,13 @@ export interface NavBarProps {
 export default function NavBar({ menu = [] }: NavBarProps) {
   const [isOpen, setOpen] = useState(false);
 
+  const _menu = menu.map(item => item.link);
+  const tmp = location.pathname.match(/^(\/\w+)\/?/);
+  let currPath = '';
+  if (tmp && _menu.includes(tmp[1])) {
+    currPath = tmp[1];
+  }
+
   return (
     <div className={styles.navbar}>
       <NavIcon
@@ -35,7 +42,12 @@ export default function NavBar({ menu = [] }: NavBarProps) {
       >
         {menu.map(menuItem => {
           return (
-            <li key={menuItem.title}>
+            <li
+              key={menuItem.title}
+              className={cns({
+                [styles.active]: currPath === menuItem.link,
+              })}
+            >
               <span
                 onClick={() => {
                   navigate(menuItem.link);

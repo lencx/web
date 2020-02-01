@@ -44,3 +44,9 @@
     @content;
   }
 }
+
+@mixin textGradient {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

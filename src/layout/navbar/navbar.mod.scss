@@ -1,6 +1,10 @@
+@import '@/styles/mixin';
+
 $breakpoint: 768px;
 
 .navbar {
+  font-family: var(--font-comic);
+
   ul {
     padding: 0;
     margin: 0;
@@ -26,6 +30,18 @@ $breakpoint: 768px;
     li {
       float: left;
       margin-left: 2rem;
+
+      span {
+        font-weight: bold;
+
+        &:hover {
+          @include textGradient;
+        }
+      }
+
+      &.active {
+        @include textGradient;
+      }
     }
   }
 }
@@ -55,6 +71,12 @@ $breakpoint: 768px;
           display: inline-block;
           width: 100%;
           height: 100%;
+        }
+
+        &.active {
+          span {
+            color: var(--theme-primary);
+          }
         }
       }
 

@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { graphql } from 'gatsby';
+import cns from 'classnames';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PostLayout from '~layout/post';
 import { PostTemplateProps, PostWidget, PostLangs } from '~comps/post';
@@ -17,18 +18,20 @@ export default function postTemplate(props: PostTemplateProps) {
   const _page = props.pageContext;
   const otherLangs = _page.otherLangs;
   return (
-    <PostLayout className="blog">
-      <h1 className="title">{_data.title}</h1>
-      <PostWidget className="post-widget" dataSource={_data} />
-      <PostLangs
-        originURL={_page.originURL}
-        lang={_page.lang}
-        dataSource={otherLangs}
-        defaultLang={post.fields.defaultLang}
-      />
-      {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
-      <MDXRenderer>{post.body}</MDXRenderer>
-      <PrevNext dataSource={props.pageContext} />
+    <PostLayout className={cns('blog', `blog_${_data.type}`)}>
+      <article>
+        <h1 className="title">{_data.title}</h1>
+        <PostWidget className="post-widget" dataSource={_data} />
+        <PostLangs
+          originURL={_page.originURL}
+          lang={_page.lang}
+          dataSource={otherLangs}
+          defaultLang={post.fields.defaultLang}
+        />
+        {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+        <MDXRenderer>{post.body}</MDXRenderer>
+        <PrevNext dataSource={props.pageContext} />
+      </article>
     </PostLayout>
   );
 }
@@ -43,6 +46,7 @@ export const query = graphql`
         directoryName
       }
       frontmatter {
+        type
         title
         date(formatString: "MMMM DD, YYYY")
         tags
