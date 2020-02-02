@@ -13,7 +13,7 @@ import './index.scss';
 export default function IndexPage() {
   return (
     <>
-      <SEO title="nofwl" />
+      <SEO title="lencx" />
       <Header className="nofwl-header" isHome />
       <ChasmChart />
     </>

@@ -7,6 +7,7 @@
 
 // www.gatsbyjs.org/packages/gatsby-remark-prismjs
 require('prismjs/plugins/line-numbers/prism-line-numbers.css');
+require('react-toastify/dist/ReactToastify.css');
 
 // TODO: bug - need to refresh the page
 Object.defineProperty(window, '__nofwl_theme__', {
