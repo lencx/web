@@ -9,20 +9,21 @@
 
 ## Feature
 
-- [x] theme: `dark/light`
-- [x] comment: [utterances](https://github.com/utterance/utterances)
-- [x] google analytics
 - [x] i18n
-- [x] create post: `yarn new`
-- [x] highlight-code-line: `example: ```js{1, 4-8}`
-- [x] tools/converter:
-  - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)
 - [x] PWA
 - [x] MDX
 - [x] RSS
+- [x] Theme: `dark/light`
+- [x] Google Analytics
+- [x] create post: `yarn new`
+- [x] tools/converter:
+  - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)
 
 ## TODO
 
-- [ ] github login: create, edit, delete post
-<!-- https://www.gatsbyjs.org/docs/adding-search/ -->
 - [ ] Search
+- [ ] Post(online): create, edit, delete
+- [ ] Comments(GitHub issue)
+- [ ] Post Views Counter
+
+<!-- https://www.gatsbyjs.org/docs/adding-search/ -->

@@ -113,10 +113,11 @@
   --yellow: rgb(255, 209, 57);
 
   /* *** text color *** */
-  --fc2: var(--dark);
-  --fc4: #4a4a4a;
-  --fc6: #686868;
-  --fc9: #929292;
+  --fc1: var(--dark);
+  --fc2: #4a4a4a;
+  --fc3: #686868;
+  --fc4: #929292;
+  --fc5: rgb(245, 247, 250);
 }
 
 /* *** theme: dark *** */
@@ -138,5 +139,6 @@ body.dark {
 
 /* *** theme: light *** */
 body.light {
+  --fc5: var(--fc2);
   --theme-bg: --light-silver;
 }
