@@ -24,9 +24,18 @@ body {
   // overflow-x: hidden;
 
   a {
+    color: var(--green);
+
     &:hover {
       @include textGradient;
     }
+  }
+
+  input,
+  select,
+  button {
+    background: transparent;
+    color: var(--theme-text-color);
   }
 }
 

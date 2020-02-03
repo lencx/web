@@ -1,1 +1,44 @@
-// .converter_color {}
+.converter_color {
+  box-shadow: var(--shadow-floating);
+  padding: 1rem;
+  border-radius: 1rem;
+
+  select,
+  input,
+  button {
+    border: 1px solid var(--theme-primary);
+    margin-right: 0.2rem;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .input_area {
+    margin-top: 0.5rem;
+  }
+
+  .output {
+    margin-top: 1rem;
+  }
+
+  .copy {
+    color: var(--blue);
+    font-weight: bold;
+
+    &.has_color {
+      cursor: pointer;
+    }
+  }
+
+  .color_block {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin: 0 0.5rem;
+  }
+}

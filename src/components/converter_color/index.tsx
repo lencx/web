@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import copy from 'copy-to-clipboard';
+import cns from 'classnames';
 import { ToastContainer, toast } from 'react-toastify';
 import * as c from './fns';
 
@@ -70,7 +71,7 @@ export default function ConverterColor() {
   };
 
   const handleCopy = () => {
-    if (converterValue !== msg2) {
+    if (converterValue !== msg && converterValue !== msg2) {
       copy(converterValue);
       toast.success(`😎 Copy ${converterValue} to clipboard`, {
         position: 'bottom-right',
@@ -82,10 +83,20 @@ export default function ConverterColor() {
     }
   };
 
+  const isColor = converterValue !== msg && converterValue !== msg2;
+
   const renderOutput = (
-    <span className="color-copy" onClick={handleCopy}>
-      {converterValue !== msg && converterValue !== msg2 && (
-        <i className="color-block" style={{ background: converterValue }} />
+    <span
+      className={cns(styles.copy, {
+        [styles.has_color]: isColor,
+      })}
+      onClick={handleCopy}
+    >
+      {isColor && (
+        <i
+          className={styles.color_block}
+          style={{ background: converterValue }}
+        />
       )}
       {converterValue}
     </span>
@@ -112,7 +123,7 @@ export default function ConverterColor() {
           );
         })}
       </select>
-      <div className={styles.input}>
+      <div className={styles.input_area}>
         <input
           type="text"
           onChange={handleInput}

@@ -1,4 +1,6 @@
 .widget {
+  color: var(--fc9);
+
   :global {
     .xsvg {
       margin-right: 0.2rem;
@@ -6,7 +8,6 @@
   }
 
   .spoiler {
-    color: rgb(67, 167, 170);
     margin-bottom: 0;
   }
 
@@ -30,14 +31,12 @@
 
     > span {
       margin-right: 10px;
-      border: solid 1px #fff;
       border-radius: 4px;
-      padding: 0 4px;
+      padding: 2px 4px;
       font-size: var(--font-size-md);
-      box-shadow: inset var(--shadow-floating);
 
       &:hover {
-        box-shadow: var(--shadow-raised);
+        box-shadow: var(--shadow-floating);
         cursor: pointer;
         border-color: #eee;
       }

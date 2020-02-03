@@ -98,33 +98,42 @@
   --logo-gutter: 0.2rem;
 
   /* *** theme *** */
-  // --theme-primary: var(--blue);
-  --theme-primary: #777;
+  --theme-primary: #989898;
+  // --theme-primary: #777;
   --light-silver: #f0f0f0;
   // --green: #3eaf7c;
   --dark: #2a2a2a;
   --red: rgb(255, 70, 66);
   --cyan: rgb(3, 209, 235);
+  --cyan2: rgb(67, 167, 170);
   --blue: rgb(56, 132, 255);
   --green: rgb(38, 203, 124);
   --orange: rgb(247, 125, 5);
   --purple: rgb(164, 78, 237);
   --yellow: rgb(255, 209, 57);
+
+  /* *** text color *** */
+  --fc2: var(--dark);
+  --fc4: #4a4a4a;
+  --fc6: #686868;
+  --fc9: #929292;
 }
 
 /* *** theme: dark *** */
 body.dark {
-  --theme-bg: #000;
-  --theme-text-color: #a3a3a3;
+  --theme-bg: rgb(31, 41, 51);
+  --theme-text-color: #d2d2d2;
+  --shadow-raised:
+    0 0 1px rgba(255, 255, 255, 0.08),
+    0 1px 2px rgba(255, 255, 255, 0.18);
   --shadow-floating:
-    0 1px 2px rgba(255, 255, 255, 0.08),
-    0 2px 4px rgba(255, 255, 255, 0.18);
+    0 0 2px rgba(255, 255, 255, 0.08),
+    0 2px 3px rgba(255, 255, 255, 0.18);
+  --shadow-overlay:
+    0 2px 4px rgba(255, 255, 255, 0.18),
+    0 4px 8px rgba(255, 255, 255, 0.38);
 
   color: var(--theme-text-color);
-
-  a {
-    color: var(--theme-text-color);
-  }
 }
 
 /* *** theme: light *** */

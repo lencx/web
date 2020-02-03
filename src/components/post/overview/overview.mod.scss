@@ -2,7 +2,13 @@
   padding: 1rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
-  box-shadow: var(--shadow-floating);
+  box-shadow: var(--shadow-raised);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-overlay);
+  }
 
   // h2 {
   //   a {

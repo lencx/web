@@ -20,6 +20,11 @@ export interface PostWidgetProps {
 export default function PostWidget({ dataSource, className }: PostWidgetProps) {
   const { tags = [], date, spoiler, readtime } = dataSource;
   // console.log(`[10] widget.tsx: `, tags);
+
+  const handleTag = (tag: string) => {
+    alert(`TODO: tag - ${tag}`);
+  };
+
   return (
     <div className={cns(className, styles.widget)}>
       {/* time */}
@@ -42,7 +47,11 @@ export default function PostWidget({ dataSource, className }: PostWidgetProps) {
         <div className={styles.tags}>
           <XTag size={18} className={styles.tagsicon} />
           {tags.map((tag: string, idx: number) => {
-            return <span key={`${tag}-${idx}`}>{tag}</span>;
+            return (
+              <span onClick={() => handleTag(tag)} key={`${tag}-${idx}`}>
+                {tag}
+              </span>
+            );
           })}
         </div>
       )}
