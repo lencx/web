@@ -19,7 +19,6 @@ export default function PostLangs({
   defaultLang?: string;
   dataSource?: any;
 }) {
-  // console.log(`[18] index.tsx: `, lang, defaultLang);
   if (!dataSource.length) return null;
   return (
     <div className={styles.post_langs}>
