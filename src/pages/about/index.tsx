@@ -81,7 +81,7 @@ export default function About() {
           {
             name: 'tx',
             link: 'https://github.com/nofwl/genFile',
-            desc: 'Generate file in nodejs',
+            desc: 'Toolset',
           },
         ]}
       />
