@@ -11,23 +11,22 @@ import { PostOverview, BlogIndexTemplateProps } from '~comps/post';
 
 export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
   const data = props.data.allMdx.nodes;
-  // console.log(`[23] post.tsx: `, props);
+  console.log(`[23] post.tsx: `, props.pageContext);
   return (
     <PostLayout>
       {data.map(item => {
-        return (
-          item.fields.lang === item.fields.defaultLang && (
-            <PostOverview key={item.id} dataSource={item} />
-          )
-        );
+        return <PostOverview key={item.id} dataSource={item} />;
       })}
     </PostLayout>
   );
 }
 
 export const query = graphql`
-  {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+  query allMdxBlogPost($langKey: String) {
+    allMdx(
+      filter: { fields: { lang: { eq: $langKey } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       nodes {
         id
         frontmatter {

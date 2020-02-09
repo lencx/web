@@ -25,6 +25,7 @@ export type PageContext = {
   previous?: any;
   next?: any;
   lang?: string;
+  langName: string;
   otherLangs?: any;
   originURL?: string;
 };
@@ -38,6 +39,11 @@ export interface PostOverviewData {
 // blog index template
 export interface BlogIndexTemplateProps {
   readonly data: AllPostQueryData;
+  readonly pageContext: {
+    langKey: string;
+    langName: string;
+    allLanguages: any;
+  };
 }
 
 export interface AllPostQueryData {

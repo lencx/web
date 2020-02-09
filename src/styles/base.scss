@@ -78,6 +78,13 @@ html[type='nofwl-blog'] {
   }
 }
 
+.blog_notes,
+.blog_thinking {
+  article {
+    font-family: var(--font-nl);
+  }
+}
+
 .blog_notes {
   blockquote {
     display: inline-block;
@@ -92,10 +99,6 @@ html[type='nofwl-blog'] {
 }
 
 .blog_thinking {
-  article {
-    font-family: var(--font-nl);
-  }
-
   blockquote {
     display: inline-block;
     margin-left: 0;

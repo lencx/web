@@ -60,24 +60,27 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMdx.edges;
 
   const defaultLangPosts = [],
-    translationsByDirectory = {};
+    translationsByDirectory = {},
+    allLanguages = {};
   posts.forEach(post => {
     const langKey = post.node.fields.lang;
     const hasLang = langs.includes(langKey);
+    const dirName = post.node.fields.directoryName;
 
     if (post.node.fields.lang === defaultLanguage) {
       defaultLangPosts.push(post);
     } else {
-      const dirName = post.node.fields.directoryName;
       // console.log('[68] node.js: ', post);
       translationsByDirectory[dirName] = [
         ...(translationsByDirectory[dirName] || []),
         {
           slug: post.node.fields.slug,
           lang: langKey,
+          langName: supportedLangs[langKey],
           directoryName: dirName,
         },
       ];
+      allLanguages[langKey] = supportedLangs[langKey];
     }
 
     // language page
@@ -89,8 +92,12 @@ exports.createPages = async ({ graphql, actions }) => {
           ? `${baseURL}/${langKey}/`
           : baseURL,
       component: blogIndexTemplate,
+      // https://www.gatsbyjs.org/docs/graphql-reference/
+      // Query variables
       context: {
         langKey,
+        langName: supportedLangs[langKey],
+        allLanguages,
       },
     });
   });

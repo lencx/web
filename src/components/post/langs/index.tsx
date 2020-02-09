@@ -20,6 +20,7 @@ export default function PostLangs({
   dataSource?: any;
 }) {
   if (!dataSource.length) return null;
+  // console.log(`[23] index.tsx: `, dataSource);
   return (
     <div className={styles.post_langs}>
       {lang === defaultLang ? (
@@ -33,9 +34,9 @@ export default function PostLangs({
           <span key={item.lang}>
             <b className={styles.symbol}>{' • '}</b>
             {lang === item.lang ? (
-              <b>{item.lang}</b>
+              <b>{item.langName}</b>
             ) : (
-              <Link to={item.slug}>{item.lang}</Link>
+              <Link to={item.slug}>{item.langName}</Link>
             )}
           </span>
         );
