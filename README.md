@@ -27,3 +27,13 @@
 - [ ] Post Views Counter
 
 <!-- https://www.gatsbyjs.org/docs/adding-search/ -->
+
+## Rust
+
+### Generate File
+
+```bash
+# copy genfile to /bin directory
+# run bash
+./rs.sh
+```
