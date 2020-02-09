@@ -9,18 +9,9 @@
 require('prismjs/plugins/line-numbers/prism-line-numbers.css');
 require('react-toastify/dist/ReactToastify.css');
 
-// TODO: bug - need to refresh the page
-Object.defineProperty(window, '__nofwl_theme__', {
-  set: function(value) {
-    if (value === 'light') {
-      // theme: light
-      require('prismjs/themes/prism-solarizedlight.css');
-    } else {
-      // theme: dark
-      require('prismjs/themes/prism-tomorrow.css');
-    }
-  },
-});
+// TODO: switch theme
+require('prismjs/themes/prism-tomorrow.css');
+
 // require('prismjs/themes/prism-solarizedlight.css');
 // require('prismjs/themes/prism-okaidia.css');
 // require('prismjs/themes/prism-twilight.css');

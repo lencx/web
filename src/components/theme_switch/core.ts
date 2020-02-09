@@ -8,7 +8,6 @@ export default `
   window.__onThemeChange = function() {};
   function setTheme(newTheme) {
     window.__theme = newTheme;
-    window.__nofwl_theme__ = window.__theme;
     preferredTheme = newTheme;
     document.body.className = newTheme;
     window.__onThemeChange(newTheme);

@@ -67,7 +67,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const hasLang = langs.includes(langKey);
     const dirName = post.node.fields.directoryName;
 
-    if (post.node.fields.lang === defaultLanguage) {
+    if (langKey === defaultLanguage) {
       defaultLangPosts.push(post);
     } else {
       // console.log('[68] node.js: ', post);
@@ -93,9 +93,8 @@ exports.createPages = async ({ graphql, actions }) => {
           : baseURL,
       component: blogIndexTemplate,
       // https://www.gatsbyjs.org/docs/graphql-reference/
-      // Query variables
       context: {
-        langKey,
+        langKey, // query variables
         langName: supportedLangs[langKey],
         allLanguages,
       },
@@ -109,7 +108,7 @@ exports.createPages = async ({ graphql, actions }) => {
         path: post.slug,
         component: blogPostTemplate,
         context: {
-          slug: post.slug,
+          slug: post.slug, // query variables
           directoryName: post.directoryName,
           lang: post.lang,
           otherLangs: translationsByDirectory[key],
@@ -139,7 +138,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: slug,
       component: blogPostTemplate,
       context: {
-        slug,
+        slug, // query variables
         previous: next,
         next: previous,
         lang: defaultLanguage,
