@@ -9,6 +9,13 @@
   padding: 0 var(--layout-side-pad);
   box-shadow: var(--shadow-dialog);
   z-index: var(--z-fixed);
+  transition: transform 500ms ease;
+  transform: translateY(0);
+}
+
+.hide {
+  transform: translateY(-100%);
+  transition: transform 500ms ease;
 }
 
 .logo {
