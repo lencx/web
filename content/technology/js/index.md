@@ -189,7 +189,7 @@ function listToTree(list, parentId = 'parentId') {
 }
 ```
 
-## URL
+<!-- ## URL
 
 ```js
 const getParam = key => new URLSearchParams(window.location.search.substring(1)).get(key) || ''
@@ -197,7 +197,7 @@ const getParam = key => new URLSearchParams(window.location.search.substring(1))
 // genParams({a: 1, b: 2})
 // output: a=1&b=2
 const genParams = obj => Object.entries(obj).map(([key, val]) => `${key}=${val}`).join('&');
-```
+``` -->
 
 ## Cookie
 
@@ -231,6 +231,36 @@ export default {
   },
   remove(name) {
     this.set(name, '', -1);
+  },
+};
+```
+
+## URL
+
+```js
+// query.js
+export default {
+  parse(search = window.location.search) {
+    if (!search) return;
+    const hashes = search.slice(search.indexOf('?') + 1).split('&');
+    return hashes.reduce((acc, hash) => {
+      const [key, val] = hash.split('=');
+      return { ...acc, [key]: decodeURIComponent(val) };
+    }, {});
+  },
+
+  get(key) {
+    const params = this.parse(window.location.search);
+    if (params) {
+      return params[key];
+    }
+  },
+
+  stringify(query) {
+    const str = Object.keys(query)
+      .map(key => `${key}=${encodeURIComponent(query[key] || '')}`)
+      .join('&');
+    return str;
   },
 };
 ```
