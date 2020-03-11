@@ -8,7 +8,7 @@ tags: [js, react]
 # readtime:
 ---
 
-import Editor from '~comps/editor'
+import Editor from '~post/editor'
 
 ## Demo
 

@@ -16,6 +16,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '~common': path.resolve(__dirname, 'src/common'),
         '~layout': path.resolve(__dirname, 'src/layout'),
         '~comps': path.resolve(__dirname, 'src/components'),
+        '~post': path.resolve(__dirname, 'src/post'),
         '~hooks': path.resolve(__dirname, 'src/hooks'),
         '~utils': path.resolve(__dirname, 'src/utils'),
         '@': path.resolve(__dirname, 'src'),
