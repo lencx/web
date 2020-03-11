@@ -1,0 +1,28 @@
+.textarea {
+  height: 100px;
+  width: 100%;
+  border: 1px solid #ddd;
+  word-break: break-all;
+  color: #666;
+  border-radius: 10px;
+
+  > div {
+    padding: 20px;
+    outline: none;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  > div:empty {
+    line-height: 60px;
+    text-align: center;
+  }
+
+  > div[placeholder]:empty::before {
+    content: attr(placeholder);
+  }
+}

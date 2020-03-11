@@ -11,7 +11,7 @@ import { PostOverview, BlogIndexTemplateProps } from '~comps/post';
 
 export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
   const data = props.data.allMdx.nodes;
-  console.log(`[23] post.tsx: `, props.pageContext);
+  // console.log(`[23] post.tsx: `, props.pageContext);
   return (
     <PostLayout>
       {data.map(item => {

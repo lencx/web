@@ -12,6 +12,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
+        'react-dom': '@hot-loader/react-dom',
         '~common': path.resolve(__dirname, 'src/common'),
         '~layout': path.resolve(__dirname, 'src/layout'),
         '~comps': path.resolve(__dirname, 'src/components'),
