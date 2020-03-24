@@ -1,5 +1,5 @@
 ---
-title: Learn Rust
+title: Learning Rust
 date: 2020-03-24
 type: technology
 category: rust

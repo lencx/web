@@ -1,5 +1,5 @@
 ---
-title: Flutter
+title: Learning Flutter
 date: 2019-12-15
 type: technology
 category: flutter
