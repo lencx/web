@@ -10,8 +10,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PostLayout from '~layout/post';
 import { PostTemplateProps, PostWidget, PostLangs } from '~comps/post';
 import PrevNext from '~comps/pagination/prev_next';
+import withUtterances from '~hooks/withUtterances';
 
-export default function postTemplate(props: PostTemplateProps) {
+function postTemplate(props: PostTemplateProps) {
   const post = props.data.mdx;
   // console.log(`[15] blog_post.tsx: `, props);
   const _data = post.frontmatter;
@@ -31,10 +32,16 @@ export default function postTemplate(props: PostTemplateProps) {
         {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
         <MDXRenderer>{post.body}</MDXRenderer>
         <PrevNext dataSource={props.pageContext} />
+        <div className="nofwl_comment" />
       </article>
     </PostLayout>
   );
 }
+
+export default withUtterances({
+  container: '.nofwl_comment',
+  repo: 'lencx/nofwl-utterances',
+})(postTemplate);
 
 export const query = graphql`
   query mdxBlogPost($slug: String) {
