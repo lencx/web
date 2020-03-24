@@ -294,7 +294,7 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1rem;
   color: inherit;
   // font-family: var(--font-def);
   font-weight: bold;
@@ -311,7 +311,7 @@ h3 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.8rem;
   color: inherit;
   // font-family: var(--font-def);
   font-weight: bold;
@@ -407,7 +407,7 @@ figure {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.8rem;
 }
 
 pre {
@@ -483,7 +483,7 @@ hr {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: calc(1.45rem - 1px);
+  margin-bottom: calc(1rem - 1px);
   // background: hsla(0, 0%, 0%, 0.2);
   border: none;
   height: 1px;
@@ -508,7 +508,7 @@ th {
 }
 
 li {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: calc(1rem / 4);
 }
 
 ol li,
@@ -601,15 +601,8 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family:
-    'SFMono-Regular',
-    Consolas,
-    'Roboto Mono',
-    'Droid Sans Mono',
-    'Liberation Mono',
-    Menlo,
-    Courier,
-    monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
+    'Liberation Mono', Menlo, Courier, monospace;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;

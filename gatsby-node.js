@@ -12,6 +12,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
+        // https://github.com/gaearon/react-hot-loader/issues/1227
+        // React-Hot-Loader: react-🔥-dom patch is not detected. React 16.6+ features may not work.
         'react-dom': '@hot-loader/react-dom',
         '~common': path.resolve(__dirname, 'src/common'),
         '~layout': path.resolve(__dirname, 'src/layout'),
