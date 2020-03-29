@@ -10,6 +10,7 @@ export interface WithUtterancesArgs {
   container: string;
   term?: string;
   theme?: string;
+  label?: string;
 }
 
 const withUtterances = (fnArgs: WithUtterancesArgs) => (
@@ -28,6 +29,7 @@ const withUtterances = (fnArgs: WithUtterancesArgs) => (
       script.setAttribute('theme', _theme || 'dark');
       script.setAttribute('issue-term', fnArgs.term || 'pathname');
       script.setAttribute('crossorigin', 'anonymous');
+      script.setAttribute('label', fnArgs.label || '💬');
       if (el) {
         el.appendChild(script);
       }

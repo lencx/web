@@ -40,7 +40,7 @@ function postTemplate(props: PostTemplateProps) {
 
 export default withUtterances({
   container: '.nofwl_comment',
-  repo: 'lencx/nofwl-utterances',
+  repo: 'lencx/nofwl-comment',
 })(postTemplate);
 
 export const query = graphql`
