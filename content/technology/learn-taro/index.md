@@ -336,6 +336,11 @@ export const getStore = (key, cb) => {
 * 图片资源使用相对路径(使用alias在微信小程序中会有问题)
 * ...
 
+## 微信开发者工具 - charles代理(域名代理到本机的开发环境)
+
+* Charles: `Tools` => `Map Remote` => `Add` (From: https://www.example.com --> To: http://localhost:10086)
+* 微信开发者工具: `设置` => `代理设置` => `手动设置代理` `localhost:8888`(charles默认端口号)
+* Charles默认端口号: `Charles` => `Proxy` => `Proxy Settings...`
 ---
 
 [更新中...]
