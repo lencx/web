@@ -50,7 +50,7 @@ export default function SEO({
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s · ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,

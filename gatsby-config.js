@@ -3,7 +3,7 @@ const postCssPlugins = require('./postcss-config.js');
 
 module.exports = {
   siteMetadata: {
-    title: `NoFWL`,
+    title: `nofwl`,
     description: `No Free Working Life`,
     author: `@lencx`,
     siteUrl: 'https://nofwl.com',

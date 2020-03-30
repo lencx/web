@@ -1,15 +1,5 @@
 body {
   font-family:
-    'Nom Na Tong',
-    'HAN NOM A',
-    'HAN NOM B',
-    Sun-ExtA,
-    Sun-ExtB,
-    Ming-Lt-HKSCS-UNI-H,
-    Ming-Lt-HKSCS-ExtB,
-    HanaMinA,
-    HanaMinB,
-    HanaMin,
     'PingFang TC',
     MingLiU,
     MingLiU-ExtB,
@@ -51,6 +41,7 @@ body {
 .nofwl-post.blog {
   h1.title {
     text-align: center;
+    font-family: var(--font-title);
   }
 
   .post-widget {

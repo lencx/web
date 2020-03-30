@@ -11,6 +11,7 @@ import PostLayout from '~layout/post';
 import { PostTemplateProps, PostWidget, PostLangs } from '~comps/post';
 import PrevNext from '~comps/pagination/prev_next';
 import withUtterances from '~hooks/withUtterances';
+import SEO from '~common/seo';
 
 function postTemplate(props: PostTemplateProps) {
   const post = props.data.mdx;
@@ -20,6 +21,7 @@ function postTemplate(props: PostTemplateProps) {
   const otherLangs = _page.otherLangs;
   return (
     <PostLayout className={cns('blog', `blog_${_data.type}`)}>
+      <SEO title={_data.title} />
       <article>
         <h1 className="title">{_data.title}</h1>
         <PostWidget className="post-widget" dataSource={_data} />
@@ -41,6 +43,7 @@ function postTemplate(props: PostTemplateProps) {
 export default withUtterances({
   container: '.nofwl_comment',
   repo: 'lencx/ntalk',
+  term: 'og:title',
 })(postTemplate);
 
 export const query = graphql`

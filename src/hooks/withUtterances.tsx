@@ -16,17 +16,17 @@ export interface WithUtterancesArgs {
 const withUtterances = (fnArgs: WithUtterancesArgs) => (
   WrappedComponent: React.ComponentType<any>
 ) => (props: any) => {
-  const _theme = `github-${fnArgs.theme ||
-    (typeof window !== 'undefined' && window.localStorage.theme)}`;
+  let _theme;
 
   useEffect(() => {
+    _theme = `github-${(window as any).__theme || 'dark'}`;
     if (fnArgs) {
       const el = document.querySelector(fnArgs.container);
       const script = document.createElement('script');
       script.src = 'https://utteranc.es/client.js';
       script.async = true;
       script.setAttribute('repo', fnArgs.repo);
-      script.setAttribute('theme', _theme || 'dark');
+      script.setAttribute('theme', fnArgs.theme || _theme);
       script.setAttribute('issue-term', fnArgs.term || 'pathname');
       script.setAttribute('crossorigin', 'anonymous');
       script.setAttribute('label', fnArgs.label || '💬');
