@@ -8,7 +8,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -46,17 +46,20 @@ export default function SEO({
 
   const metaDescription = description || site.siteMetadata.description;
 
+  useEffect(() => {
+    (document as any)
+      .querySelector('html')
+      .setAttribute(
+        'style',
+        `${now.getMonth() + 1}.${now.getDate()}` === '4.4'
+          ? `filter: grayscale(1)`
+          : ''
+      );
+  }, []);
+
   return (
     <Helmet
-      htmlAttributes={
-        {
-          lang,
-          style:
-            `${now.getMonth() + 1}.${now.getDate()}` === '4.4'
-              ? `filter: grayscale(1)`
-              : '',
-        } as any
-      }
+      htmlAttributes={{ lang }}
       title={title}
       titleTemplate={`%s · ${site.siteMetadata.title}`}
       meta={[
