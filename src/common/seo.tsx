@@ -12,6 +12,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+const now = new Date();
+
 export interface SeoProps {
   title: string;
   description?: string;
@@ -46,9 +48,15 @@ export default function SEO({
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      htmlAttributes={
+        {
+          lang,
+          style:
+            `${now.getMonth() + 1}.${now.getDate()}` === '4.4'
+              ? `filter: grayscale(1)`
+              : '',
+        } as any
+      }
       title={title}
       titleTemplate={`%s · ${site.siteMetadata.title}`}
       meta={[

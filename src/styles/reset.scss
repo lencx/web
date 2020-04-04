@@ -613,13 +613,13 @@ pre code {
   line-height: 1.42;
 }
 
-code {
-  &::before,
-  &::after {
-    letter-spacing: -0.2em;
-    content: ' ';
-  }
-}
+// code {
+//   &::before,
+//   &::after {
+//     letter-spacing: -0.2em;
+//     content: ' ';
+//   }
+// }
 
 tt {
   &::before,
@@ -665,4 +665,14 @@ input[type='text'] {
   appearance: none;
   border: 1px solid #d2d2d2;
   background: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Inconsolata', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+    monospace;
 }
