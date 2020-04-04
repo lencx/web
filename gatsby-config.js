@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `nofwl`,
     description: `No Free Working Life`,
-    author: `@lencx`,
+    author: `lencx`,
     siteUrl: 'https://nofwl.com',
   },
   plugins: [

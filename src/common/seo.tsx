@@ -52,7 +52,7 @@ export default function SEO({
       .setAttribute(
         'style',
         `${now.getMonth() + 1}.${now.getDate()}` === '4.4'
-          ? `filter: grayscale(1)`
+          ? `filter: grayscale(0.88)`
           : ''
       );
   }, []);
