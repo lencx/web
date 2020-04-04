@@ -2,7 +2,7 @@
   /* *** layout *** */
   --layout-header-height: 3.6rem;
   --layout-gutter: 0.5rem;
-  --layout-side-pad: 1rem;
+  --layout-side-pad: 0.5rem;
   // max-content-width
   --layout-content-zone: 1080px;
 
@@ -47,6 +47,13 @@
     'MingLiU_HKSCS-ExtB',
     simsun,
     sans-serif;
+  --font-consolas:
+    'Inconsolata',
+    consolas,
+    monaco,
+    'Andale Mono',
+    'Ubuntu Mono',
+    monospace;
   --font-size-xs: 0.5rem;
   --font-size-sm: 0.75rem;
   --font-size-md: 1rem;
@@ -93,6 +100,7 @@
       rgb(46, 199, 192) 0%,
       rgb(26, 134, 228) 100%
     );
+  --gradient3: linear-gradient(var(--light-silver) 44%, var(--dark));
 
   /* *** logo *** */
   --logo-size: 3rem;

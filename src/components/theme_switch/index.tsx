@@ -10,6 +10,8 @@ import themeScript from './core';
 import moonIcon from './moon.png';
 import sunIcon from './sun.png';
 
+const now = new Date();
+
 export default function ThemeSwitch() {
   const [theme, setTheme] = useState(null);
 
@@ -25,6 +27,17 @@ export default function ThemeSwitch() {
     win.__onThemeChange = () => {
       setTheme(win.__theme);
     };
+  }, []);
+
+  useEffect(() => {
+    (document as any)
+      .querySelector('html')
+      .setAttribute(
+        'style',
+        `${now.getMonth() + 1}.${now.getDate()}` === '4.4'
+          ? `filter: grayscale(0.88)`
+          : ''
+      );
   }, []);
 
   return (

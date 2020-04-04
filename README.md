@@ -16,6 +16,7 @@
 - [x] Theme: `dark/light`
 - [x] Google Analytics
 - [x] create post: `yarn new`
+- [x] Comments(GitHub issue)
 - [x] tools/converter:
   - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)
 
@@ -23,7 +24,6 @@
 
 - [ ] Search
 - [ ] Post(online): create, edit, delete
-- [ ] Comments(GitHub issue)
 - [ ] Post Views Counter
 
 <!-- https://www.gatsbyjs.org/docs/adding-search/ -->

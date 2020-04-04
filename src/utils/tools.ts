@@ -3,6 +3,11 @@
  * @create_at: Jan 20, 2020
  */
 
+import dayjs from 'dayjs';
+
+export const dateFormat = (date: Date, format = '') =>
+  dayjs(date).format('YYYY-MM-DD' || format);
+
 export const getScrollPosition = (el: any = window) => ({
   x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
   y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop,

@@ -25,6 +25,7 @@
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.3.1",
     "create-react-class": "^15.6.3",
+    "dayjs": "^1.8.23",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-feed-mdx": "^1.0.1",
