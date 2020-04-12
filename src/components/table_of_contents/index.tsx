@@ -17,11 +17,16 @@ export interface TableOfContentsProps {
   headings?: any;
 }
 
+// WebpackError: ReferenceError: window is not defined
+const isWin = typeof window !== `undefined`;
+
 export default function TableOfContents(props: TableOfContentsProps) {
   useEffect(() => {
-    const hash = decodeURIComponent(window.location.hash);
-    if (hash) {
-      navigate(`${window.location.pathname}${hash}`);
+    if (isWin) {
+      const hash = decodeURIComponent(window.location.hash);
+      if (hash) {
+        navigate(`${window.location.pathname}${hash}`);
+      }
     }
   }, []);
 
@@ -35,7 +40,8 @@ export default function TableOfContents(props: TableOfContentsProps) {
           {data.map((heading: any, idx: number) => {
             const uri = `#${slugger.slug(heading.value)}`;
             slugger.reset();
-            const active = decodeURIComponent(window.location.hash) === uri;
+            const active =
+              isWin && decodeURIComponent(window.location.hash) === uri;
             return (
               <li
                 key={heading.value + idx}
