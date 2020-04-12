@@ -13,6 +13,8 @@
 - [x] PWA
 - [x] MDX
 - [x] RSS
+- [x] Archive
+- [x] Post TOC(table of content)
 - [x] Theme: `dark/light`
 - [x] Google Analytics
 - [x] create post: `yarn new`
@@ -23,12 +25,12 @@
 ## TODO
 
 - [ ] Search
-- [ ] Post(online): create, edit, delete
 - [ ] Post Views Counter
+<!-- - [ ] Post(online): create, edit, delete -->
 
 <!-- https://www.gatsbyjs.org/docs/adding-search/ -->
 
-## Rust
+<!-- ## Rust
 
 ### Generate File
 
@@ -36,4 +38,4 @@
 # copy genfile to /bin directory
 # run bash
 ./rs.sh
-```
+``` -->
