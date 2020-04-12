@@ -65,5 +65,9 @@ export interface PostQueryData {
     body: string;
     frontmatter: PostFrontmatter;
     fields: PostFields;
+    headings?: {
+      depth: number;
+      value: string;
+    };
   };
 }

@@ -1,0 +1,50 @@
+.toc {
+  border-right: solid 1px rgba(100, 100, 100, 0.3);
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  font-family: var(--font-consolas);
+  font-size: 12px;
+
+  > div {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    cursor: pointer;
+    line-height: 1.2;
+
+    span {
+      color: var(--fc5);
+    }
+
+    &.active {
+      border-right: solid 3px var(--green);
+
+      span {
+        color: var(--green);
+        text-decoration: underline;
+      }
+    }
+
+    &:hover {
+      span {
+        color: var(--green);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .toc_level_#{$i} {
+    padding-left: 10px + $i * 10px;
+  }
+}

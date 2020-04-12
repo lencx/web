@@ -136,6 +136,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        // https://github.com/remarkjs/remark-slug
+        // plugin to add anchors to headings using GitHub’s algorithm
+        remarkPlugins: [require('remark-slug')],
         extensions: [`.mdx`, `.md`],
         // a workaround to solve mdx-remark plugin compat issue
         // https://github.com/gatsbyjs/gatsby/issues/15486

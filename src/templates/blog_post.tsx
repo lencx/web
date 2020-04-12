@@ -12,6 +12,7 @@ import { PostTemplateProps, PostWidget, PostLangs } from '~comps/post';
 import PrevNext from '~comps/pagination/prev_next';
 import withUtterances from '~hooks/withUtterances';
 import SEO from '~common/seo';
+import TableOfContents from '~comps/table_of_contents';
 
 function postTemplate(props: PostTemplateProps) {
   const post = props.data.mdx;
@@ -22,20 +23,25 @@ function postTemplate(props: PostTemplateProps) {
   return (
     <PostLayout className={cns('blog', `blog_${_data.type}`)}>
       <SEO title={_data.title} />
-      <article>
-        <h1 className="title">{_data.title}</h1>
-        <PostWidget className="post-widget" dataSource={_data} />
-        <PostLangs
-          originURL={_page.originURL}
-          lang={_page.lang}
-          dataSource={otherLangs}
-          defaultLang={post.fields.defaultLang}
-        />
-        {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
-        <MDXRenderer>{post.body}</MDXRenderer>
-        <PrevNext dataSource={props.pageContext} />
-        <div className="nofwl_comment" />
-      </article>
+      <div className="blog__container">
+        {`blog_${_data.type}` === 'blog_technology' && (
+          <TableOfContents className="blog-toc" headings={post.headings} />
+        )}
+        <article className="blog-article">
+          {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+          <h1 className="title">{_data.title}</h1>
+          <PostWidget className="post-widget" dataSource={_data} />
+          <PostLangs
+            originURL={_page.originURL}
+            lang={_page.lang}
+            dataSource={otherLangs}
+            defaultLang={post.fields.defaultLang}
+          />
+          <MDXRenderer>{post.body}</MDXRenderer>
+          <PrevNext dataSource={props.pageContext} />
+          <div className="nofwl_comment" />
+        </article>
+      </div>
     </PostLayout>
   );
 }
@@ -49,6 +55,7 @@ export default withUtterances({
 export const query = graphql`
   query mdxBlogPost($slug: String) {
     mdx(fields: { slug: { eq: $slug } }) {
+      body
       fields {
         slug
         lang
@@ -62,7 +69,10 @@ export const query = graphql`
         tags
         readtime
       }
-      body
+      headings {
+        value
+        depth
+      }
     }
   }
 `;

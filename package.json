@@ -43,13 +43,15 @@
     "gatsby-remark-responsive-iframe": "^2.2.33",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.13",
+    "github-slugger": "^1.3.0",
     "lost": "^8.3.1",
     "postcss-pxtorem": "^4.0.1",
     "prismjs": "^1.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-toastify": "^5.5.0"
+    "react-toastify": "^5.5.0",
+    "remark-slug": "^6.0.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",

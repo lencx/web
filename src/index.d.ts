@@ -20,3 +20,6 @@ interface SVGProps {
   size?: number | string;
   style?: React.CSSProperties;
 }
+
+// npm
+declare module 'github-slugger';
