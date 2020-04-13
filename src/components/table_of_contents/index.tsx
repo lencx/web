@@ -8,6 +8,8 @@ import cns from 'classnames';
 import GithubSlugger from 'github-slugger';
 import { navigate } from 'gatsby';
 
+import { isWin } from '~utils/tools';
+
 import styles from './toc.mod.scss';
 
 const slugger = new GithubSlugger();
@@ -16,9 +18,6 @@ export interface TableOfContentsProps {
   className?: string;
   headings?: any;
 }
-
-// WebpackError: ReferenceError: window is not defined
-const isWin = typeof window !== `undefined`;
 
 export default function TableOfContents(props: TableOfContentsProps) {
   useEffect(() => {

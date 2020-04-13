@@ -6,8 +6,10 @@
 import React, { useState, useEffect } from 'react';
 import { navigate } from 'gatsby';
 import cns from 'classnames';
+
 import NavIcon from '~comps/nav_icon';
 import ThemeSwitch from '~comps/theme_switch';
+import { isWin } from '~utils/tools';
 
 import styles from './navbar.mod.scss';
 
@@ -32,7 +34,7 @@ export default function NavBar({ visible, menu = [] }: NavBarProps) {
   // fix build error
   // "window" is not available during server side rendering.
   // WebpackError: ReferenceError: window is not defined
-  if (typeof window !== 'undefined') {
+  if (isWin) {
     const tmp = window && window.location.pathname.match(/^(\/\w+)\/?/);
     if (tmp && _menu.includes(tmp[1])) {
       currPath = tmp[1];

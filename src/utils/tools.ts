@@ -109,3 +109,6 @@ export function changeCss(className: string, classValue: string) {
     console.error(e);
   }
 }
+
+// WebpackError: ReferenceError: window is not defined
+export const isWin = typeof window !== `undefined`;
