@@ -13,6 +13,7 @@ import PrevNext from '~comps/pagination/prev_next';
 import withUtterances from '~hooks/withUtterances';
 import SEO from '~common/seo';
 import TableOfContents from '~comps/table_of_contents';
+import QRCodeGenerator from '~comps/qrcode_generator';
 
 function postTemplate(props: PostTemplateProps) {
   const post = props.data.mdx;
@@ -23,6 +24,7 @@ function postTemplate(props: PostTemplateProps) {
   return (
     <PostLayout className={cns('blog', `blog_${_data.type}`)}>
       <SEO title={_data.title} />
+      <QRCodeGenerator url={window.location.href} />
       <div className="blog__container">
         {`blog_${_data.type}` === 'blog_technology' && (
           <TableOfContents className="blog-toc" headings={post.headings} />

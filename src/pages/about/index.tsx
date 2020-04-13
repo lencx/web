@@ -6,6 +6,7 @@
 import React from 'react';
 import Layout from '~layout/post';
 import SEO from '~common/seo';
+import NetlifyForm from '~comps/netlify_form';
 
 import styles from './about.mod.scss';
 
@@ -85,6 +86,8 @@ export default function About() {
           },
         ]}
       />
+      <h3>Contact Me</h3>
+      <NetlifyForm />
     </Layout>
   );
 }
