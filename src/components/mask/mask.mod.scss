@@ -1,0 +1,20 @@
+.mask {
+  opacity: 1;
+  pointer-events: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  height: 100vh;
+  user-select: none;
+  transition: 0.25s ease;
+
+  &.hide {
+    pointer-events: none;
+    opacity: 0;
+    user-select: auto;
+  }
+}

@@ -1,0 +1,20 @@
+.page_widget {
+  position: fixed;
+  padding: 10px 5px;
+  height: 74px;
+  z-index: 9;
+  box-shadow: var(--shadow-floating);
+  border-radius: 6px;
+  margin-left: -70px;
+
+  img {
+    margin: 0;
+    cursor: pointer;
+
+    &.comment {
+      width: 24px;
+      height: 24px;
+      margin-top: 6px;
+    }
+  }
+}

@@ -15,7 +15,7 @@
 - [x] RSS
 - [x] Archive
 - [x] Post TOC(table of content)
-- [x] Post QRCode(share URL)
+- [x] Page Widget(QRCode & Comments)
 - [x] Theme: `dark/light`
 - [x] Google Analytics
 - [x] create post: `yarn new`

@@ -132,14 +132,20 @@ html[type='nofwl-blog'] {
     position: relative;
   }
 
+  .page_widget {
+    display: none;
+  }
+
   @media screen and (min-width: 960px) {
-    .blog-toc {
+    .blog-toc,
+    .page_widget {
       display: block;
     }
 
     .blog-article {
+      position: relative;
       left: 320px;
-      width: calc(100% - 260px);
+      width: calc(100% - 320px);
     }
   }
 }

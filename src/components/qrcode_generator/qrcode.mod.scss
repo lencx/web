@@ -1,0 +1,15 @@
+.qrcode {
+  width: 24px;
+  height: 24px;
+
+  .mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    canvas {
+      width: 240px !important;
+      height: 240px !important;
+    }
+  }
+}

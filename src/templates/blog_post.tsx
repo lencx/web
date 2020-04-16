@@ -13,8 +13,7 @@ import PrevNext from '~comps/pagination/prev_next';
 import withUtterances from '~hooks/withUtterances';
 import SEO from '~common/seo';
 import TableOfContents from '~comps/table_of_contents';
-import QRCodeGenerator from '~comps/qrcode_generator';
-import { isWin } from '~utils/tools';
+import PageWidget from '~comps/page_widget';
 
 function postTemplate(props: PostTemplateProps) {
   const post = props.data.mdx;
@@ -25,12 +24,12 @@ function postTemplate(props: PostTemplateProps) {
   return (
     <PostLayout className={cns('blog', `blog_${_data.type}`)}>
       <SEO title={_data.title} />
-      <QRCodeGenerator url={isWin ? window.location.href : ''} />
       <div className="blog__container">
         {`blog_${_data.type}` === 'blog_technology' && (
           <TableOfContents className="blog-toc" headings={post.headings} />
         )}
         <article className="blog-article">
+          <PageWidget />
           {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
           <h1 className="title">{_data.title}</h1>
           <PostWidget className="post-widget" dataSource={_data} />
@@ -42,7 +41,7 @@ function postTemplate(props: PostTemplateProps) {
           />
           <MDXRenderer>{post.body}</MDXRenderer>
           <PrevNext dataSource={props.pageContext} />
-          <div className="nofwl_comment" />
+          <div id="nofwl_comment" />
         </article>
       </div>
     </PostLayout>
@@ -50,7 +49,7 @@ function postTemplate(props: PostTemplateProps) {
 }
 
 export default withUtterances({
-  container: '.nofwl_comment',
+  container: '#nofwl_comment',
   repo: 'lencx/ntalk',
   term: 'og:title',
 })(postTemplate);
