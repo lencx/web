@@ -5,7 +5,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import QRCode from 'qrcode';
-import Mask from '~comps/Mask';
+import Mask from '~comps/mask';
 
 import styles from './qrcode.mod.scss';
 
