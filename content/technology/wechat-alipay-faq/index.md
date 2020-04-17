@@ -122,6 +122,78 @@ wechatPay(
 );
 ```
 
+### [微信分享](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html)
+
+#### Step
+
+* `Step1`: 绑定域名
+  - 先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+  - 备注：登录后可在“开发者中心”查看对应的接口权限。
+* `Step2`: 引入JS文件
+  - 在需要调用JS接口的页面引入如下JS文件，（支持https）：http://res.wx.qq.com/open/js/jweixin-1.6.0.js
+  - 如需进一步提升服务稳定性，当上述资源不可访问时，可改访问：http://res2.wx.qq.com/open/js/jweixin-1.6.0.js （支持https）。
+* `Step3`: 通过config接口注入权限验证配置
+* `Step4`: 通过ready接口处理成功验证
+* `Step5`: 通过error接口处理失败验证
+
+#### Method
+
+```js
+// wechatShare.js
+import { wxSignature } from '@services/global'; // 后端权限签名算法
+
+// url: 当前网页的URL，不包含#及其后面部分
+export async function wechatShareSign(url = window.location.href.split('#')[0]) {
+  const data = await wxSignature(url); // 返回{timestamp: '', nonceStr: '', signature: ''}
+
+  const shareConfig = {
+    // 开启调试模式,调用的所有api的返回值会在客户端alert出来，
+    // 若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    debug: true,
+    appId: '', // 公众号appID
+    // 签名用的noncestr和timestamp必须与wx.config中的nonceStr和timestamp相同。
+    timestamp: data.timestamp, // 必填，生成签名的时间戳 (后端返回)
+    nonceStr: data.nonceStr, // 必填，生成签名的随机串 (后端返回)
+    signature: data.signature, // 必填，签名 (后端返回)
+    jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData'], // 必填，需要使用的JS接口列表
+  };
+
+  wx.config(shareConfig);
+}
+
+export default function wechatShare({
+  title = '',
+  desc = '',
+  link = window.location.href,
+  imgUrl = '',
+  onSuccess,
+}) {
+  wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
+    // “分享给朋友”及“分享到QQ”
+    wx.updateAppMessageShareData({
+      title, // 分享标题
+      desc, // 分享描述
+      link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl, // 分享图标
+      success: function () {
+        // 设置成功
+        onSuccess && onSuccess();
+      }
+    });
+    // “分享到朋友圈”及“分享到QQ空间”
+    wx.updateTimelineShareData({
+      title, // 分享标题
+      link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl, // 分享图标
+      success: function () {
+        // 设置成功
+        onSuccess && onSuccess();
+      }
+    });
+  });
+}
+```
+
 ## 支付宝支付
 
 ### [手机网站支付接口](https://opendocs.alipay.com/open/60/104790)
