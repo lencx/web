@@ -74,7 +74,19 @@ html[type='nofwl-blog'] {
 .blog_notes,
 .blog_thinking {
   article {
+    max-width: 1080px;
+    margin: auto;
     font-family: var(--font-nl);
+  }
+
+  .page_widget {
+    display: none;
+  }
+
+  @media screen and (min-width: 1250px) {
+    .page_widget {
+      display: block;
+    }
   }
 }
 
