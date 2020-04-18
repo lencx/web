@@ -100,6 +100,15 @@ function arrayDeleteItem(array, record) {
 ```js
 const randomStr = () => Math.random().toString(36).substring(2);
 
+export function randomStr2(length) {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
+
 const randomDate = () => `${new Date(+(new Date()) - Math.floor(Math.random() * 10000000000))}`;
 ```
 
@@ -263,4 +272,12 @@ export default {
     return str;
   },
 };
+```
+
+### URL Extract
+
+```js
+// url-extract.js
+export const matchURL = /((https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|])/g;
+export const textURL = str => str.replace(matchURL, `<a href="$1">$1</a>`);
 ```
