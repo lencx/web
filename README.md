@@ -5,7 +5,7 @@
 </p>
 <h1 align="center" style="margin-top: 0">nofwl</h1>
 
-> No free working life
+> No Free Working Life
 
 ## Feature
 
@@ -18,7 +18,8 @@
 - [x] Page Widget(QRCode & Comments)
 - [x] Theme: `dark/light`
 - [x] Google Analytics
-- [x] create post: `yarn new`
+- [x] Create Post: `yarn new`
+- [x] Highlight Code Line: **```language{1,4-6,9-15}**
 - [x] Comments(GitHub issue)
 - [x] tools/converter:
   - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)

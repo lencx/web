@@ -52,9 +52,8 @@ export default function TableOfContents(props: TableOfContentsProps) {
                   onClick={() => {
                     navigate(`${window.location.pathname}${uri}`);
                   }}
-                >
-                  {heading.value}
-                </span>
+                  dangerouslySetInnerHTML={{ __html: heading.value }}
+                />
               </li>
             );
           })}

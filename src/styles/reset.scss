@@ -583,14 +583,14 @@ th {
   padding-top: 0.725rem;
   padding-bottom: calc(0.725rem - 1px);
 
-  &:first-child {
-    padding-left: 0;
-  }
+  // &:first-child {
+  //   padding-left: 0;
+  // }
 }
 
-td:first-child {
-  padding-left: 0;
-}
+// td:first-child {
+//   padding-left: 0;
+// }
 
 th:last-child,
 td:last-child {

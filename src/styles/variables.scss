@@ -146,10 +146,13 @@ body.dark {
     0 4px 8px rgba(255, 255, 255, 0.38);
 
   color: var(--theme-text-color);
+
+  --table: rgba(255, 255, 255, 0.1);
 }
 
 /* *** theme: light *** */
 body.light {
   --fc5: var(--fc2);
   --theme-bg: --light-silver;
+  --table: rgba(0, 0, 0, 0.1);
 }

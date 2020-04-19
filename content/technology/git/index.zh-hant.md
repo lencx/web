@@ -1,6 +1,7 @@
 ---
 title: git
 date: 2019-03-26
+type: technology
 spoiler: git 技巧
 category: git
 ---

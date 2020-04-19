@@ -44,6 +44,18 @@ pre[class*='language-'] {
   white-space: normal;
 }
 
+.gatsby-highlight-code-line {
+  display: block;
+  background: #111b22;
+
+  // fix: empty line
+  height: 20px;
+
+  @media screen and (max-width: 480px) {
+    height: 18px;
+  }
+}
+
 .gatsby-highlight {
   .line-numbers-rows {
     padding: 0.9rem 0 0.9rem 0.5rem;

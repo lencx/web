@@ -161,3 +161,29 @@ html[type='nofwl-blog'] {
     }
   }
 }
+
+table {
+  thead {
+    background: rgba(0, 0, 0, 0.18);
+    border: 1px solid var(--table);
+    box-sizing: border-box;
+    font-family: var(--font-code);
+    font-weight: bold;
+  }
+
+  tbody {
+    tr:nth-child(2n + 1) {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    tr:nth-child(2n) {
+      background: rgba(0, 0, 0, 0.03);
+    }
+  }
+
+  th,
+  td {
+    border: 1px solid var(--table);
+    box-sizing: border-box;
+  }
+}

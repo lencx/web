@@ -1,7 +1,7 @@
 ---
 title: Bash Command
 date: 2019-08-04
-type: bash
+type: technology
 category: bash
 spoiler: bash
 tags: [bash]

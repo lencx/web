@@ -1,6 +1,7 @@
 ---
 title: Awesome Terminal
 date: 2019-08-15
+type: technology
 category: terminal
 spoiler: awesome command-line frameworks, toolkits, guides and gizmos.
 tags: [terminal, bash, zsh, awesome]

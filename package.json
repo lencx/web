@@ -3,7 +3,7 @@
   "private": true,
   "description": "No free working life",
   "version": "1.0.0",
-  "author": "lencx <cxin1314@gmail.com",
+  "author": "lencx <cxin1314@gmail.com>",
   "license": "MIT",
   "scripts": {
     "new": "node ./bin/new",

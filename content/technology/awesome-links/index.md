@@ -1,6 +1,7 @@
 ---
 title: Awesome Links
 date: 2019-03-31
+type: technology
 spoiler: 🌟Awesome lists about all kinds of interesting topics
 category: Awesome
 ---

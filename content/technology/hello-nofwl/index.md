@@ -1,6 +1,7 @@
 ---
 title: 基于Gatsby实现的nofwl theme
 date: 2019-03-27
+type: technology
 spoiler: nofwl theme
 category:
 readtime: 2
@@ -73,11 +74,17 @@ int main()
 
 ## Test highlight code line
 
-```js{1,3-5}
+```javascript{1,4-6,9-15}
 console.log(1);
 console.log(2);
 console.log(3);
 console.log(4);
 console.log(5);
 console.log(6);
+console.log(7);
+console.log(8);
+
+
+console.log(9);
+console.log(10);
 ```
