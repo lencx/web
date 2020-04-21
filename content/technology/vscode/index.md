@@ -12,10 +12,16 @@ tags:
 
 ### Commonly used
 
-* `Auto Close Tag`: Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text
-* `Auto Import`: Automatically finds, parses and provides code actions and code completion for all available imports. Works with Typescript and TSX
-* `Auto Rename Tag`: Auto rename paired HTML/XML tag
-* `Beautify`: Beautify code in place for VS Code
+* ~~`Auto Close Tag`: Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text~~
+* `~~Auto Import`: Automatically finds, parses and provides code actions and code completion for all available imports. Works with Typescript and TSX~~
+* ~~`Auto Rename Tag`: Auto rename paired HTML/XML tag~~
+
+  ```json
+  // settings.json
+  "editor.renameOnType": true,
+  ```
+
+* ~~`Beautify`: Beautify code in place for VS Code~~
 * `Better TOML`: Better TOML Language support
 * `Bracket Pair Colorizer`: A customizable extension for colorizing matching brackets
 * `change-case`: Quickly change the case (camelCase, CONSTANT_CASE, snake_case, etc) of the current selection or current word
@@ -36,7 +42,7 @@ tags:
 * `GraphQL for VSCode`: GraphQL syntax highlighting, linting, auto-complete, and more!
 * `Highlight Matching Tag`: Highlights matching closing and opening tags
 * `HTML CSS Support`: CSS support for HTML documents
-* `HTML Snippets`: Full HTML tags including HTML5 Snippets
+* ~~`HTML Snippets`: Full HTML tags including HTML5 Snippets~~
 * `Import Cost`: Display import/require package size in the editor
 * `JavaScript (ES6) code snippets`: Code snippets for JavaScript in ES6 syntax
 * `Live Share`: Real-time collaborative development from the comfort of your favorite tools.
@@ -44,7 +50,7 @@ tags:
 * `markdownlint`: Markdown linting and style checking for Visual Studio Code
 * `MDX`: Provides syntax highlighting and bracket matching for MDX (JSX in Markdown) files.
 * `MDX Preview`: MDX Preview
-* `Path Intellisense`: Visual Studio Code plugin that autocompletes filenames
+* ~~`Path Intellisense`: Visual Studio Code plugin that autocompletes filenames~~
 * `Prettier - Code formatter`: Code formatter using prettier
 * `Project Manager`: Easily switch between projects
 * `ra-lsp`: An alternative rust language server to the RLS
@@ -56,15 +62,47 @@ tags:
 * `Sass`: Indented Sass syntax highlighting, autocomplete & snippets
 * `Settings Sync`: Synchronize Settings, Snippets, Themes, File Icons, Launch, Keybindings, Workspaces and Extensions Across Multiple Machines Using GitHub Gist.
 * `SQL Server (mssql)`: Develop Microsoft SQL Server, Azure SQL Database and SQL Data Warehouse everywhere
-* `SVG Viewer`: SVG Viewer for Visual Studio Code.
+* ~~`SVG Viewer`: SVG Viewer for Visual Studio Code.~~
+* `SVG Preview`: Preview for Svg files
 * `TabNine`: All-language autocompleter — TabNine uses machine learning to help you write code faster.
 * `Terminal`: Terminal for Visual Studio Code
 * `Terminal Tabs`: Adds tabs for each terminal process to the status bar
-* `TODO Highlight`: highlight TODOs, FIXMEs, and any keywords, annotations...
+* ~~`TODO Highlight`: highlight TODOs, FIXMEs, and any keywords, annotations...~~
 * `Todo Tree`: Show TODO, FIXME, etc. comment tags in a tree view
-* `TSLint (deprecated)`: TSLint for Visual Studio Code
+  - [used to set a different icon in the tree view](https://octicons.github.com)
+
+  ```json
+  // settings.json
+  "todo-tree.general.tags": ["TODO:", "FIX:", "BUG:"],
+  // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*)\\s*($TAGS)|^\\s*- \\[ \\])",
+  "todo-tree.highlights.defaultHighlight": {
+      "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+      "TODO:": {
+          "foreground": "#000",
+          "background": "#ffbd2a",
+          "iconColour": "#ffbd2a"
+      },
+      "FIX:": {
+          "foreground": "#fff",
+          "background": "#54b2ea",
+          "icon": "pin",
+          "iconColour": "#54b2ea"
+      },
+      "BUG:": {
+          "foreground": "#fff",
+          "background": "#eb4d9c",
+          "icon": "zap",
+          "iconColour": "#eb4d9c"
+      },
+  }
+  ```
+
+* ~~`TSLint`: TSLint support for Visual Studio Code~~
+* `vscode-colorize`: A vscode extension to help visualize css colors in files.
 * `vscode-icons`: Icons for Visual Studio Code
-* `XML Tools`: XML Formatting, XQuery, and XPath Tools for Visual Studio Code
+* ~~`XML Tools`: XML Formatting, XQuery, and XPath Tools for Visual Studio Code~~
 
 ### Theme
 
@@ -76,3 +114,32 @@ tags:
 * `Material Theme Icons`: Material Theme Icons, the most epic icons theme for Visual Studio Code and Material Theme.
 * `Night Owl`: A VS Code theme for the night owls out there. Now introducing Light Owl theme for daytime usage. Decisions were based on meaningful contrast for reading comprehension and for optimal razzle dazzle. ✨
 * `Shades of Purple`: 🦄 A professional theme suite with hand-picked & bold shades of purple for your VS Code editor and terminal apps. One of the excellent most downloaded and top rated VSCode Themes on the marketplace. Part of VSCode.pro course.
+
+
+## User Snippets
+
+> Code -> Preferences -> User Snippets
+
+```json
+// (java|type)script(react)?.json
+{
+  "Line number printing": {
+		"prefix": "ln",
+		"body": [
+			"console.log(`[$TM_LINE_NUMBER] $TM_FILENAME: `, $1);",
+		],
+		"description": "Log output to console"
+	},
+	"author & create_at": {
+		"prefix": "ac",
+		"body": [
+			"/**",
+			" * @author: lencx",
+			" * @create_at: $CURRENT_MONTH_NAME_SHORT $CURRENT_DATE, $CURRENT_YEAR",
+			" */",
+			"",
+			"$1"
+		]
+	},
+}
+```

@@ -279,5 +279,19 @@ export default {
 ```js
 // url-extract.js
 export const matchURL = /((https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|])/g;
-export const textURL = str => str.replace(matchURL, `<a href="$1">$1</a>`);
+export const textURL = (str, text) => str.replace(matchURL, `<a href="$1">${text || '$1'}</a>`);
+```
+
+### Algorithm
+
+```js
+// Fibonacci sequence
+function fib(n) {
+  let dp = [0];
+  dp[1] = dp[2] = 1;
+  for (let i = 3; i <= n; i++) {
+    dp[i] = dp[i - 1] + dp[i - 2];
+  }
+  return dp[n];
+}
 ```
