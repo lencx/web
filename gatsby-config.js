@@ -138,7 +138,7 @@ module.exports = {
       options: {
         // https://github.com/remarkjs/remark-slug
         // plugin to add anchors to headings using GitHub’s algorithm
-        remarkPlugins: [require('remark-slug')],
+        remarkPlugins: [require('remark-slug'), require(`remark-math`)],
         extensions: [`.mdx`, `.md`],
         // a workaround to solve mdx-remark plugin compat issue
         // https://github.com/gatsbyjs/gatsby/issues/15486
@@ -146,6 +146,7 @@ module.exports = {
         //   `gatsby-remark-images`,
         // ],
         gatsbyRemarkPlugins: [
+          `gatsby-remark-katex`,
           {
             // https://github.com/gatsbyjs/gatsby/issues/16516
             // bug: disable background-image on gatsby-resp-image-background-image to prevent FOUB

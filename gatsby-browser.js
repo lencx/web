@@ -8,6 +8,7 @@
 // www.gatsbyjs.org/packages/gatsby-remark-prismjs
 require('prismjs/plugins/line-numbers/prism-line-numbers.css');
 require('react-toastify/dist/ReactToastify.css');
+require('katex/dist/katex.min.css');
 
 // TODO: switch theme
 require('prismjs/themes/prism-tomorrow.css');

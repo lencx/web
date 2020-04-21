@@ -88,3 +88,36 @@ console.log(8);
 console.log(9);
 console.log(10);
 ```
+
+## LaTeX
+
+> [Supported Functions](https://katex.org/docs/supported.html)
+
+```md
+$$a^2 + b^2 = c^2$$
+
+\sum \bigodot
+\int
+\iint
+```
+
+$$a^2 + b^2 = c^2$$
+
+$$
+\sum \bigodot
+\int
+\iint
+
+\tilde{a} = \widetilde{ac}
+
+( \big( \Big( \bigg( \Bigg(
+$$
+
+$$
+\begin{Bmatrix}
+   a & b \\
+   c & d
+\end{Bmatrix}
+
+\boxed{\pi=\frac c d}
+$$

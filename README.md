@@ -20,6 +20,10 @@
 - [x] Google Analytics
 - [x] Create Post: `yarn new`
 - [x] Highlight Code Line: **```language{1,4-6,9-15}**
+- [x] LaTeX: [katex](https://katex.org/docs/supported.html)
+  ```mdx
+  $$a^2 + b^2 = c^2$$
+  ```
 - [x] Comments(GitHub issue)
 - [x] tools/converter:
   - [x] [🎨 Color](https://www.nofwl.com/tools/converter#color_converter)
