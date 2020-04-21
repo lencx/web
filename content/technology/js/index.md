@@ -284,9 +284,15 @@ export const textURL = (str, text) => str.replace(matchURL, `<a href="$1">${text
 
 ### Algorithm
 
+#### Fibonacci sequence
+
 ```js
-// Fibonacci sequence
 function fib(n) {
+  if (n == 1 || n == 2) return 1;
+  return fib(n - 1) + fib(n - 2);
+}
+
+function fib2(n) {
   let dp = [0];
   dp[1] = dp[2] = 1;
   for (let i = 3; i <= n; i++) {
@@ -294,4 +300,15 @@ function fib(n) {
   }
   return dp[n];
 }
+
+function fib3(n) {
+  if (n === 2 || n === 1) return 1;
+  let prev = 1, curr = 1;
+  for (let i = 3; i <= n; i++) {
+    const sum = prev + curr;
+    prev = curr;
+    curr = sum;
+  }
+  return curr;
+}s
 ```
