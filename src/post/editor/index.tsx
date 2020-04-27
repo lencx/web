@@ -1,7 +1,12 @@
+/**
+ * @author: lencx
+ * @create_at: Mar 11, 2020
+ */
+
 import React from 'react';
 import createReactClass from 'create-react-class';
 
-import styles from './index.mod.scss';
+import styles from './editor.mod.scss';
 
 interface EditorProps {
   placeholder?: string;
