@@ -1,5 +1,5 @@
 ---
-title: Application Or Browser Extensions
+title: Application And Browser Extensions
 date: 2020-04-26
 type: technology
 category: awesome
@@ -36,6 +36,13 @@ tags: [mac, windows, browser, app, extensions]
 * [Terminal](https://github.com/microsoft/terminal)
 
 ## Extensions(Chrome, Firefox)
+
+### Manage Extensions
+
+* Chrome: `chrome://extensions`
+* Firefox: `about:addons`
+
+### Extension Recommend
 
 * AdBlock: Block ads and pop-ups on YouTube, Facebook, Twitch, and your favorite websites.
 * CodeCopy: Because copy to clipboard buttons should exist on every code snippet
