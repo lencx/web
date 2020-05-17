@@ -14,7 +14,7 @@ tags: [mac, windows, browser, app, extensions]
 
 * [VS Code](https://code.visualstudio.com)
 * [Insomnia](https://github.com/Kong/insomnia): Cross-platform HTTP and GraphQL Client
-  - [How to use](../insomnia-faq)
+  - [How to use](../insomnia)
   - [JSONPath](https://goessner.net/articles/JsonPath)
 * [Dash](https://kapeli.com/dash): Dash gives your Mac instant offline access to 200+ API documentation sets.
 * [Alfred](https://www.alfredapp.com): Alfred is an award-winning app for macOS which boosts your efficiency with hotkeys, keywords, text expansion and more. Search your Mac and the web, and be more productive with custom actions to control your Mac.
@@ -28,6 +28,8 @@ tags: [mac, windows, browser, app, extensions]
 * [Hidden Bar](https://github.com/dwarvesf/hidden): Hidden Bar lets you hide menu bar items to give your Mac a cleaner look.
 * [Rectangle](https://github.com/rxhanson/Rectangle): Rectangle is a window management app based on Spectacle, written in Swift.
 * [The Unarchiver](https://macpaw.com/the-unarchiver): The Unarchiver is the world’s favorite RAR opener for Mac. Unlike Mac’s native tool it’s sleeker and supports all known archive types.
+* [Itsycal](https://www.mowglii.com/itsycal): Itsycal is a tiny menu bar calendar.
+* [Dropover](https://dropoverapp.com): Dropover is a utility that makes it easier to manage and move content between folders, applications, windows and workspaces using Drag and Drop.
 
 ## Windows
 

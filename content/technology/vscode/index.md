@@ -104,6 +104,7 @@ tags:
 * ~~**TSLint**: TSLint support for Visual Studio Code~~
 * `vscode-colorize`: A vscode extension to help visualize css colors in files.
 * ~~**XML Tools**: XML Formatting, XQuery, and XPath Tools for Visual Studio Code~~
+* **Draw.io Integration**: This extension integrates [Draw.io](https://draw.io) into VS Code.
 
 ### Theme
 
