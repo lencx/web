@@ -15,4 +15,6 @@ sudo xcodebuild -license accept
 
 sudo scutil --set HostName <host_name>
 sudo scutil --set ComputerName <computer_name>
+
+scutil --get <HostName|LocalHostName|ComputerName>
 ```

@@ -93,3 +93,7 @@ export PATH="$PWD/flutter/bin:$PATH"
 cd ./flutter
 flutter doctor
 ```
+
+## Resources
+
+* [flutter_sticky_header](https://github.com/letsar/flutter_sticky_header)

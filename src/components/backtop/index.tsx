@@ -21,7 +21,10 @@ export default function BackTop({ minHeight = 300 }: BackTopProps) {
     if (s > 0) {
       // window.requestAnimationFrame(backToTop);
       // window.scrollTo(0, s - s / 12);
-      window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
     } else {
       if (!isVisible) {
         setVisible(false);
