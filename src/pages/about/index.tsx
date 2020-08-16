@@ -9,10 +9,20 @@ import SEO from '~common/seo';
 
 import styles from './about.mod.scss';
 
+const BASE_API_URL = 'https://lencx-stats.vercel.app/api';
+const GITHUB_URL = 'https://www.github.com/lencx';
+
 interface LinkItem {
   name?: string;
   link?: string;
   desc?: string;
+}
+
+interface ProjectCardProps {
+  url: string;
+  type?: 'pins' | 'stats' | 'langs';
+  repo?: string;
+  alt?: string;
 }
 
 export function LinkItems({
@@ -45,11 +55,33 @@ export function LinkItems({
   );
 }
 
+export function ProjectCard(props: ProjectCardProps) {
+  let url;
+  switch (props.type) {
+    case 'langs':
+      url = `${BASE_API_URL}/top-langs/?username=lencx&layout=compact&theme=calm`;
+      break;
+    case 'stats':
+      url = `${BASE_API_URL}/?username=lencx&theme=calm&show_icons=true`;
+      break;
+    default:
+      url = `${BASE_API_URL}/pin/?username=lencx&theme=calm&repo=${props.repo}`;
+  }
+  return (
+    <a className={styles.proj_card} href={props.url}>
+      <img src={url} alt={props.alt || props.type || props.repo} />
+    </a>
+  );
+}
+
 export default function About() {
   return (
     <Layout>
       <SEO title="About" />
-      <h3>About</h3>
+      <h3>About Me</h3>
+      <code>
+        &nbsp;Life’s attitude to you depends on your attitude to it.&nbsp;
+      </code>
       <LinkItems
         linkKey="desc"
         dataSource={[
@@ -66,25 +98,12 @@ export default function About() {
         ]}
       />
       <h3>Project</h3>
-      <LinkItems
-        dataSource={[
-          {
-            name: 'nofwl',
-            link: 'https://github.com/lencx/nofwl',
-            desc: 'Gatsby blog theme',
-          },
-          {
-            name: 'genFile',
-            link: 'https://github.com/nofwl/genFile',
-            desc: 'Generate file in nodejs',
-          },
-          {
-            name: 'tx',
-            link: 'https://github.com/nofwl/genFile',
-            desc: 'Toolset',
-          },
-        ]}
-      />
+      <ProjectCard url={GITHUB_URL} type="stats" />
+      <br />
+      <ProjectCard url={`${GITHUB_URL}/deno-example`} repo="deno-example" />
+      <ProjectCard url={`${GITHUB_URL}/nofwl`} repo="nofwl" />
+      <ProjectCard url={`${GITHUB_URL}/deno-getfiles`} repo="deno-getfiles" />
+      <ProjectCard url={`https://music.nofwl.com`} repo="music" />
     </Layout>
   );
 }
