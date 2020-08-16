@@ -86,3 +86,5 @@ Cargo.lock
 **/*.rs.bk
 
 /rust
+
+/database
