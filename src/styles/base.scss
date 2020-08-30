@@ -104,27 +104,83 @@ html[type='nofwl-blog'] {
 }
 
 .blog_thinking {
-  blockquote {
-    display: inline-block;
-    margin-left: 0;
-    margin-right: 0;
-    // border: solid 1px #aaa;
-    border-left: solid 5px var(--theme-primary);
-    border-bottom: solid 1px var(--theme-primary);
-    padding: 2px 5px 2px 8px;
-    border-top-left-radius: 1.4rem;
-    border-bottom-right-radius: 1.2rem;
-
+  .blog-article {
     blockquote {
-      margin-left: -4px;
-      padding: 2px 10px;
-      border-top-left-radius: 1.2rem;
-      border-bottom-right-radius: 1rem;
-      background: var(--theme-primary);
-      color: #fff;
-      font-family: var(--font-comic);
-      font-size: 12px;
-      font-weight: normal;
+      display: inline-block;
+      margin-left: 0;
+      margin-right: 0;
+      // border: solid 1px #aaa;
+      // border-left: solid 5px var(--theme-primary);
+      // border-bottom: solid 1px var(--theme-primary);
+      border-left: solid 5px var(--teal);
+      border-bottom: solid 1px var(--teal);
+      padding: 2px 5px 2px 8px;
+      border-top-left-radius: 1.4rem;
+      border-bottom-right-radius: 1.2rem;
+
+      blockquote {
+        margin-left: -4px;
+        padding: 2px 10px;
+        border-top-left-radius: 1.2rem;
+        border-bottom-right-radius: 1rem;
+        // background: var(--theme-primary);
+        background: var(--dark2);
+        color: #fff;
+        font-family: var(--font-comic);
+        font-size: 12px;
+        font-weight: normal;
+      }
+    }
+
+    > ul {
+      border-left: solid 5px var(--teal);
+      padding-left: 10px;
+      list-style: none;
+      line-height: 1.5;
+
+      > li {
+        position: relative;
+        margin-bottom: 15px;
+
+        &::before {
+          position: absolute;
+          display: block;
+          width: 15px;
+          height: 5px;
+          content: '';
+          top: 24px;
+          background: var(--teal);
+          left: -15px;
+        }
+
+        em {
+          background: rgba(255, 255, 255, 0.3);
+          padding: 0 4px;
+          border-radius: 5px;
+          font-style: normal;
+          color: #fff;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        ul {
+          margin-top: 0;
+        }
+      }
+
+      blockquote {
+        display: block;
+        background: #323031;
+        border-left: solid 5px var(--teal);
+        border-bottom: solid 1px var(--teal);
+        color: #a2a392;
+
+        > blockquote {
+          border: none;
+        }
+      }
     }
   }
 }
