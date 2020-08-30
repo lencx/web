@@ -99,11 +99,11 @@ export default function About() {
       />
       <h3>Project</h3>
       <ProjectCard url={GITHUB_URL} type="stats" />
-      <br />
+      {/* <br />
       <ProjectCard url={`${GITHUB_URL}/deno-example`} repo="deno-example" />
       <ProjectCard url={`${GITHUB_URL}/nofwl`} repo="nofwl" />
       <ProjectCard url={`${GITHUB_URL}/deno-getfiles`} repo="deno-getfiles" />
-      <ProjectCard url={`https://music.nofwl.com`} repo="music" />
+      <ProjectCard url={`https://music.nofwl.com`} repo="music" /> */}
     </Layout>
   );
 }
