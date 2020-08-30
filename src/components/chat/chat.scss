@@ -1,0 +1,77 @@
+.nofwl__chat {
+  background: var(--dark);
+  max-width: 680px;
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 8px;
+
+  .chat__item {
+    margin-bottom: 12px;
+    display: flex;
+
+    .chat__head {
+      color: var(--fc4);
+      font-family: var(--font-comic);
+    }
+
+    .chat__msg {
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  }
+
+  .chat__buddy {
+    justify-content: flex-start;
+
+    .chat__head,
+    .chat__msg {
+      margin-left: 8px;
+    }
+
+    .chat__msg {
+      border-top-left-radius: 0;
+      background: var(--gradient4);
+      color: #000;
+    }
+  }
+
+  .chat__self {
+    justify-content: flex-end;
+
+    .chat__head,
+    .chat__msg {
+      margin-right: 8px;
+    }
+
+    .chat__head {
+      text-align: right;
+    }
+
+    .chat__msg {
+      border-top-right-radius: 0;
+      background: var(--gradient5);
+      color: var(--light-silver);
+    }
+  }
+
+  .chat__content {
+    max-width: calc(100% - 70px);
+    font-size: 14px;
+    line-height: 1.4;
+
+    .chat__head {
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+
+  .chat__avatar {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-size: 100%;
+    border-radius: 2px;
+  }
+}
