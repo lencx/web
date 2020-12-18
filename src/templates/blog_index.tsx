@@ -16,9 +16,11 @@ export default function BlogIndexTemplate(props: BlogIndexTemplateProps) {
   return (
     <PostLayout>
       <SEO title="Blog" />
-      {data.map(item => {
-        return <PostOverview key={item.id} dataSource={item} />;
-      })}
+      <div className="nofwl_posts">
+        {data.map(item => {
+          return <PostOverview key={item.id} dataSource={item} />;
+        })}
+      </div>
     </PostLayout>
   );
 }

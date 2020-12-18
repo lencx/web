@@ -32,7 +32,7 @@
 
 - [ ] Search
 - [ ] Post Views Counter
-<!-- - [ ] Post(online): create, edit, delete -->
+  <!-- - [ ] Post(online): create, edit, delete -->
 
 <!-- https://www.gatsbyjs.org/docs/adding-search/ -->
 
@@ -44,4 +44,9 @@
 # copy genfile to /bin directory
 # run bash
 ./rs.sh
+``` -->
+
+<!-- ```bash
+# yarn start error
+npm install --ignore-scripts=false --verbose
 ``` -->

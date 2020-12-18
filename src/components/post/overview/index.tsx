@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { Link } from 'gatsby';
+import cns from 'classnames';
 import { PostOverviewData } from '../interface';
 import PostWidget from '../widget';
 
@@ -18,7 +19,7 @@ export default function PostOverview({ dataSource }: PostOverviewProps) {
   const _data = dataSource.frontmatter;
   const _fields = dataSource.fields;
   return (
-    <div className={styles.post}>
+    <div className={cns('nofwl_post_card', styles.post)}>
       <h2>
         <Link to={_fields.slug}>{_data.title}</Link>
       </h2>

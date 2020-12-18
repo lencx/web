@@ -10,3 +10,20 @@
   box-shadow: none;
   background: none;
 }
+
+.nofwl_posts {
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (min-width: 768px) {
+    .nofwl_post_card {
+      flex: 0 0 calc(50% - 20px);
+      margin: 10px;
+      max-width: calc(50% - 20px);
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .nofwl_post_card {
+      flex: 0 0 100%;
+    }
+  }
+}

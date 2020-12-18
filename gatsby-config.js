@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-catch-links`,
     {
       // blog-posts
       resolve: `gatsby-source-filesystem`,

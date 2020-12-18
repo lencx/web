@@ -30,11 +30,19 @@
     word-break: break-all;
     background-position: center center;
     background-repeat: no-repeat;
+    box-shadow: 0 2px 2px var(--light-silver);
+    background-color: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      box-shadow: 0 5px 5px var(--teal);
+      transition: box-shadow 200ms ease-in-out;
+    }
   }
 
   .cont {
     position: absolute;
-    background: rgba(#fff, 0.85);
+    box-shadow: 0 1px 3px #000;
+    background: #fff;
     width: 100%;
     padding: 10px;
     bottom: 0;
@@ -43,6 +51,7 @@
       margin-top: 10px;
       text-align: left;
       line-height: 20px;
+      color: #666;
     }
   }
 }

@@ -54,6 +54,7 @@ export default function Header({ className, isHome = false }: HeaderProps) {
               { title: 'Blog', link: '/blog' },
               { title: 'Tools', link: '/tools' },
               { title: 'Archive', link: '/archive' },
+              { title: 'Friends', link: '/friends' },
               { title: 'About', link: '/about' },
             ]}
           />
