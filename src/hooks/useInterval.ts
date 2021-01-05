@@ -1,5 +1,15 @@
+/**
+ * @author: lencx
+ * @create_at: Jan 05, 2021
+ */
+
 import { useEffect, useRef } from 'react';
 
+/**
+ * useInterval
+ * @param callback
+ * @param delay
+ */
 export default function useInterval(callback: Function, delay: number | null) {
   const savedCallback = useRef<Function>();
 
